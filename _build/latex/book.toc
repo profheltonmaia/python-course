@@ -1,0 +1,102 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Capítulo 1: Introdução à programação em Python}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}O que é programação de computadores?}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}O que você precisa para começar?}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Escrevendo seu primeiro programa em python}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Como um programa em Python funciona?}{5}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Estrutura básica de um programa em Python}{6}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Exemplo aprimorado: capturando nome e idade}{6}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Estratégias cientificamente fundamentadas para estudar programação}{7}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Capítulo 2: Váriáveis e Tipos de dados}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definindo Variáveis e Tipos de Dados}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Tipos de dados Básicos}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Números Inteiros}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Números de Ponto Flutuante}{10}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Strings}{10}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Booleanos}{11}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Tipos de dados compostos}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Listas}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Tuplas}{13}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Dicionários}{16}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Conjuntos}{18}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Exercícios}{20}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Capítulo 3: Operadores e expressões}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Operadores Aritméticos}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Operadores Relacionais}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Operadores Lógicos}{25}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Operadores de Atribuição}{26}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Operadores de Incremento e Decremento}{27}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Operador de Incremento}{27}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Operador de Decremento}{27}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Operadores Unários}{27}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Operador Negativo (\sphinxstyleliteralintitle {\sphinxupquote {\sphinxhyphen {}}}):}{27}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Operador Positivo (\sphinxstyleliteralintitle {\sphinxupquote {+}}):}{28}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Operador de Inversão Bit a Bit (\sphinxstyleliteralintitle {\sphinxupquote {\textasciitilde {}}}):}{28}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Exercícios}{28}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Capítulo 4: Controle de Fluxo}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estruturas condicionais}{29}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}A Instrução \sphinxstyleliteralintitle {\sphinxupquote {if}}}{29}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Instruções \sphinxstyleliteralintitle {\sphinxupquote {elif}} e \sphinxstyleliteralintitle {\sphinxupquote {else}}}{29}{subsection.4.1.2}%
+\contentsline {subsubsection}{Exemplo com \sphinxstyleliteralintitle {\sphinxupquote {elif}}:}{30}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {4.1.3}Exemplo Prático: Verificação de Números Pares e Ímpares}{30}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Aninhamento de Estruturas Condicionais}{30}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Estruturas de repetição}{31}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Estrutura de Repetição \sphinxstyleliteralintitle {\sphinxupquote {for}}}{32}{subsection.4.2.1}%
+\contentsline {subsubsection}{Casos de Utilização do \sphinxstyleliteralintitle {\sphinxupquote {for}}}{32}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {4.2.2}Estrutura de Repetição \sphinxstyleliteralintitle {\sphinxupquote {while}}}{33}{subsection.4.2.2}%
+\contentsline {subsubsection}{Casos de Utilização do \sphinxstyleliteralintitle {\sphinxupquote {while}}}{34}{subsubsection*.5}%
+\contentsline {section}{\numberline {4.3}Exercícios}{34}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Capítulo 5: Funções}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Definindo Funções}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Nomes de Funções:}{38}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Nomes de Parâmetros:}{38}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Argumentos de Função}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Retorno de Valor}{39}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Funções Anônimas (Lambda)}{39}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Funções Recursivas}{40}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Funções \sphinxstyleemphasis {built\sphinxhyphen {}in}}{40}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Funções para Conversão de Tipos}{41}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Funções para Manipulação de Sequências}{41}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Funções para Interagir com o Usuário}{41}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Funções Matemáticas}{41}{subsection.5.6.4}%
+\contentsline {section}{\numberline {5.7}Exercícios}{42}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Capítulo 6: Strings}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introdução a Strings}{43}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Operações com Strings}{43}{subsection.6.1.1}%
+\contentsline {subsubsection}{Concatenação}{43}{subsubsection*.6}%
+\contentsline {subsubsection}{Repetição}{43}{subsubsection*.7}%
+\contentsline {subsubsection}{Indexação e Fatiamento (\sphinxstyleemphasis {Slicing})}{44}{subsubsection*.8}%
+\contentsline {subsection}{\numberline {6.1.2}Métodos de Strings}{44}{subsection.6.1.2}%
+\contentsline {subsubsection}{\sphinxstyleliteralintitle {\sphinxupquote {upper()}} e \sphinxstyleliteralintitle {\sphinxupquote {lower()}}}{44}{subsubsection*.9}%
+\contentsline {subsubsection}{\sphinxstyleliteralintitle {\sphinxupquote {replace()}}}{44}{subsubsection*.10}%
+\contentsline {subsubsection}{\sphinxstyleliteralintitle {\sphinxupquote {split()}}}{45}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {6.1.3}Explorando mais Conceitos}{45}{subsection.6.1.3}%
+\contentsline {subsubsection}{Formatação de Strings (f\sphinxhyphen {}strings)}{45}{subsubsection*.12}%
+\contentsline {subsubsection}{Métodos \sphinxstyleliteralintitle {\sphinxupquote {startswith()}} e \sphinxstyleliteralintitle {\sphinxupquote {endswith()}}}{45}{subsubsection*.13}%
+\contentsline {section}{\numberline {6.2}Expressões Regulares em Python}{45}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Sintaxe Básica e Principais Funções}{46}{subsection.6.2.1}%
+\contentsline {subsubsection}{\sphinxstyleliteralintitle {\sphinxupquote {re.findall(pattern, string)}} e \sphinxstyleliteralintitle {\sphinxupquote {re.finditer(pattern, string):}}}{47}{subsubsection*.14}%
+\contentsline {subsubsection}{\sphinxstyleliteralintitle {\sphinxupquote {re.sub(pattern, replacement, string):}}}{47}{subsubsection*.15}%
+\contentsline {section}{\numberline {6.3}Exercícios}{48}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Capítulo 7: NumPy e Matplotlib}{51}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Manipulação de Arrays com o NumPy}{51}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Definindo Arrays}{51}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Operações com Arrays}{52}{subsection.7.1.2}%
+\contentsline {subsubsection}{Criando Arrays com valores específicos}{52}{subsubsection*.16}%
+\contentsline {subsubsection}{Concatenando e Empilhando Arrays}{53}{subsubsection*.17}%
+\contentsline {subsubsection}{Reshape e Transposição}{53}{subsubsection*.18}%
+\contentsline {subsubsection}{Operações Estatísticas}{54}{subsubsection*.19}%
+\contentsline {subsubsection}{Indexação e Fatiamento}{54}{subsubsection*.20}%
+\contentsline {subsubsection}{Operações Lógicas}{54}{subsubsection*.21}%
+\contentsline {section}{\numberline {7.2}Visualização de Dados com o Matplotlib}{55}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Gráficos Simples}{55}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Gráfico de Linha: Evolução de Casos de COVID\sphinxhyphen {}19 no Brasil}{56}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Gráfico de Barras: Distribuição de Renda no Brasil}{57}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Gráfico de Dispersão: Correlação entre Duas Variáveis}{58}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Histograma: Distribuição de uma Variável}{59}{subsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.2.6}Explorando Gráficos Estatísticos}{60}{subsection.7.2.6}%
+\contentsline {subsection}{\numberline {7.2.7}Salvando os graficos como figuras}{63}{subsection.7.2.7}%
+\contentsline {section}{\numberline {7.3}Exercícios}{63}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Capítulo 8: Manipulação de Arquivos}{69}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Manipulação de Arquivos}{69}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Exercícios}{69}{section.8.2}%
