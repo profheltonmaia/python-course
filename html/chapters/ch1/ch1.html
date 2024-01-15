@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Capítulo 1: Introdução à programação em Python &#8212; Curso de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch1/ch1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Capítulo 2: Váriáveis e Tipos de dados" href="../ch2/ch2.html" />
+    <link rel="prev" title="Bem-vindo" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.jpeg" class="logo__image only-light" alt="Curso de Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.jpeg" class="logo__image only-dark" alt="Curso de Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Bem-vindo
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Python Básico</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 1: Introdução à programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Váriáveis e Tipos de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e expressões</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/ch1/ch1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Capítulo 1: Introdução à programação em Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programacao-de-computadores">O que é programação de computadores?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-voce-precisa-para-comecar">O que você precisa para começar?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-seu-primeiro-programa-em-python">Escrevendo seu primeiro programa em python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-um-programa-em-python-funciona">Como um programa em Python funciona?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-basica-de-um-programa-em-python">Estrutura básica de um programa em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao">Estratégias cientificamente fundamentadas para estudar programação</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-introducao-a-programacao-em-python">
+<h1>Capítulo 1: Introdução à programação em Python<a class="headerlink" href="#capitulo-1-introducao-a-programacao-em-python" title="Permalink to this heading">#</a></h1>
+<section id="o-que-e-programacao-de-computadores">
+<h2>O que é programação de computadores?<a class="headerlink" href="#o-que-e-programacao-de-computadores" title="Permalink to this heading">#</a></h2>
+<p>Programar computadores é a arte e ciência de conceber e criar conjuntos de instruções que capacitam computadores a realizar tarefas específicas. Esse processo envolve a expressão lógica de algoritmos por meio de uma linguagem de programação, atuando como a ponte entre a mente humana e a máquina.</p>
+<p>Essa habilidade é fundamental para aqueles que buscam atuar no universo da computação, desempenhando um papel essencial em diversas disciplinas, como engenharia, ciência, negócios, saúde, educação e entretenimento. A capacidade de programar não apenas possibilita a automação de processos, mas também estimula a resolução criativa de problemas e impulsiona a inovação tecnológica.</p>
+<p>Na prática da programação, os desenvolvedores convertem conceitos abstratos em linguagem compreensível pelos computadores, proporcionando-lhes a habilidade de executar tarefas complexas. Essa interação entre humanos e máquinas desempenha um papel fundamental na contínua evolução da sociedade digital, moldando desde avanços científicos até transformações sociais significativas.</p>
+<p>A habilidade de programar transcende a mera condição técnica, transformando-se em uma ferramenta importante para explorar novas ideias e o aprimoramento pessoal. Filosoficamente falando, programar é também uma forma de enxergar o mundo sob diferentes perspectivas, processos e abstrações.</p>
+<p>Dentro do contexto do Python, esta é uma linguagem considerada de alto nível, sendo interpretada e multiparadigma. Tal caracterização implica que o Python destaca-se por sua facilidade de aprendizado e uso, sendo aplicável a uma ampla gama de propósitos. Sua versatilidade se destaca ainda mais pela capacidade de suportar diversos paradigmas de programação, proporcionando aos desenvolvedores uma abordagem flexível e adaptável para resolver problemas em diferentes domínios.</p>
+<p>O Python é uma linguagem de programação versátil que desempenha papéis significativos em diversas áreas. A seguir, um breve resumo de algumas dessas possibilidades:</p>
+<ul class="simple">
+<li><p><strong>Engenharia e Ciências:</strong> Utilizado em simulação, análise e visualização de dados, assim como em projetos de aprendizado de máquina. Sua sintaxe clara e concisa, bem como sua ampla biblioteca de módulos científicos, tornam-o uma escolha popular para tais abordagens.</p></li>
+<li><p><strong>Negócios:</strong> Como uma ferramenta essencial para a análise de dados, automação de processos e desenvolvimento de aplicativos web. Sua flexibilidade e eficiência o tornam uma escolha versátil para soluções empresariais.</p></li>
+<li><p><strong>Educação:</strong> O Python é a linguagem de programação mais popular para o ensino de programação em escolas e universidades. Sua sintaxe simples e intuitiva torna-o uma linguagem fácil de aprender, mesmo para iniciantes.</p></li>
+<li><p><strong>Entretenimento:</strong> É uma linguagem de programação versátil e robusta que é frequentemente utilizada na criação de jogos, aplicativos móveis e outros softwares de entretenimento. Sua flexibilidade e robustez permitem que seja usada para criar aplicações de alta qualidade e de todos os tipos.</p></li>
+<li><p><strong>Saúde:</strong> Fortemente utilizado em análise de dados médicos e desenvolvimento de softwares especializados e pesquisa médica. Sua capacidade analítica e adaptabilidade o tornam uma ferramenta valiosa para a pesquisa e a inovação em saúde.</p></li>
+</ul>
+<p>Python é uma linguagem de programação versátil que atende a uma ampla gama de necessidades, desde automatização de tarefas repetitivas até desafios avançados. Suas aplicações incluem automação, análise de dados, desenvolvimento de jogos, inteligência artificial, automação de redes, aplicações científicas, desenvolvimento de aplicativos de desktop e web, construção de APIs, segurança cibernética, simulações científicas e matemáticas, Internet das Coisas (IoT) e produção de mídia. A versatilidade do Python o torna uma ferramenta indispensável em diversas áreas, proporcionando uma base sólida para inovação no cenário tecnológico atual. Dominar Python não é apenas uma habilidade essencial, mas também uma maneira de explorar as constantes inovações e desafios tecnológicos em evolução.</p>
+<!-- Python, uma linguagem versátil, atende a um amplo espectro de necessidades, desde tarefas básicas até desafios avançados. Algumas de suas aplicações incluem:
+
+- **Automatizar Tarefas Repetitivas:** Ideal para criar scripts que automatizam tarefas rotineiras, economizando tempo e aumentando a eficiência.
+  
+- **Análise de Dados e Visualização:** Pode ser utilizado para explorar, analisar e visualizar dados, fornecendo insights valiosos para a tomada de decisões em diversas áreas, como negócios e ciência.
+  
+- **Desenvolvimento de Jogos:** Popular para o desenvolvimento de jogos, proporcionando uma combinação de simplicidade e poder.
+  
+- **Inteligência Artificial:** Amplamente utilizado em projetos de inteligência artificial, abrangendo desde chatbots simples até sistemas mais complexos de processamento de linguagem natural.
+  
+- **Automação de Redes e Sistemas:** Empregado para automatizar a administração de sistemas e redes, facilitando a configuração e o gerenciamento eficientes.
+  
+- **Aplicações Científicas:** Adotado em diversas disciplinas científicas para modelagem matemática, simulações e experimentação.
+  
+- **Desenvolvimento de Aplicativos de Desktop:** Pode ser usado para criar aplicativos de desktop interativos e funcionais.
+  
+- **Construção de APIs:** Escolha popular para criar APIs (Interfaces de Programação de Aplicações), permitindo a comunicação eficiente entre diferentes componentes de software.
+  
+- **Segurança Cibernética:** Utilizado em ferramentas e scripts para testes de segurança e análise de vulnerabilidades.
+  
+- **Desenvolvimento Web:** Amplamente empregado em frameworks como Django e Flask para desenvolver aplicativos web robustos e escaláveis.
+  
+- **Simulações Científicas e Matemáticas Avançadas:** Utilizado em ambientes acadêmicos e de pesquisa para simulações e modelagens complexas para resolução de problemas matemáticos avançados.
+  
+- **Internet das Coisas (IoT):** Amplamente adotado no desenvolvimento para IoT, proporcionando simplicidade e flexibilidade para integrar e coletar dados em ambientes conectados.
+  
+- **Produção de Mídia (Imagens, Vídeos e Música):** Usado de maneira abrangente na produção e manipulação de mídia, oferecendo ferramentas especializadas para criar, editar vídeos e imagens, e até mesmo compor música, evidenciando sua versatilidade nas expressões artísticas digitais.
+
+Com sua versatilidade impressionante, Python emerge como uma ferramenta indispensável com aplicações abrangentes. Sua utilidade vai além de simplesmente trabalhar com computadores; ela se estende para áreas tão diversas quanto ciência de dados, desenvolvimento web, inteligência artificial e muito mais. Assim, dominar este linguagem não apenas se torna uma habilidade essencial, mas também uma forma para explorar inovações e desafios em constante evolução no vasto panorama tecnológico contemporâneo. -->
+</section>
+<section id="o-que-voce-precisa-para-comecar">
+<h2>O que você precisa para começar?<a class="headerlink" href="#o-que-voce-precisa-para-comecar" title="Permalink to this heading">#</a></h2>
+<p>Para iniciar seu aprendizado em Python, além desta documentação, é fundamental contar com os seguintes elementos:</p>
+<ol class="arabic simple">
+<li><p><strong>Computador com Acesso à Internet:</strong> Recomenda-se utilizar um computador com conexão à internet para facilitar o download de pacotes adicionais e o acesso à documentação online, enriquecendo sua experiência de aprendizado. No entanto, é válido destacar que é possível programar em Python em um ambiente offline, o que se torna uma opção viável em situações em que a conexão à internet não está disponível.</p></li>
+<li><p><strong>Editor de Texto ou IDE (Ambiente de Desenvolvimento Integrado):</strong> Escolha um editor de texto que atenda às suas preferências e necessidades. Pode ser um editor simples como o Notepad ou algo mais avançado como o Sublime Text, Atom, Visual Studio Code, ou editores online como o <a class="reference external" href="https://replit.com">Replit</a>, Google Colab ou o Jupyter Notebook. Além disso, o PyCharm é uma poderosa IDE específica para Python que oferece recursos avançados e é amplamente utilizada por desenvolvedores.</p></li>
+<li><p><strong>Interpretador Python:</strong> Faça o download do interpretador Python diretamente do site da Python Software Foundation (<a class="reference external" href="https://www.python.org/">https://www.python.org/</a>). Alternativamente, você pode utilizar ambientes online como o Replit, que já incluem um interpretador Python e um editor de texto integrados.</p></li>
+</ol>
+<p>Equipado com esses recursos, você estará pronto para explorar e aprimorar suas habilidades em Python. Seja trabalhando localmente em seu computador ou em ambientes online, você terá a flexibilidade necessária para mergulhar no mundo da programação, adaptando-se ao seu estilo de aprendizado preferido.</p>
+<p><strong>Observação:</strong> O Python é uma linguagem de programação interpretada, ou seja, seu código é executado diretamente pelo interpretador, sem ser convertido para um formato de código de máquina. Isso torna o Python uma linguagem mais fácil de aprender e usar, pois não é necessário compilar o código antes de executá-lo.</p>
+</section>
+<section id="escrevendo-seu-primeiro-programa-em-python">
+<h2>Escrevendo seu primeiro programa em python<a class="headerlink" href="#escrevendo-seu-primeiro-programa-em-python" title="Permalink to this heading">#</a></h2>
+<p>Neste material introdutório, apresentamos um exemplo conciso de um programa em Python que realiza a soma de dois números e exibe o resultado na tela. O arquivo pode ser nomeado “<a class="reference external" href="http://soma.py">soma.py</a>”, e o código é o seguinte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">soma</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soma</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Neste exemplo didático, valores são atribuídos às variáveis <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>. Posteriormente, uma nova variável chamada <code class="docutils literal notranslate"><span class="pre">soma</span></code> armazena o resultado da adição desses valores. Finalmente, o comando <code class="docutils literal notranslate"><span class="pre">print</span></code> é utilizado para exibir o resultado da soma.</p>
+<p>Aqui está a explicação de cada linha do código:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">1</span></code></strong>: Atribui o valor inteiro 1 à variável <code class="docutils literal notranslate"><span class="pre">a</span></code>. Variáveis armazenam dados em Python.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">2</span></code></strong>: Atribui o valor 2 à variável <code class="docutils literal notranslate"><span class="pre">b</span></code>. Agora, <code class="docutils literal notranslate"><span class="pre">a</span></code> contém 1 e <code class="docutils literal notranslate"><span class="pre">b</span></code> contém 2.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">soma</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></strong>: Cria a variável <code class="docutils literal notranslate"><span class="pre">soma</span></code> e atribui a ela a soma dos valores em <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>, resultando em 3.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">print(soma)</span></code></strong>: Utiliza a função <code class="docutils literal notranslate"><span class="pre">print</span></code> para exibir o valor armazenado em <code class="docutils literal notranslate"><span class="pre">soma</span></code>, que é 3.</p></li>
+</ul>
+<p>Resumidamente, o programa define dois valores (1 e 2) em duas variáveis (<code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>), realiza a soma desses valores e armazena o resultado em uma terceira variável (<code class="docutils literal notranslate"><span class="pre">soma</span></code>), e finalmente, imprime o resultado (3) na tela.</p>
+<p><strong>O que são variáveis?</strong></p>
+<p>São identificadores nomeados que armazenam e representam dados, essenciais para a manipulação dinâmica de informações em um programa.</p>
+<p><strong>O que são funções?</strong></p>
+<p>São blocos de código reutilizáveis que realizam tarefas específicas. A função <code class="docutils literal notranslate"><span class="pre">print</span></code> foi usada para exibir informações no console ou terminal.</p>
+<p>Para executar o código Python:</p>
+<ol class="arabic simple">
+<li><p>Escreva o código em um editor de texto.</p></li>
+<li><p>Salve o arquivo como “.py”.</p></li>
+<li><p>Abra um terminal ou prompt de comando.</p></li>
+<li><p>Navegue até o diretório do arquivo.</p></li>
+<li><p>Execute com <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">nome_do_arquivo.py</span></code>.</p></li>
+<li><p>Observe a saída no terminal.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>soma.py
+</pre></div>
+</div>
+<p>A saída será o número 3, resultado da soma de 1 e 2.</p>
+</section>
+<section id="como-um-programa-em-python-funciona">
+<h2>Como um programa em Python funciona?<a class="headerlink" href="#como-um-programa-em-python-funciona" title="Permalink to this heading">#</a></h2>
+<p>O processo de execução de um código Python no computador é composto por várias etapas, cada uma desempenhando um papel fundamental. Tudo começa com o desenvolvimento do código fonte, usualmente armazenado em arquivos com extensão “.py”. Esse código é então submetido ao interpretador Python.</p>
+<p>O interpretador é o programa encarregado de ler e processar o código fonte. Ele converte o código Python em código objeto (bytecode), uma forma intermediária que é independente da arquitetura do hardware. Este bytecode é uma representação de baixo nível que servirá como entrada para a Máquina Virtual Python (PVM).</p>
+<p>A PVM é a camada que efetivamente executa o programa. Ela gerencia a execução do bytecode, cuida do gerenciamento de memória e interage com o sistema operacional. Além disso, algumas implementações do interpretador Python, como o CPython, podem incorporar um Compilador Just-In-Time (JIT).</p>
+<!-- ![Minha primeira imagem](pythonWorks.svg "Minha primeira imagem") -->
+</section>
+<section id="estrutura-basica-de-um-programa-em-python">
+<h2>Estrutura básica de um programa em Python<a class="headerlink" href="#estrutura-basica-de-um-programa-em-python" title="Permalink to this heading">#</a></h2>
+<p>Um programa em Python segue uma estrutura básica, um algoritmo, que é uma sequência de passos definidos para realizar uma tarefa. Similar a uma receita culinária, o algoritmo tem entrada (dados), processamento (passos a seguir), e saída (resultado).</p>
+<p>Conceitualmente, a estrutura fundamental de um programa Python é:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Bloco de código principal</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main()</span></code>: Função principal do programa, chamada quando o programa é executado.</p></li>
+<li><p>Bloco de código principal: Onde a execução do programa ocorre, identado para indicar que faz parte do bloco principal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>: Verifica se o arquivo está sendo executado como um programa principal, garantindo que a função <code class="docutils literal notranslate"><span class="pre">main()</span></code> seja executada.</p></li>
+</ul>
+<p>Exemplo de um programa básico:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Para executar, salve o código em um arquivo “.py”, como “hello_world.py”, e no terminal, execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello_world</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Lembre-se da importância da formatação adequada (indentação) para indicar a estrutura do programa. A consistência, preferencialmente utilizando quatro espaços por nível, é recomendada pela PEP 8. Essa prática aprimora a legibilidade e mantém um estilo uniforme.</p>
+</section>
+<section id="exemplo-aprimorado-capturando-nome-e-idade">
+<h2>Exemplo aprimorado: capturando nome e idade<a class="headerlink" href="#exemplo-aprimorado-capturando-nome-e-idade" title="Permalink to this heading">#</a></h2>
+<p>Vamos aprimorar nosso código inicial para aprender a interagir com o usuário. Neste exemplo, criaremos um programa que solicita e armazena o nome e a idade do usuário, para então exibir essas informações. Siga os passos abaixo:</p>
+<ol class="arabic">
+<li><p>Crie um novo arquivo para armazenar o código do programa.</p></li>
+<li><p>Copie ou digite o seguinte código no arquivo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Qual é o seu nome? &quot;</span><span class="p">)</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Qual é a sua idade? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O código utiliza a função <code class="docutils literal notranslate"><span class="pre">input</span></code> para solicitar que o usuário insira seu nome e idade. Os dados fornecidos são armazenados nas variáveis <code class="docutils literal notranslate"><span class="pre">nome</span></code> e <code class="docutils literal notranslate"><span class="pre">idade</span></code>, respectivamente. Em seguida, o programa imprime essas informações na tela.</p>
+</li>
+<li><p>Salve o arquivo e execute-o usando o interpretador Python.</p></li>
+<li><p>O programa solicitará que você insira o nome e a idade.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Qual é o seu nome? Ana Maria
+Qual é a sua idade? 25
+</pre></div>
+</div>
+</li>
+<li><p>Após fornecer as informações, o programa imprimirá o nome e a idade na tela.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ana</span> <span class="n">Maria</span>
+<span class="mi">25</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Este exemplo ilustra o uso da função <code class="docutils literal notranslate"><span class="pre">input</span></code> para interagir com o usuário, capturando dados e exibindo as informações posteriormente. A utilização de <code class="docutils literal notranslate"><span class="pre">input</span></code> é fundamental para criar programas interativos e dinâmicos.</p>
+</section>
+<section id="estrategias-cientificamente-fundamentadas-para-estudar-programacao">
+<h2>Estratégias cientificamente fundamentadas para estudar programação<a class="headerlink" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao" title="Permalink to this heading">#</a></h2>
+<p>Estudar programação é uma tarefa desafiadora, mas também gratificante. Com uma abordagem estruturada e focada, é possível aprender os conceitos básicos e avançar rapidamente na carreira de desenvolvimento de software. Aqui estão algumas estratégias respaldadas por princípios de aprendizagem e cognição que podem ajudá-lo a aprender programação de forma mais eficaz:</p>
+<p><strong>Repetição espaçada:</strong>
+A repetição espaçada é uma técnica de aprendizado que envolve revisar conceitos em intervalos crescentes, fortalecendo a retenção a longo prazo. Utilize programas de flashcards ou aplicativos de repetição espaçada para implementar essa técnica.</p>
+<p><strong>Interleaving:</strong>
+O interleaving é uma técnica que envolve misturar diferentes tópicos durante o estudo. Isso evita a dependência excessiva de um único conceito e promove a aplicação flexível de conhecimentos. Alternar entre tópicos relacionados durante as sessões de estudo é uma prática eficaz.</p>
+<p><strong>Prática ativa:</strong>
+Engaje-se em práticas ativas, como resolver problemas e desenvolver projetos. Essa abordagem estimula a aplicação prática do conhecimento, consolidando a compreensão e fortalecendo as habilidades práticas.</p>
+<p><strong>Compreensão profunda:</strong>
+Foque na compreensão profunda dos conceitos, indo além da memorização para entender os princípios subjacentes. Concentre-se no “porquê” de algo funcionar, não apenas no “como”.</p>
+<p><strong>Foco e mínima interrupção:</strong>
+Mantenha sessões de estudo focadas, minimizando interrupções para preservar a profundidade da concentração. Escolha ambientes tranquilos e utilize técnicas de meditação para melhorar a concentração.</p>
+<p><strong>Aprendizagem baseada em problemas:</strong>
+Aborde a programação como resolução de problemas, tornando a aprendizagem mais contextual e eficaz. A resolução prática de desafios promove a aplicação real dos conceitos.</p>
+<p><strong>Recursos diversificados:</strong>
+Utilize diversos recursos de aprendizagem, como livros, vídeos, tutoriais interativos e cursos online. Essa variedade enriquece a compreensão dos tópicos.</p>
+<p><strong>Espaço para reflexão:</strong>
+Reserve tempo após o estudo para reflexão, consolidando o conhecimento e aplicando-o a novas situações. Escrever um diário de aprendizado ou discutir com um mentor pode ser útil.</p>
+<p><strong>Revisão regular:</strong>
+Mantenha o conhecimento fresco na memória por meio de revisões regulares. Crie um cronograma ou utilize aplicativos de revisão para identificar lacunas na compreensão.</p>
+<p><strong>Aprendizagem colaborativa:</strong>
+Participe de grupos de estudo, fóruns online ou projetos colaborativos. A aprendizagem colaborativa proporciona feedback valioso e a oportunidade de compartilhar ideias.</p>
+<p>Ao seguir essas estratégias, você pode aumentar suas chances de sucesso no aprendizado de programação e desenvolver uma base sólida de habilidades.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/ch1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bem-vindo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ch2/ch2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Capítulo 2: Váriáveis e Tipos de dados</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programacao-de-computadores">O que é programação de computadores?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-voce-precisa-para-comecar">O que você precisa para começar?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-seu-primeiro-programa-em-python">Escrevendo seu primeiro programa em python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-um-programa-em-python-funciona">Como um programa em Python funciona?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-basica-de-um-programa-em-python">Estrutura básica de um programa em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao">Estratégias cientificamente fundamentadas para estudar programação</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Helton Maia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

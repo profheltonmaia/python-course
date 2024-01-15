@@ -1,0 +1,1266 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Capítulo 7: NumPy e Matplotlib &#8212; Curso de Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch7/ch7';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Capítulo 8: Manipulação de Arquivos" href="../ch8/ch8.html" />
+    <link rel="prev" title="Capítulo 6: Strings" href="../ch6/ch6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.jpeg" class="logo__image only-light" alt="Curso de Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.jpeg" class="logo__image only-dark" alt="Curso de Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Bem-vindo
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Python Básico</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Váriáveis e Tipos de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e expressões</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 7: NumPy e Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/ch7/ch7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Capítulo 7: NumPy e Matplotlib</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arrays-com-o-numpy">Manipulação de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-arrays">Definindo Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-arrays">Operações com Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arrays-com-valores-especificos">Criando Arrays com valores específicos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenando-e-empilhando-arrays">Concatenando e Empilhando Arrays</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-e-transposicao">Reshape e Transposição</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-estatisticas">Operações Estatísticas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-e-fatiamento">Indexação e Fatiamento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-logicas">Operações Lógicas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-dados-com-o-matplotlib">Visualização de Dados com o Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-simples">Gráficos Simples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linha-evolucao-de-casos-de-covid-19-no-brasil">Gráfico de Linha: Evolução de Casos de COVID-19 no Brasil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras-distribuicao-de-renda-no-brasil">Gráfico de Barras: Distribuição de Renda no Brasil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersao-correlacao-entre-duas-variaveis">Gráfico de Dispersão: Correlação entre Duas Variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-distribuicao-de-uma-variavel">Histograma: Distribuição de uma Variável</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorando-graficos-estatisticos">Explorando Gráficos Estatísticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-os-graficos-como-figuras">Salvando os graficos como figuras</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-7-numpy-e-matplotlib">
+<h1>Capítulo 7: NumPy e Matplotlib<a class="headerlink" href="#capitulo-7-numpy-e-matplotlib" title="Permalink to this heading">#</a></h1>
+<section id="manipulacao-de-arrays-com-o-numpy">
+<h2>Manipulação de Arrays com o NumPy<a class="headerlink" href="#manipulacao-de-arrays-com-o-numpy" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://numpy.org/">NumPy</a> é uma biblioteca fundamental para computação numérica em Python. Ela fornece estruturas de dados eficientes para a manipulação de arrays multidimensionais, bem como funções matemáticas para operações rápidas em elementos desses arrays.</p>
+<p>A instrução <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> é utilizada para importar a biblioteca NumPy e atribuir a ela um nome de apelido (alias), que neste caso é “np”. Essa prática é comum e recomendada quando se trabalha com bibliotecas extensas como o NumPy, pois facilita a referência a funções e objetos da biblioteca, tornando o código mais conciso e legível.</p>
+<section id="definindo-arrays">
+<h3>Definindo Arrays<a class="headerlink" href="#definindo-arrays" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importando a biblioteca NumPy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Criando uma array unidimensional</span>
+<span class="n">array_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># Criando uma array bidimensional</span>
+<span class="n">array_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="c1"># Arrays especiais</span>
+<span class="n">zeros_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Array 3x3 preenchido com zeros</span>
+<span class="n">ones_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>   <span class="c1"># Array 2x4 preenchido com uns</span>
+<span class="n">random_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Array 3x2 com valores aleatórios entre 0 e 1</span>
+
+<span class="c1"># Imprimindo os arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array Unidimensional:&quot;</span><span class="p">,</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array Bidimensional:&quot;</span><span class="p">,</span><span class="n">array_2d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array Zeros:&quot;</span><span class="p">,</span><span class="n">zeros_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array Ones:&quot;</span><span class="p">,</span><span class="n">ones_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array Random:&quot;</span><span class="p">,</span><span class="n">random_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Unidimensional</span><span class="p">:</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Array</span> <span class="n">Bidimensional</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">Array</span> <span class="n">Zeros</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]]</span>
+<span class="n">Array</span> <span class="n">Ones</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span><span class="p">]]</span>
+<span class="n">Array</span> <span class="n">Random</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mf">0.97601954</span> <span class="mf">0.98766048</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.28732808</span> <span class="mf">0.28372316</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.58467457</span> <span class="mf">0.4823928</span> <span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="operacoes-com-arrays">
+<h3>Operações com Arrays<a class="headerlink" href="#operacoes-com-arrays" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Soma de arrays</span>
+<span class="n">soma_arrays</span> <span class="o">=</span> <span class="n">array_1d</span> <span class="o">+</span> <span class="n">array_1d</span>
+
+<span class="c1"># Multiplicação de arrays</span>
+<span class="n">mult_arrays</span> <span class="o">=</span> <span class="n">array_1d</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="c1"># Produto escalar</span>
+<span class="n">dot_product</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">array_1d</span><span class="p">,</span> <span class="n">array_1d</span><span class="p">)</span>
+
+<span class="c1"># Imprimindo os arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soma dos arrays:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">soma_arrays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicação dos arrays:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">mult_arrays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Produto escalar dos arrays:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">dot_product</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Soma</span> <span class="n">dos</span> <span class="n">arrays</span><span class="p">:</span>
+ <span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">6</span>  <span class="mi">8</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Multiplicação</span> <span class="n">dos</span> <span class="n">arrays</span><span class="p">:</span>
+ <span class="p">[</span> <span class="mi">3</span>  <span class="mi">6</span>  <span class="mi">9</span> <span class="mi">12</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">Produto</span> <span class="n">escalar</span> <span class="n">dos</span> <span class="n">arrays</span><span class="p">:</span>
+ <span class="mi">55</span>
+</pre></div>
+</div>
+<section id="criando-arrays-com-valores-especificos">
+<h4>Criando Arrays com valores específicos<a class="headerlink" href="#criando-arrays-com-valores-especificos" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Array unidimensional com valores espaçados uniformemente</span>
+<span class="n">linear_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Cria um array com 5 elementos de 0 a 1</span>
+
+<span class="c1"># Array bidimensional com valores específicos</span>
+<span class="n">custom_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]])</span>
+
+<span class="c1"># Imprimindo os arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array unidimensional: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">linear_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array bidimensional:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">custom_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">unidimensional</span><span class="p">:</span>
+ <span class="p">[</span><span class="mf">0.</span>   <span class="mf">0.25</span> <span class="mf">0.5</span>  <span class="mf">0.75</span> <span class="mf">1.</span>  <span class="p">]</span>
+<span class="n">Array</span> <span class="n">bidimensional</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">40</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="concatenando-e-empilhando-arrays">
+<h4>Concatenando e Empilhando Arrays<a class="headerlink" href="#concatenando-e-empilhando-arrays" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenando dois arrays unidimensionais</span>
+<span class="n">array_concatenada</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">array_1d</span><span class="p">,</span> <span class="n">linear_array</span><span class="p">))</span>
+
+<span class="c1"># Empilhando dois arrays bidimensionais verticalmente</span>
+<span class="n">stacked_array_vertical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">array_2d</span><span class="p">,</span> <span class="n">custom_array</span><span class="p">))</span>
+
+<span class="c1"># Empilhando dois arrays bidimensionais horizontalmente</span>
+<span class="n">stacked_array_horizontal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">array_2d</span><span class="p">,</span> <span class="n">custom_array</span><span class="p">))</span>
+
+<span class="c1"># Imprimindo os arrays concatenados e empilhados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array concatenada: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">array_concatenada</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array empilhada verticalmente: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stacked_array_vertical</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array empilhada horizontalmente: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">stacked_array_horizontal</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">concatenada</span><span class="p">:</span>
+ <span class="p">[</span><span class="mf">1.</span>   <span class="mf">2.</span>   <span class="mf">3.</span>   <span class="mf">4.</span>   <span class="mf">5.</span>   <span class="mf">0.</span>   <span class="mf">0.25</span> <span class="mf">0.5</span>  <span class="mf">0.75</span> <span class="mf">1.</span>  <span class="p">]</span>
+<span class="n">Array</span> <span class="n">empilhada</span> <span class="n">verticalmente</span><span class="p">:</span>
+ <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">40</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">]]</span>
+<span class="n">Array</span> <span class="n">empilhada</span> <span class="n">horizontalmente</span><span class="p">:</span>
+ <span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span> <span class="mi">40</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">]]</span>
+
+</pre></div>
+</div>
+</section>
+<section id="reshape-e-transposicao">
+<h4>Reshape e Transposição<a class="headerlink" href="#reshape-e-transposicao" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mudando a forma (reshape) de um array</span>
+<span class="n">array_novo_shape</span> <span class="o">=</span> <span class="n">array_1d</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Transpondo um array bidimensional</span>
+<span class="n">array_transposta</span> <span class="o">=</span> <span class="n">array_2d</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># Iprimindo os arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array com novom shape:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">array_novo_shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array transposta:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">array_transposta</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">com</span> <span class="n">novom</span> <span class="n">shape</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
+<span class="n">Array</span> <span class="n">transposta</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mi">1</span> <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span> <span class="mi">5</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span> <span class="mi">6</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="operacoes-estatisticas">
+<h4>Operações Estatísticas<a class="headerlink" href="#operacoes-estatisticas" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Média e desvio padrão de um array</span>
+<span class="n">valor_medio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="n">desvio_padrao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+
+<span class="c1"># Mínimo e máximo de um array bidimensional</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">array_2d</span><span class="p">)</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">array_2d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Máximo ao longo das linhas</span>
+
+<span class="c1"># Imprimindo os valores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Média:&quot;</span><span class="p">,</span> <span class="n">valor_medio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Désvio Padrão:&quot;</span><span class="p">,</span> <span class="n">desvio_padrao</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor Mínimo:&quot;</span><span class="p">,</span> <span class="n">min_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor Máximo:&quot;</span><span class="p">,</span> <span class="n">max_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Média</span><span class="p">:</span> <span class="mf">3.0</span>
+<span class="n">Désvio</span> <span class="n">Padrão</span><span class="p">:</span> <span class="mf">1.4142135623730951</span>
+<span class="n">Valor</span> <span class="n">Mínimo</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">Máximo</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">6</span><span class="p">]</span>
+
+</pre></div>
+</div>
+</section>
+<section id="indexacao-e-fatiamento">
+<h4>Indexação e Fatiamento<a class="headerlink" href="#indexacao-e-fatiamento" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acessando elementos específicos</span>
+<span class="n">elemento_2nd</span> <span class="o">=</span> <span class="n">array_1d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Fatiando(slicing) uma array</span>
+<span class="n">slice_array</span> <span class="o">=</span> <span class="n">array_1d</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="c1"># Imprimindo os elementos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elemento 2nd:&quot;</span><span class="p">,</span> <span class="n">elemento_2nd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slice:&quot;</span><span class="p">,</span> <span class="n">slice_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Elemento</span> <span class="mi">2</span><span class="n">nd</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Slice</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="operacoes-logicas">
+<h4>Operações Lógicas<a class="headerlink" href="#operacoes-logicas" title="Permalink to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrando elementos maiores que 3</span>
+<span class="n">array_filtrado</span> <span class="o">=</span> <span class="n">array_1d</span><span class="p">[</span><span class="n">array_1d</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Substituindo valores baseados em uma condição</span>
+<span class="n">array_1d</span><span class="p">[</span><span class="n">array_1d</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Imprimindo os arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arrray Filtrado:&quot;</span><span class="p">,</span> <span class="n">array_filtrado</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array 1D:&quot;</span><span class="p">,</span> <span class="n">array_1d</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Arrray</span> <span class="n">Filtrado</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">Array</span> <span class="mi">1</span><span class="n">D</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="visualizacao-de-dados-com-o-matplotlib">
+<h2>Visualização de Dados com o Matplotlib<a class="headerlink" href="#visualizacao-de-dados-com-o-matplotlib" title="Permalink to this heading">#</a></h2>
+<p><strong>Visualização de Dados com <a class="reference external" href="https://matplotlib.org/">Matplotlib</a></strong></p>
+<p>A visualização de dados é essencial para analisar e compreender informações, proporcionando clareza na apresentação de dados e facilitando a identificação de padrões e tendências.</p>
+<p>O Matplotlib, uma biblioteca de visualização de dados em Python, é uma escolha popular entre cientistas de dados, engenheiros e analistas de negócios. Além de ser de código aberto e gratuito, destaca-se por sua facilidade de uso.</p>
+<p><strong>Funcionalidades do Matplotlib</strong></p>
+<p>A biblioteca oferece uma ampla gama de funcionalidades, incluindo gráficos de linha, barras, dispersão, área, pizza, histogramas, boxplots, violin plots, mapas de calor, nuvem de palavras, entre outros. A personalização de gráficos também é uma característica marcante.</p>
+<p><strong>Exemplos de Visualizações com Matplotlib</strong></p>
+<ul class="simple">
+<li><p>Gráfico de linha: Evolução de casos de COVID-19 no Brasil.</p></li>
+<li><p>Gráfico de barras: Distribuição de renda no Brasil.</p></li>
+<li><p>Gráfico de dispersão: Correlação entre duas variáveis.</p></li>
+<li><p>Histograma: Distribuição de uma variável.</p></li>
+</ul>
+<p><strong>Integração com Outras Bibliotecas</strong></p>
+<p>O Matplotlib integra-se de maneira eficiente com outras bibliotecas, como NumPy, proporcionando um ambiente poderoso para análise de dados. Essa integração permite, por exemplo, visualizar dados gerados por algoritmos de aprendizado de máquina.</p>
+<section id="graficos-simples">
+<h3>Gráficos Simples<a class="headerlink" href="#graficos-simples" title="Permalink to this heading">#</a></h3>
+<p>Para introduzir a criação de gráficos, começaremos com um exemplo simples de gráfico de linha usando a biblioteca Matplotlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Dados de exemplo</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Criando o gráfico de linha</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dados de Exemplo&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionando rótulos e título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eixo X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eixo Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de Linha Simples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Exibindo o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4d3ac3ec4b8c73b18d62454d685b95f58bdbc32b84dd7a9ebaa116a8bcadd006.png" src="../../_images/4d3ac3ec4b8c73b18d62454d685b95f58bdbc32b84dd7a9ebaa116a8bcadd006.png" />
+</div>
+</div>
+<p>O código começa importando a biblioteca Matplotlib usando <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code>. Isso é essencial para utilizar as funcionalidades da biblioteca, e o alias <code class="docutils literal notranslate"><span class="pre">plt</span></code> é comumente usado para facilitar o acesso a essas funções. Em seguida, o código continua com a definição dos dados e a criação do gráfico de linha. Ao final, a função <code class="docutils literal notranslate"><span class="pre">show()</span></code> é utilizada para exibir o gráfico.</p>
+</section>
+<section id="grafico-de-linha-evolucao-de-casos-de-covid-19-no-brasil">
+<h3>Gráfico de Linha: Evolução de Casos de COVID-19 no Brasil<a class="headerlink" href="#grafico-de-linha-evolucao-de-casos-de-covid-19-no-brasil" title="Permalink to this heading">#</a></h3>
+<p>Este exemplo utiliza o Matplotlib para criar um gráfico de linha representando a evolução dos casos de COVID-19 no Brasil. A biblioteca NumPy é utilizada para gerar dados fictícios para ilustração.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Dados fictícios para ilustração</span>
+<span class="n">dias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">casos_diarios</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="c1"># Criando o gráfico de linha</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dias</span><span class="p">,</span> <span class="n">casos_diarios</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Casos Diários&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionando rótulos e título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Dias&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total de Casos&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Evolução de Casos de COVID-19 no Brasil&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Exibindo o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5f68507cc2df024a28fceb005984bb5750251f785fc3d662f075d161bbd88451.png" src="../../_images/5f68507cc2df024a28fceb005984bb5750251f785fc3d662f075d161bbd88451.png" />
+</div>
+</div>
+</section>
+<section id="grafico-de-barras-distribuicao-de-renda-no-brasil">
+<h3>Gráfico de Barras: Distribuição de Renda no Brasil<a class="headerlink" href="#grafico-de-barras-distribuicao-de-renda-no-brasil" title="Permalink to this heading">#</a></h3>
+<p>Neste exemplo, um gráfico de barras é utilizado para representar a distribuição de renda no Brasil. Os dados são fictícios e representam percentuais da população em diferentes faixas de renda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Dados fictícios para ilustração</span>
+<span class="n">faixas_renda</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0-999&#39;</span><span class="p">,</span> <span class="s1">&#39;1000-1999&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-2999&#39;</span><span class="p">,</span> <span class="s1">&#39;3000-3999&#39;</span><span class="p">,</span> <span class="s1">&#39;4000+&#39;</span><span class="p">]</span>
+<span class="n">percentuais</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Criando o gráfico de barras</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">faixas_renda</span><span class="p">,</span> <span class="n">percentuais</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionando rótulos e título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Faixas de Renda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentual da População&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribuição de Renda no Brasil&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exibindo o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/aefff5e195bb3a088d4d8127c410ba02a73e9657c4ae69ed81c077f24350309b.png" src="../../_images/aefff5e195bb3a088d4d8127c410ba02a73e9657c4ae69ed81c077f24350309b.png" />
+</div>
+</div>
+</section>
+<section id="grafico-de-dispersao-correlacao-entre-duas-variaveis">
+<h3>Gráfico de Dispersão: Correlação entre Duas Variáveis<a class="headerlink" href="#grafico-de-dispersao-correlacao-entre-duas-variaveis" title="Permalink to this heading">#</a></h3>
+<p>Este exemplo utiliza um gráfico de dispersão para visualizar a correlação entre duas variáveis fictícias: horas de estudo e desempenho em exames.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Dados fictícios para ilustração</span>
+<span class="n">horas_estudo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">desempenho_exames</span> <span class="o">=</span> <span class="mi">70</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">horas_estudo</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c1"># Criando o gráfico de dispersão</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">horas_estudo</span><span class="p">,</span> <span class="n">desempenho_exames</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># Adicionando rótulos e título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Horas de Estudo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Desempenho em Exames&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlação entre Horas de Estudo e Desempenho em Exames&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exibindo o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0b44ca229dd85695f711f66603e5f05578aa98b0c0a1ebc27ef098e89fef0eba.png" src="../../_images/0b44ca229dd85695f711f66603e5f05578aa98b0c0a1ebc27ef098e89fef0eba.png" />
+</div>
+</div>
+</section>
+<section id="histograma-distribuicao-de-uma-variavel">
+<h3>Histograma: Distribuição de uma Variável<a class="headerlink" href="#histograma-distribuicao-de-uma-variavel" title="Permalink to this heading">#</a></h3>
+<p>Neste exemplo, um histograma é utilizado para representar a distribuição de idades em uma amostra de pessoas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Dados fictícios para ilustração</span>
+<span class="n">idades</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Criando o histograma</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">idades</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionando rótulos e título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Idade&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequência&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribuição de Idades&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exibindo o gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c18dc5a5801168adce9241bce5bf0e4ec857454d5df40b6a99fede7f6bca2a00.png" src="../../_images/c18dc5a5801168adce9241bce5bf0e4ec857454d5df40b6a99fede7f6bca2a00.png" />
+</div>
+</div>
+</section>
+<section id="explorando-graficos-estatisticos">
+<h3>Explorando Gráficos Estatísticos<a class="headerlink" href="#explorando-graficos-estatisticos" title="Permalink to this heading">#</a></h3>
+<p>Neste exemplo simplificado, abordaremos a representação gráfica de uma distribuição gaussiana bidimensional, utilizando subplots para destacar diferentes características.</p>
+<p>Começamos definindo uma distribuição gaussiana bidimensional com média zero e uma matriz de covariância específica. A primeira subplot exibe a densidade de probabilidade, proporcionando uma visão visual da dispersão dos dados nos eixos X e Y.</p>
+<p>As subplots seguintes exploram as projeções marginais, revelando a densidade de probabilidade ao longo do eixo X e Y, respectivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definindo os parâmetros da distribuição gaussiana</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">covariance</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="c1"># Criando uma grade de valores para x e y</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Calculando os valores da distribuição gaussiana manualmente</span>
+<span class="n">inv_covariance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">covariance</span><span class="p">)</span>
+<span class="n">det_covariance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">covariance</span><span class="p">)</span>
+<span class="n">exponent</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">inv_covariance</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">inv_covariance</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">inv_covariance</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">det_covariance</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">exponent</span><span class="p">)</span>
+
+<span class="c1"># Criando subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Subplot da densidade de probabilidade</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Densidade de Probabilidade&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Eixo X&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Eixo Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Projeção bidimensional no eixo X</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projeção no Eixo X&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Eixo X&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Densidade de Probabilidade&#39;</span><span class="p">)</span>
+
+<span class="c1"># Projeção bidimensional no eixo Y</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Projeção no Eixo Y&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Densidade de Probabilidade&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Eixo Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustando o layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Exibindo os subplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4be045c59c3ada3704b4f17fdc18379e1c2746c8677777a79abf72a52393aee4.png" src="../../_images/4be045c59c3ada3704b4f17fdc18379e1c2746c8677777a79abf72a52393aee4.png" />
+</div>
+</div>
+<p>Esse código possui muitos detalhes matemáticos e de configuração, vamos analisar passo a passo:</p>
+<ol class="arabic simple">
+<li><p><strong>Definição dos Parâmetros da Distribuição Gaussiana:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">0]</span></code>: Define a média da distribuição gaussiana bidimensional como (0, 0).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">covariance</span> <span class="pre">=</span> <span class="pre">[[1,</span> <span class="pre">0.5],</span> <span class="pre">[0.5,</span> <span class="pre">1]]</span></code>: Define a matriz de covariância da distribuição gaussiana bidimensional.</p></li>
+</ul>
+</li>
+<li><p><strong>Criação da Grade de Valores para x e y:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">np.linspace(-3,</span> <span class="pre">3,</span> <span class="pre">100)</span></code>: Cria uma sequência linear de 100 valores entre -3 e 3 para o eixo x.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.linspace(-3,</span> <span class="pre">3,</span> <span class="pre">100)</span></code>: Cria uma sequência linear de 100 valores entre -3 e 3 para o eixo y.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.meshgrid(x,</span> <span class="pre">y)</span></code>: Cria uma grade bidimensional de valores combinando os valores de x e y.</p></li>
+</ul>
+</li>
+<li><p><strong>Cálculo dos Valores da Distribuição Gaussiana Manualmente:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inv_covariance</span> <span class="pre">=</span> <span class="pre">np.linalg.inv(covariance)</span></code>: Calcula a matriz inversa da matriz de covariância.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">det_covariance</span> <span class="pre">=</span> <span class="pre">np.linalg.det(covariance)</span></code>: Calcula o determinante da matriz de covariância.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exponent</span> <span class="pre">=</span> <span class="pre">-0.5</span> <span class="pre">*</span> <span class="pre">(x**2</span> <span class="pre">*</span> <span class="pre">inv_covariance[0,</span> <span class="pre">0]</span> <span class="pre">+</span> <span class="pre">y**2</span> <span class="pre">*</span> <span class="pre">inv_covariance[1,</span> <span class="pre">1]</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span> <span class="pre">*</span> <span class="pre">inv_covariance[0,</span> <span class="pre">1])</span></code>: Calcula o expoente da função gaussiana.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">(1</span> <span class="pre">/</span> <span class="pre">(2</span> <span class="pre">*</span> <span class="pre">np.pi</span> <span class="pre">*</span> <span class="pre">np.sqrt(det_covariance)))</span> <span class="pre">*</span> <span class="pre">np.exp(exponent)</span></code>: Calcula os valores da distribuição gaussiana bidimensional.</p></li>
+</ul>
+</li>
+<li><p><strong>Criação de Subplots:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axs</span> <span class="pre">=</span> <span class="pre">plt.subplots(1,</span> <span class="pre">3,</span> <span class="pre">figsize=(15,</span> <span class="pre">5))</span></code>: Cria uma figura com uma linha e três colunas de subplots.</p></li>
+</ul>
+</li>
+<li><p><strong>Subplot da Densidade de Probabilidade:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axs[0].contourf(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">cmap='viridis')</span></code>: Plota a densidade de probabilidade utilizando contornos preenchidos.</p></li>
+<li><p>Configuração de título e rótulos dos eixos.</p></li>
+</ul>
+</li>
+<li><p><strong>Projeção Bidimensional no Eixo X:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axs[1].plot(x[0,</span> <span class="pre">:],</span> <span class="pre">np.sum(z,</span> <span class="pre">axis=0),</span> <span class="pre">color='blue')</span></code>: Plota a projeção da densidade de probabilidade no eixo X.</p></li>
+<li><p>Configuração de título e rótulos dos eixos.</p></li>
+</ul>
+</li>
+<li><p><strong>Projeção Bidimensional no Eixo Y:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">axs[2].plot(np.sum(z,</span> <span class="pre">axis=1),</span> <span class="pre">y[:,</span> <span class="pre">0],</span> <span class="pre">color='red')</span></code>: Plota a projeção da densidade de probabilidade no eixo Y.</p></li>
+<li><p>Configuração de título e rótulos dos eixos.</p></li>
+</ul>
+</li>
+<li><p><strong>Ajuste de Layout e Exibição dos Subplots:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code>: Ajusta automaticamente o layout dos subplots para evitar sobreposição.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>: Exibe os subplots.</p></li>
+</ul>
+</li>
+</ol>
+<p>Este código cria uma representação visual completa de uma distribuição gaussiana bidimensional, oferecendo diferentes perspectivas por meio de subplots.</p>
+</section>
+<section id="salvando-os-graficos-como-figuras">
+<h3>Salvando os graficos como figuras<a class="headerlink" href="#salvando-os-graficos-como-figuras" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercícios sobre NumPy e Matplotlib:</strong></p>
+<ol class="arabic">
+<li><p><strong>Manipulação de Arrays com NumPy:</strong> Crie uma array bidimensional com números de 1 a 9 e, em seguida, uma array unidimensional com cinco elementos, todos iguais a 10. Imprima ambas as arrays.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">array_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">array_unidimensional</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Operações com Arrays:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Multiplique a array unidimensional <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> por 2 e calcule o produto escalar da array <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">6]</span></code> com ela mesma. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiplicada_por_2</span> <span class="o">=</span> <span class="n">array_1d</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Multiplicada</span> <span class="n">por</span> <span class="mi">2</span><span class="p">:</span>
+<span class="p">[</span> <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">6</span>  <span class="mi">8</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">produto_escalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">array_1d</span><span class="p">,</span> <span class="n">array_1d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Produto</span> <span class="n">Escalar</span><span class="p">:</span>
+<span class="mi">55</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Criando Arrays com valores específicos:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Crie uma array unidimensional com 6 elementos espaçados uniformemente entre 0 e 1 e, em seguida, uma array bidimensional com valores todos iguais a 7. Imprima ambas as arrays.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">linear_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Unidimensional</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">0.</span>  <span class="mf">0.2</span> <span class="mf">0.4</span> <span class="mf">0.6</span> <span class="mf">0.8</span> <span class="mf">1.</span> <span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_sevens</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Bidimensional</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Concatenando e Empilhando Arrays:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Concatene as arrays <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> e <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code> e, em seguida, empilhe verticalmente as arrays bidimensionais <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code> e <code class="docutils literal notranslate"><span class="pre">[[7,</span> <span class="pre">8,</span> <span class="pre">9]]</span></code>. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_concatenada</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Concatenada</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_empilhada_verticalmente</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Empilhada</span> <span class="n">Verticalmente</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Reshape e Transposição:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Reshape a array unidimensional <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> para uma matriz com uma coluna e cinco linhas e, em seguida, transponha a array bidimensional <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code>. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_reshaped</span> <span class="o">=</span> <span class="n">array_1d</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Reshaped</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_transposta</span> <span class="o">=</span> <span class="n">array_2d</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Transposta</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span> <span class="mi">5</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span> <span class="mi">6</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Operações Estatísticas:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Calcule a média e o desvio padrão da array <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50]</span></code> e encontre o valor máximo ao longo das colunas da array bidimensional <code class="docutils literal notranslate"><span class="pre">[[5,</span> <span class="pre">8,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">6,</span> <span class="pre">9]]</span></code>. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">media_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">array_valores</span><span class="p">)</span>
+<span class="n">desvio_padrao_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">array_valores</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Média</span><span class="p">:</span> <span class="mf">30.0</span>
+<span class="n">Desvio</span> <span class="n">Padrão</span><span class="p">:</span> <span class="mf">14.1421356237</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_value_colunas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">array_2d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Valor</span> <span class="n">Máximo</span> <span class="n">por</span> <span class="n">Coluna</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">5</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Indexação e Fatiamento:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Acesse o terceiro elemento da array unidimensional <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">-2,</span> <span class="pre">-3,</span> <span class="pre">-4,</span> <span class="pre">-5]</span></code> e faça um slice da array unidimensional <code class="docutils literal notranslate"><span class="pre">[-10,</span> <span class="pre">-20,</span> <span class="pre">-30,</span> <span class="pre">-40,</span> <span class="pre">-50]</span></code> que inclua os elementos do segundo ao quarto. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">terceiro_elemento</span> <span class="o">=</span> <span class="n">array_indexacao</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Terceiro</span> <span class="n">Elemento</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sliced_array</span> <span class="o">=</span> <span class="n">array_fatiamento</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Fatiada</span><span class="p">:</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">20</span> <span class="o">-</span><span class="mi">30</span> <span class="o">-</span><span class="mi">40</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Operações Lógicas:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Filtrar os elementos maiores que 5 na array <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">8,</span> <span class="pre">1,</span> <span class="pre">6,</span> <span class="pre">2]</span></code> e substituir os valores maiores que 10 na array <code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">15,</span> <span class="pre">2,</span> <span class="pre">11,</span> <span class="pre">9]</span></code> por 0. Imprima os resultados.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_filtrada</span> <span class="o">=</span> <span class="n">array_logica</span><span class="p">[</span><span class="n">array_logica</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Filtrada</span><span class="p">:</span>
+<span class="p">[</span> <span class="mi">8</span>  <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array_substituida</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array_substituicao</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">array_substituicao</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">Substituída</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">7</span> <span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Visualização de Dados com Matplotlib:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Crie um gráfico de linha simples com os pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2),</span> <span class="pre">(2,</span> <span class="pre">4),</span> <span class="pre">(3,</span> <span class="pre">6),</span> <span class="pre">(4,</span> <span class="pre">8),</span> <span class="pre">(5,</span> <span class="pre">10)</span></code> e, em seguida, crie um gráfico de barras representando a distribuição de pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3),</span> <span class="pre">(2,</span> <span class="pre">5),</span> <span class="pre">(3,</span> <span class="pre">2),</span> <span class="pre">(4,</span> <span class="pre">7),</span> <span class="pre">(5,</span> <span class="pre">4)</span></code>. Exiba ambos os gráficos.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Gráfico de Linha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong>
+<em>(Exibe o gráfico de linha)</em></p>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Gráfico de Barras&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong>
+<em>(Exibe o gráfico de barras)</em></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Abrindo e Visualizando Imagens:</strong></p>
+<ul>
+<li><p><strong>Enunciado:</strong> Abra e exiba uma imagem de sua escolha e, em seguida, abra e exiba duas imagens diferentes lado a lado (pode ser a mesma imagem duplicada). Certifique-se de ter a biblioteca Matplotlib instalada.</p></li>
+<li><p><strong>Entrada 1:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imagem</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;caminho/para/sua/imagem.jpg&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imagem</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Saída 1:</strong>
+<em>(Exibe a imagem)</em></p>
+</li>
+<li><p><strong>Entrada 2:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imagem1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;caminho/para/outra/imagem1.jpg&#39;</span><span class="p">)</span>
+<span class="n">imagem2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;caminho/para/outra/imagem2.jpg&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imagem1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imagem2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Saída 2:</strong>
+<em>(Exibe as duas imagens lado a lado)</em></p>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/ch7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ch6/ch6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Capítulo 6: Strings</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ch8/ch8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Capítulo 8: Manipulação de Arquivos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arrays-com-o-numpy">Manipulação de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-arrays">Definindo Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-arrays">Operações com Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arrays-com-valores-especificos">Criando Arrays com valores específicos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenando-e-empilhando-arrays">Concatenando e Empilhando Arrays</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-e-transposicao">Reshape e Transposição</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-estatisticas">Operações Estatísticas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#indexacao-e-fatiamento">Indexação e Fatiamento</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-logicas">Operações Lógicas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacao-de-dados-com-o-matplotlib">Visualização de Dados com o Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-simples">Gráficos Simples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-linha-evolucao-de-casos-de-covid-19-no-brasil">Gráfico de Linha: Evolução de Casos de COVID-19 no Brasil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras-distribuicao-de-renda-no-brasil">Gráfico de Barras: Distribuição de Renda no Brasil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersao-correlacao-entre-duas-variaveis">Gráfico de Dispersão: Correlação entre Duas Variáveis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-distribuicao-de-uma-variavel">Histograma: Distribuição de uma Variável</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorando-graficos-estatisticos">Explorando Gráficos Estatísticos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-os-graficos-como-figuras">Salvando os graficos como figuras</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Helton Maia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
