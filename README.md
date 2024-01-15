@@ -1,2 +1,2 @@
-### Curso de Python
-[2024](https://profheltonmaia.github.io/python-course/intro.html)
+### Curso de Python (LiP)
+[ECT-UFRN 2024.1](https://profheltonmaia.github.io/python-course/intro.html)
