@@ -346,7 +346,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersao-correlacao-entre-duas-variaveis">Gráfico de Dispersão: Correlação entre Duas Variáveis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-distribuicao-de-uma-variavel">Histograma: Distribuição de uma Variável</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorando-graficos-estatisticos">Explorando Gráficos Estatísticos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-os-graficos-como-figuras">Salvando os graficos como figuras</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-graficos-como-figuras">Salvando Gráficos como Figuras</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
@@ -651,7 +651,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/30f34e3e229c8089edf7f213fee5a8044875e83be296bc103ec91f40fd114fae.png" src="../../_images/30f34e3e229c8089edf7f213fee5a8044875e83be296bc103ec91f40fd114fae.png" />
+<img alt="../../_images/ca4c2e4d2a10fecc1f50ba481a9b2ddad5e304bce0146e55d00c205a91942ca9.png" src="../../_images/ca4c2e4d2a10fecc1f50ba481a9b2ddad5e304bce0146e55d00c205a91942ca9.png" />
 </div>
 </div>
 </section>
@@ -710,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5dc5495b11bc900ce37945e17c64a7c5ce8e3d546c8ae28e321b4e767c248bf2.png" src="../../_images/5dc5495b11bc900ce37945e17c64a7c5ce8e3d546c8ae28e321b4e767c248bf2.png" />
+<img alt="../../_images/87810eb6652da9decb49fec3c9e76a962b804523e031335189874b2507113460.png" src="../../_images/87810eb6652da9decb49fec3c9e76a962b804523e031335189874b2507113460.png" />
 </div>
 </div>
 </section>
@@ -739,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/365d1f68f617649c84fe44acff3267ab6a891a4382ff3ab3e0beee84355a6a32.png" src="../../_images/365d1f68f617649c84fe44acff3267ab6a891a4382ff3ab3e0beee84355a6a32.png" />
+<img alt="../../_images/d8c313a717699e559c749872a4ec44dda39547dd4c79138702a2a96e9cbccdd3.png" src="../../_images/d8c313a717699e559c749872a4ec44dda39547dd4c79138702a2a96e9cbccdd3.png" />
 </div>
 </div>
 </section>
@@ -856,24 +856,195 @@ document.write(`
 </ol>
 <p>Este código cria uma representação visual completa de uma distribuição gaussiana bidimensional, oferecendo diferentes perspectivas por meio de subplots.</p>
 </section>
-<section id="salvando-os-graficos-como-figuras">
-<h3>Salvando os graficos como figuras<a class="headerlink" href="#salvando-os-graficos-como-figuras" title="Permalink to this heading">#</a></h3>
+<section id="salvando-graficos-como-figuras">
+<h3>Salvando Gráficos como Figuras<a class="headerlink" href="#salvando-graficos-como-figuras" title="Permalink to this heading">#</a></h3>
+<p>A biblioteca Matplotlib oferece uma maneira descomplicada de salvar gráficos em diversos formatos, como PNG, PDF, SVG e JPEG. Como exemplo, vamos criar um scatter plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Dados para o scatter plot</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Ajustar a cor e tamanho dos pontos com base nos valores de Y</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span> <span class="o">*</span> <span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="c1"># Criar um scatter plot personalizado</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pontos de Exemplo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Valores de Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eixo X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eixo Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot Didático&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionar uma linha de tendência</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">))(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linha de Tendência&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionar legenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Adicionar grade para melhor visualização</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Salvar o scatter plot como arquivo PNG</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatter_plot.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exibir o scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7c129a04daf71d3ef92e573d1f149d1a46b2c825d6d035d16ed299e70e65ede8.png" src="../../_images/7c129a04daf71d3ef92e573d1f149d1a46b2c825d6d035d16ed299e70e65ede8.png" />
+</div>
+</div>
+<p>Para salvar, utilizamos a função <code class="docutils literal notranslate"><span class="pre">savefig()</span></code>, indicando o nome do arquivo com a extensão desejada. Para outros formatos, mude a extensão do nome:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatter_plot.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatter_plot.svg&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatter_plot.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A resolução padrão será utilizada, mas você pode ajustá-la conforme necessário com o argumento <code class="docutils literal notranslate"><span class="pre">dpi</span></code>. Este processo oferece uma maneira eficiente de preservar visualizações geradas em Python para uso futuro, compartilhamento ou inclusão em documentos e apresentações.</p>
 </section>
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Manipulação de Arrays com NumPy:</strong> Crie uma array bidimensional com números de 1 a 9 e, em seguida, uma array unidimensional com cinco elementos, todos iguais a 10. Imprima ambas as arrays.</p></li>
-<li><p><strong>Operações com Arrays:</strong> Multiplique a array unidimensional <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> por 2 e calcule o produto escalar com ela mesma. Imprima os resultados.</p></li>
-<li><p><strong>Criando Arrays com valores específicos:</strong> Crie uma array unidimensional com 6 elementos espaçados uniformemente entre 0 e 1 e, em seguida, uma array bidimensional com valores todos iguais a 7. Imprima ambas as arrays.</p></li>
-<li><p><strong>Concatenando e Empilhando Arrays:</strong> Concatene as arrays <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> e <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code> e, em seguida, empilhe verticalmente as arrays bidimensionais <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code> e <code class="docutils literal notranslate"><span class="pre">[[7,</span> <span class="pre">8,</span> <span class="pre">9]]</span></code>. Imprima os resultados.</p></li>
-<li><p><strong>Redimensionamento e Transposição:</strong> Redimensionone a array unidimensional <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> para uma matriz com uma coluna e cinco linhas e, em seguida, transponha a array bidimensional <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code>. Imprima os resultados.</p></li>
-<li><p>**Operações Estatísticas:**Calcule a média e o desvio padrão da array <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50]</span></code> e encontre o valor máximo ao longo das colunas da array bidimensional <code class="docutils literal notranslate"><span class="pre">[[5,</span> <span class="pre">8,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">6,</span> <span class="pre">9]]</span></code>. Imprima os resultados.</p></li>
-<li><p><strong>Indexação e Fatiamento:</strong> Acesse o terceiro elemento da array unidimensional <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">-2,</span> <span class="pre">-3,</span> <span class="pre">-4,</span> <span class="pre">-5]</span></code> e faça um slice da array unidimensional <code class="docutils literal notranslate"><span class="pre">[-10,</span> <span class="pre">-20,</span> <span class="pre">-30,</span> <span class="pre">-40,</span> <span class="pre">-50]</span></code> que inclua os elementos do segundo ao quarto. Imprima os resultados.</p></li>
-<li><p><strong>Operações Lógicas:</strong> Filtrar os elementos maiores que 5 na array <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">8,</span> <span class="pre">1,</span> <span class="pre">6,</span> <span class="pre">2]</span></code> e substituir os valores maiores que 10 na array <code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">15,</span> <span class="pre">2,</span> <span class="pre">11,</span> <span class="pre">9]</span></code> por 0. Imprima os resultados.</p></li>
-<li><p>**Visualização de Dados com Matplotlib:**Crie um gráfico de linha simples com os pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2),</span> <span class="pre">(2,</span> <span class="pre">4),</span> <span class="pre">(3,</span> <span class="pre">6),</span> <span class="pre">(4,</span> <span class="pre">8),</span> <span class="pre">(5,</span> <span class="pre">10)</span></code> e, em seguida, crie um gráfico de barras representando a distribuição de pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3),</span> <span class="pre">(2,</span> <span class="pre">5),</span> <span class="pre">(3,</span> <span class="pre">2),</span> <span class="pre">(4,</span> <span class="pre">7),</span> <span class="pre">(5,</span> <span class="pre">4)</span></code>. Exiba ambos os gráficos.</p></li>
-<li><p><strong>Abrindo e Visualizando Imagens:</strong> Abra e exiba uma imagem de sua escolha e, em seguida, abra e exiba duas imagens diferentes lado a lado (pode ser a mesma imagem duplicada). Certifique-se de ter a biblioteca Matplotlib instalada.</p></li>
+<ol class="arabic">
+<li><p><strong>Manipulação de Arrays com NumPy:</strong> Crie uma array bidimensional com números de 1 a 9 e, em seguida, uma array unidimensional com cinco elementos, todos iguais a 10. Imprima ambas as arrays.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Etrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entradas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">9</span> <span class="mi">8</span> <span class="mi">7</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">6</span> <span class="mi">5</span> <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="p">[</span><span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Operações com Arrays:</strong> Multiplique uma dada array unidimensional de tamanho 5 por 2 e calcule o produto escalar com ela mesma. Imprima os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span> <span class="mi">10</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[</span><span class="mi">6</span> <span class="mi">12</span> <span class="mi">18</span> <span class="mi">24</span> <span class="mi">30</span><span class="p">]</span>
+<span class="mi">825</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">2</span>  <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">6</span><span class="p">]</span>
+<span class="mi">16</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Criando Arrays com valores específicos:</strong> Crie uma array unidimensional com 6 elementos espaçados uniformemente entre 0 e 1 e, em seguida, uma array bidimensional com valores todos iguais a 7. Imprima ambas as arrays.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entradas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">0.</span> <span class="mf">0.2</span> <span class="mf">0.4</span> <span class="mf">0.6</span> <span class="mf">0.8</span> <span class="mf">1.</span><span class="p">]</span>
+<span class="p">[[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span> <span class="mi">7</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Concatenando e Empilhando Arrays:</strong> Dadas duas arrays bidimensionais <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code> e <code class="docutils literal notranslate"><span class="pre">[[7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code>, <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">11,</span> <span class="pre">12]]</span></code>, concatene-as horizontalmente e, em seguida, imprima os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entradas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Redimensionamento e Transposição:</strong> Redimensionone a array unidimensional <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code> para uma matriz com uma coluna e cinco linhas e, em seguida, transponha a array bidimensional <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]]</span></code>. Imprima os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entradas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">[[</span><span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">5</span><span class="p">]]</span>    
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">4</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">2</span> <span class="mi">5</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">3</span> <span class="mi">6</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Operações Estatísticas:</strong> Calcule a média e o desvio padrão da array <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">20,</span> <span class="pre">30,</span> <span class="pre">40,</span> <span class="pre">50]</span></code>. Também, encontre o valor máximo ao longo das colunas da array bidimensional <code class="docutils literal notranslate"><span class="pre">[[5,</span> <span class="pre">8,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">6,</span> <span class="pre">9]]</span></code>. Imprima os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entradas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="mf">30.0</span>
+<span class="mf">14.1421356237</span>
+<span class="p">[</span><span class="mi">5</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Indexação e Fatiamento:</strong> Vamos criar uma situação fictícia envolvendo um array que representa a temperatura em graus Celsius durante uma semana. Acesse o terceiro dia da semana e faça um slice que inclua os dados dos dias de terça a quinta. Imprima os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Teste 1
+Entrada: 22 24 26 28 30 32 30
+Saída:
+26°C
+[24 26 28]°C
+
+# Teste 2
+Entrada: 18 20 19 22 23 21 20
+Saída:
+19°C
+[20 19 22]°C
+</pre></div>
+</div>
+</li>
+<li><p><strong>Operações Lógicas:</strong> Escreva um programa  que permita ao usuário realizar operações lógicas em arrays. O programa deve solicitar ao usuário duas arrays e dois valores de referência. A primeira array, denominada <code class="docutils literal notranslate"><span class="pre">array1</span></code>, será utilizada para filtrar elementos maiores que o primeiro valor de referência, substituindo-os por 0. A segunda array, denominada <code class="docutils literal notranslate"><span class="pre">array2</span></code>, terá seus valores maiores que o segundo valor de referência substituídos por 0. O programa deve imprimir os resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">3</span> <span class="mi">8</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">2</span>
+<span class="mi">7</span> <span class="mi">15</span> <span class="mi">2</span> <span class="mi">11</span> <span class="mi">9</span>
+<span class="mi">5</span>
+<span class="mi">10</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span>
+<span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">4</span> <span class="mi">8</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">12</span>
+<span class="mi">2</span> <span class="mi">15</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">99</span>
+<span class="mi">10</span>
+<span class="mi">20</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span>
+<span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</li>
+<li><p>**Visualização de Dados com Matplotlib:**Crie um gráfico de linha simples com os pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2),</span> <span class="pre">(2,</span> <span class="pre">4),</span> <span class="pre">(3,</span> <span class="pre">6),</span> <span class="pre">(4,</span> <span class="pre">8),</span> <span class="pre">(5,</span> <span class="pre">10)</span></code> e, em seguida, crie um gráfico de barras representando a distribuição de pontos <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3),</span> <span class="pre">(2,</span> <span class="pre">5),</span> <span class="pre">(3,</span> <span class="pre">2),</span> <span class="pre">(4,</span> <span class="pre">7),</span> <span class="pre">(5,</span> <span class="pre">4)</span></code>. Exiba ambos os gráficos.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entrada</span>
+<span class="n">Saída</span><span class="p">:</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Visualização Avançada com Matplotlib:</strong> Crie um programa que gera um gráfico com múltiplas linhas. Os dados para as linhas são fornecidos como dicionário, onde as chaves representam as categorias e os valores associados são listas de valores para cada categoria.</p></li>
 </ol>
+<p>Os dados são os seguintes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dados</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Categoria A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+  <span class="s1">&#39;Categoria B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+  <span class="s1">&#39;Categoria C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Cada categoria deve ser representada por uma linha no gráfico, com os valores correspondentes no eixo y. O eixo x deve representar os pontos de dados (1 a 5).</p>
+<p>Além disso, o programa deve salvar o gráfico gerado no formato PNG com o nome “grafico_multilinhas.png”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entrada</span>
+<span class="n">Saída</span><span class="p">:</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -960,7 +1131,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-dispersao-correlacao-entre-duas-variaveis">Gráfico de Dispersão: Correlação entre Duas Variáveis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograma-distribuicao-de-uma-variavel">Histograma: Distribuição de uma Variável</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explorando-graficos-estatisticos">Explorando Gráficos Estatísticos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-os-graficos-como-figuras">Salvando os graficos como figuras</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salvando-graficos-como-figuras">Salvando Gráficos como Figuras</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
