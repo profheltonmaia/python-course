@@ -325,7 +325,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arquivos">Manipulação de Arquivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-lendo-e-escrevendo-em-arquivos">Criando, Lendo e Escrevendo em Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arquivos">Criando Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-arquivos">Lendo Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anexando-dados-a-arquivos">Anexando Dados a Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-arquivos-linha-por-linha">Lendo Arquivos Linha por Linha</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-varias-linhas">Escrevendo Várias Linhas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-todas-as-linhas-e-armazenando-em-uma-lista">Lendo Todas as Linhas e armazenando em uma Lista</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fechando-arquivos">Fechando Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-fechar-arquivos">Como fechar arquivos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-instrucao-with">Usando a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamento-de-excecoes">Tratamento de Exceções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-diferentes-tipos-de-arquivos">Trabalhando com Diferentes Tipos de Arquivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-diretorios">Trabalhando com Diretórios</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
             </nav>
@@ -340,11 +356,188 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-8-manipulacao-de-arquivos">
 <h1>Capítulo 8: Manipulação de Arquivos<a class="headerlink" href="#capitulo-8-manipulacao-de-arquivos" title="Permalink to this heading">#</a></h1>
-<section id="manipulacao-de-arquivos">
-<h2>Manipulação de Arquivos<a class="headerlink" href="#manipulacao-de-arquivos" title="Permalink to this heading">#</a></h2>
+<section id="criando-lendo-e-escrevendo-em-arquivos">
+<h2>Criando, Lendo e Escrevendo em Arquivos<a class="headerlink" href="#criando-lendo-e-escrevendo-em-arquivos" title="Permalink to this heading">#</a></h2>
+<p>A manipulação de arquivos é uma parte essencial da programação. Em Python, podemos usar a função <code class="docutils literal notranslate"><span class="pre">open()</span></code> para criar um novo arquivo ou abrir um existente em diferentes modos.</p>
+<section id="criando-arquivos">
+<h3>Criando Arquivos<a class="headerlink" href="#criando-arquivos" title="Permalink to this heading">#</a></h3>
+<p>Podemos criar um novo arquivo usando o modo de escrita <code class="docutils literal notranslate"><span class="pre">'w'</span></code>. Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Criando um novo arquivo para escrita</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Adoro programar em Python!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="lendo-arquivos">
+<h3>Lendo Arquivos<a class="headerlink" href="#lendo-arquivos" title="Permalink to this heading">#</a></h3>
+<p>Para ler um arquivo existente, usamos o modo de leitura <code class="docutils literal notranslate"><span class="pre">'r'</span></code>. Veja como fazer isso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Abrindo um arquivo existente para leitura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo_lido</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo_lido</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="anexando-dados-a-arquivos">
+<h3>Anexando Dados a Arquivos<a class="headerlink" href="#anexando-dados-a-arquivos" title="Permalink to this heading">#</a></h3>
+<p>Podemos adicionar dados a um arquivo existente usando o modo de anexação <code class="docutils literal notranslate"><span class="pre">'a'</span></code>. Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Anexando dados a um arquivo existente</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Python é uma linguagem de programação incrível!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="lendo-arquivos-linha-por-linha">
+<h3>Lendo Arquivos Linha por Linha<a class="headerlink" href="#lendo-arquivos-linha-por-linha" title="Permalink to this heading">#</a></h3>
+<p>Também é possível ler um arquivo linha por linha usando um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>. Veja como:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lendo um arquivo linha por linha</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">arquivo</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="escrevendo-varias-linhas">
+<h3>Escrevendo Várias Linhas<a class="headerlink" href="#escrevendo-varias-linhas" title="Permalink to this heading">#</a></h3>
+<p>Para escrever várias linhas de uma vez, use a função <code class="docutils literal notranslate"><span class="pre">writelines()</span></code>. Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escrevendo várias linhas de uma vez</span>
+<span class="n">linhas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Linha 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Linha 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Linha 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">arquivo</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="lendo-todas-as-linhas-e-armazenando-em-uma-lista">
+<h3>Lendo Todas as Linhas e armazenando em uma Lista<a class="headerlink" href="#lendo-todas-as-linhas-e-armazenando-em-uma-lista" title="Permalink to this heading">#</a></h3>
+<p>Também é possível ler todas as linhas de um arquivo para uma lista usando a função <code class="docutils literal notranslate"><span class="pre">readlines()</span></code>. Veja como fazer isso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lendo todas as linhas de um arquivo para uma lista</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">linhas</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fechando-arquivos">
+<h2>Fechando Arquivos<a class="headerlink" href="#fechando-arquivos" title="Permalink to this heading">#</a></h2>
+<p>Depois de terminar de trabalhar com um arquivo, é importante fechá-lo. Fechar arquivos ajuda a liberar recursos do sistema que foram alocados para o arquivo quando ele foi aberto. Se você não fechar um arquivo, Python o fará eventualmente quando o programa terminar. No entanto, depender disso não é uma boa prática de programação e pode levar a comportamentos indesejados.</p>
+<section id="como-fechar-arquivos">
+<h3>Como fechar arquivos?<a class="headerlink" href="#como-fechar-arquivos" title="Permalink to this heading">#</a></h3>
+<p>Em Python, você pode fechar um arquivo usando o método <code class="docutils literal notranslate"><span class="pre">close()</span></code>. Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># Realize suas operações no arquivo aqui</span>
+<span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Depois que um arquivo é fechado, você não pode mais ler ou escrever nele.</p>
+</section>
+<section id="usando-a-instrucao-with">
+<h3>Usando a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#usando-a-instrucao-with" title="Permalink to this heading">#</a></h3>
+<p>Uma maneira melhor e mais segura de lidar com arquivos é usar a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code>. Ela permite que você abra um arquivo, faça operações nele e feche-o automaticamente quando o bloco <code class="docutils literal notranslate"><span class="pre">with</span></code> é saído. Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="c1"># Realize suas operações no arquivo aqui</span>
+<span class="c1"># Não é necessário fechar o arquivo explicitamente</span>
+</pre></div>
+</div>
+<p>Neste exemplo, <code class="docutils literal notranslate"><span class="pre">arquivo</span></code> é fechado automaticamente depois de sair do bloco <code class="docutils literal notranslate"><span class="pre">with</span></code>, mesmo se ocorrer uma exceção dentro do bloco. Isso torna a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code> a maneira recomendada de abrir e fechar arquivos em Python.</p>
+</section>
+</section>
+<section id="tratamento-de-excecoes">
+<h2>Tratamento de Exceções<a class="headerlink" href="#tratamento-de-excecoes" title="Permalink to this heading">#</a></h2>
+<p>O tratamento de exceções é uma técnica usada para lidar com erros que podem ocorrer durante a execução de um programa. Em Python, podemos usar as instruções <code class="docutils literal notranslate"><span class="pre">try</span></code> e <code class="docutils literal notranslate"><span class="pre">except</span></code> para capturar e tratar exceções. O bloco <code class="docutils literal notranslate"><span class="pre">try</span></code> contém o código que pode gerar uma exceção. Se uma exceção ocorrer, o controle é transferido para o bloco <code class="docutils literal notranslate"><span class="pre">except</span></code>, que contém o código que deve ser executado em resposta à exceção.</p>
+<p>Aqui está um exemplo de como tratar a exceção <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Não é possível dividir por zero!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O código acima tenta dividir o número 10 por zero, o que gera uma exceção <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>. O bloco <code class="docutils literal notranslate"><span class="pre">except</span></code> captura a exceção e imprime a mensagem “Não é possível dividir por zero!”.</p>
+<p>Aqui está outro exemplo para ilustrar o tratamento de exceções:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite outro número: &quot;</span><span class="p">))</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você deve digitar um número inteiro!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não é possível dividir por zero!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O resultado da divisão é:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>O código acima solicita ao usuário que insira dois números. Se o usuário digitar um valor que não é um número inteiro, o bloco <code class="docutils literal notranslate"><span class="pre">except</span></code> correspondente é executado e a mensagem “Você deve digitar um número inteiro!” é impressa. Se o usuário digitar zero como o segundo número, o bloco <code class="docutils literal notranslate"><span class="pre">except</span></code> correspondente é executado e a mensagem “Não é possível dividir por zero!” é impressa. Caso contrário, o bloco <code class="docutils literal notranslate"><span class="pre">else</span></code> é executado e o resultado da divisão é impresso.</p>
+</section>
+<section id="trabalhando-com-diferentes-tipos-de-arquivos">
+<h2>Trabalhando com Diferentes Tipos de Arquivos<a class="headerlink" href="#trabalhando-com-diferentes-tipos-de-arquivos" title="Permalink to this heading">#</a></h2>
+<p>Ao trabalhar com diferentes tipos de arquivos em Python, utilizamos módulos específicos para cada formato. No exemplo a seguir, mostraremos como lidar com arquivos CSV:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Abrindo um arquivo CSV existente para leitura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">leitor_csv</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">arquivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">leitor_csv</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linha</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste trecho de código, o módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code> é importado. Em seguida, o arquivo CSV chamado ‘exemplo.csv’ é aberto no modo de leitura (<code class="docutils literal notranslate"><span class="pre">'r'</span></code>). Utilizando a função <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>, criamos um objeto <code class="docutils literal notranslate"><span class="pre">leitor_csv</span></code> para processar e ler o conteúdo do arquivo. Por fim, um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> itera sobre as linhas do arquivo, e cada linha é impressa.</p>
+<p>Agora, vejamos como trabalhar com arquivos JSON:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Abrindo um arquivo JSON existente para leitura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo_lido</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">arquivo</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo_lido</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste exemplo, o módulo <code class="docutils literal notranslate"><span class="pre">json</span></code> é importado. O arquivo JSON chamado ‘exemplo.json’ é aberto no modo de leitura (<code class="docutils literal notranslate"><span class="pre">'r'</span></code>). A função <code class="docutils literal notranslate"><span class="pre">json.load()</span></code> é utilizada para carregar o conteúdo do arquivo como um objeto Python. O conteúdo lido, que agora é um dicionário ou uma lista Python, é então impresso.</p>
+<p>Por último, para lidar com arquivos binários, utilize o modo de leitura ou escrita <code class="docutils literal notranslate"><span class="pre">'b'</span></code> ao abrir o arquivo, como mostrado no exemplo abaixo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Abrindo um arquivo binário existente para leitura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemplo.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+    <span class="n">conteudo_lido</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo_lido</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste trecho, um arquivo binário chamado ‘exemplo.bin’ é aberto no modo de leitura binária (<code class="docutils literal notranslate"><span class="pre">'rb'</span></code>). A função <code class="docutils literal notranslate"><span class="pre">arquivo.read()</span></code> é empregada para ler o conteúdo binário do arquivo, e o resultado, que é uma sequência de bytes, é impresso.</p>
+</section>
+<section id="trabalhando-com-diretorios">
+<h2>Trabalhando com Diretórios<a class="headerlink" href="#trabalhando-com-diretorios" title="Permalink to this heading">#</a></h2>
+<p>Ao manipular diretórios e caminhos em Python, o módulo <code class="docutils literal notranslate"><span class="pre">os</span></code> se destaca como uma ferramenta essencial, proporcionando funcionalidades robustas para interação com o sistema operacional. Vamos aprimorar a explicação anterior, incluindo informações sobre como mudar o diretório de trabalho, também conhecido como “path”.</p>
+<p>Considere o exemplo prático a seguir, que demonstra como listar todos os arquivos em um diretório e realizar a alteração do diretório de trabalho:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Obtendo o diretório atual</span>
+<span class="n">diretorio_atual</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Diretório Atual: </span><span class="si">{</span><span class="n">diretorio_atual</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mudando para um diretório específico</span>
+<span class="n">novo_diretorio</span> <span class="o">=</span> <span class="s1">&#39;/caminho/para/o/novo/diretorio&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">novo_diretorio</span><span class="p">)</span>
+
+<span class="c1"># Listando todos os arquivos no novo diretório</span>
+<span class="k">for</span> <span class="n">nome_arquivo</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nome_arquivo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No início, importamos o módulo <code class="docutils literal notranslate"><span class="pre">os</span></code>, que amplia as capacidades do Python para operações no sistema operacional. A função <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> retorna o diretório de trabalho atual e a exibição deste diretório é feita através da função <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>Em seguida, utilizamos <code class="docutils literal notranslate"><span class="pre">os.chdir(novo_diretorio)</span></code> para mudar o diretório de trabalho para o caminho especificado em <code class="docutils literal notranslate"><span class="pre">novo_diretorio</span></code>. Isso é útil quando precisamos executar operações em um diretório específico.</p>
+<p>Posteriormente, empregamos o loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para iterar sobre cada nome de arquivo na lista obtida por <code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code>. A variável <code class="docutils literal notranslate"><span class="pre">nome_arquivo</span></code> assume, em cada iteração, o valor correspondente na lista, permitindo a exibição dos nomes dos arquivos no novo diretório.</p>
+<p>É importante ajustar as variáveis <code class="docutils literal notranslate"><span class="pre">diretorio_atual</span></code> e <code class="docutils literal notranslate"><span class="pre">novo_diretorio</span></code> de acordo com os caminhos reais de interesse.</p>
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Criação de Arquivo:</strong> Crie um novo arquivo chamado “meu_arquivo.txt” e escreva nele a frase “Estou aprendendo Python!”.</p></li>
+<li><p><strong>Leitura de Arquivo:</strong> Abra o arquivo “meu_arquivo.txt” criado no exercício anterior e imprima o conteúdo lido.</p></li>
+<li><p><strong>Anexando Dados ao Arquivo:</strong> Adicione uma nova linha ao final do arquivo “meu_arquivo.txt” com a mensagem “Python é incrível!”.</p></li>
+<li><p><strong>Lendo Linhas do Arquivo:</strong> Leia o arquivo “meu_arquivo.txt” linha por linha e imprima cada linha.</p></li>
+<li><p><strong>Escrevendo Várias Linhas de uma Vez:</strong> Crie uma lista contendo três frases diferentes. Escreva todas as frases de uma vez no arquivo “meu_arquivo.txt”.</p></li>
+<li><p><strong>Lendo Todas as Linhas para uma Lista:</strong> Leia todas as linhas do arquivo “meu_arquivo.txt” para uma lista e imprima essa lista.</p></li>
+<li><p><strong>Fechando Arquivos Explicitamente:</strong> Abra o arquivo “meu_arquivo.txt”, realize algumas operações fictícias e feche o arquivo explicitamente usando o método <code class="docutils literal notranslate"><span class="pre">close()</span></code>.</p></li>
+<li><p><strong>Usando a Instrução <code class="docutils literal notranslate"><span class="pre">with</span></code>:</strong> Refatore o código do exercício anterior para utilizar a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code> ao abrir o arquivo, garantindo seu fechamento automático.</p></li>
+<li><p><strong>Manipulação de Erros ao Ler Arquivo:</strong> Trate a exceção <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> ao tentar abrir um arquivo inexistente chamado “arquivo_inexistente.txt”. Imprima uma mensagem amigável informando que o arquivo não foi encontrado.</p></li>
+<li><p><strong>Manipulação de Erros ao Converter para Número:</strong> Solicite ao usuário que digite um número. Utilize a instrução <code class="docutils literal notranslate"><span class="pre">try</span></code> e <code class="docutils literal notranslate"><span class="pre">except</span></code> para tratar a exceção <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> caso o usuário não digite um valor numérico. Imprima uma mensagem indicando que o valor digitado não é um número.</p></li>
+</ol>
 </section>
 </section>
 
@@ -402,7 +595,23 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arquivos">Manipulação de Arquivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-lendo-e-escrevendo-em-arquivos">Criando, Lendo e Escrevendo em Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arquivos">Criando Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-arquivos">Lendo Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anexando-dados-a-arquivos">Anexando Dados a Arquivos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-arquivos-linha-por-linha">Lendo Arquivos Linha por Linha</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-varias-linhas">Escrevendo Várias Linhas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lendo-todas-as-linhas-e-armazenando-em-uma-lista">Lendo Todas as Linhas e armazenando em uma Lista</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fechando-arquivos">Fechando Arquivos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-fechar-arquivos">Como fechar arquivos?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-instrucao-with">Usando a instrução <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tratamento-de-excecoes">Tratamento de Exceções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-diferentes-tipos-de-arquivos">Trabalhando com Diferentes Tipos de Arquivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabalhando-com-diretorios">Trabalhando com Diretórios</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
   </nav></div>

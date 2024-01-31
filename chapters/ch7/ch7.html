@@ -326,7 +326,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arrays-com-o-numpy">Manipulação de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizacao-de-arrays-com-o-numpy">Utilização de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-arrays">Definindo Arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-arrays">Operações com Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arrays-com-valores-especificos">Criando Arrays com valores específicos</a></li>
@@ -363,8 +363,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-7-numpy-e-matplotlib">
 <h1>Capítulo 7: NumPy e Matplotlib<a class="headerlink" href="#capitulo-7-numpy-e-matplotlib" title="Permalink to this heading">#</a></h1>
-<section id="manipulacao-de-arrays-com-o-numpy">
-<h2>Manipulação de Arrays com o NumPy<a class="headerlink" href="#manipulacao-de-arrays-com-o-numpy" title="Permalink to this heading">#</a></h2>
+<section id="utilizacao-de-arrays-com-o-numpy">
+<h2>Utilização de Arrays com o NumPy<a class="headerlink" href="#utilizacao-de-arrays-com-o-numpy" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://numpy.org/">NumPy</a> é uma biblioteca fundamental para computação numérica em Python. Ela fornece estruturas de dados eficientes para a manipulação de arrays multidimensionais, bem como funções matemáticas para operações rápidas em elementos desses arrays.</p>
 <p>A instrução <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code> é utilizada para importar a biblioteca NumPy e atribuir a ela um nome de apelido (alias), que neste caso é “np”. Essa prática é comum e recomendada quando se trabalha com bibliotecas extensas como o NumPy, pois facilita a referência a funções e objetos da biblioteca, tornando o código mais conciso e legível.</p>
 <section id="definindo-arrays">
@@ -651,7 +651,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ca4c2e4d2a10fecc1f50ba481a9b2ddad5e304bce0146e55d00c205a91942ca9.png" src="../../_images/ca4c2e4d2a10fecc1f50ba481a9b2ddad5e304bce0146e55d00c205a91942ca9.png" />
+<img alt="../../_images/0b10e8015ab371f8481c9a95f0109d351c94fee77133a2aa2fed8bb57b5e9e7d.png" src="../../_images/0b10e8015ab371f8481c9a95f0109d351c94fee77133a2aa2fed8bb57b5e9e7d.png" />
 </div>
 </div>
 </section>
@@ -710,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/87810eb6652da9decb49fec3c9e76a962b804523e031335189874b2507113460.png" src="../../_images/87810eb6652da9decb49fec3c9e76a962b804523e031335189874b2507113460.png" />
+<img alt="../../_images/f0ee1eec5197cba622a5314f8d1aece3966709fbd4906fa2a2a8d39067673523.png" src="../../_images/f0ee1eec5197cba622a5314f8d1aece3966709fbd4906fa2a2a8d39067673523.png" />
 </div>
 </div>
 </section>
@@ -739,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d8c313a717699e559c749872a4ec44dda39547dd4c79138702a2a96e9cbccdd3.png" src="../../_images/d8c313a717699e559c749872a4ec44dda39547dd4c79138702a2a96e9cbccdd3.png" />
+<img alt="../../_images/dff9b1cce43b58603ee1fe876381590e1ea3f8a20ccc4bf33244fe7c807b28d2.png" src="../../_images/dff9b1cce43b58603ee1fe876381590e1ea3f8a20ccc4bf33244fe7c807b28d2.png" />
 </div>
 </div>
 </section>
@@ -1045,6 +1045,52 @@ Saída:
 <span class="n">Saída</span><span class="p">:</span>
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;remove-input&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Dados para o gráfico de dispersão</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1"># Ajustar a cor e tamanho dos pontos com base nos valores de Y</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span> <span class="o">*</span> <span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="c1"># Criar um gráfico de dispersão personalizado</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pontos de Exemplo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Valores de Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eixo X&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eixo Y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot Didático&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionar uma linha de tendência</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">))(</span><span class="n">x</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linha de Tendência&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adicionar legenda</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Adicionar grade para melhor visualização</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Salvar o gráfico como arquivo PNG</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;scatter_plot.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exibir o gráfico de dispersão</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7c129a04daf71d3ef92e573d1f149d1a46b2c825d6d035d16ed299e70e65ede8.png" src="../../_images/7c129a04daf71d3ef92e573d1f149d1a46b2c825d6d035d16ed299e70e65ede8.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -1111,7 +1157,7 @@ Saída:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-arrays-com-o-numpy">Manipulação de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizacao-de-arrays-com-o-numpy">Utilização de Arrays com o NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-arrays">Definindo Arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacoes-com-arrays">Operações com Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-arrays-com-valores-especificos">Criando Arrays com valores específicos</a></li>
