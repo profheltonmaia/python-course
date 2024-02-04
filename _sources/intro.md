@@ -2,7 +2,7 @@
 
 Bem-vindo ao curso de Python para Iniciantes
 
-Este livro foi cuidadosamente elaborado para estudantes universitários que desejam adquirir habilidades fundamentais em programação por meio da linguagem Python.
+Este material foi cuidadosamente elaborado para estudantes universitários que desejam adquirir habilidades fundamentais em programação por meio da linguagem Python.
 
 Dividido em 8 capítulos, este guia proporciona uma introdução completa aos conceitos essenciais de Python. No primeiro capítulo, exploraremos o universo da programação de computadores, desde os conceitos básicos até o funcionamento de programas em Python. Você terá a oportunidade de escrever seu primeiro programa e compreender a estrutura fundamental.
 
@@ -14,13 +14,13 @@ No quarto capítulo, abordaremos o controle de fluxo por meio de estruturas cond
 
 O capítulo cinco introduz as funções, desde a definição até funções recursivas e integradas. A resolução de exercícios proporcionará uma compreensão sólida desses conceitos essenciais.
 
-O sexto capítulo mergulha no fascinante mundo das strings, explorando operações, métodos e expressões regulares. Exercícios práticos são projetados para consolidar seu conhecimento.
+O sexto capítulo mergulha no importante mundo das strings, explorando operações, métodos e expressões regulares. Exercícios práticos são projetados para consolidar seu conhecimento.
 
 No sétimo capítulo, elevamos o nível ao explorar as bibliotecas NumPy e Matplotlib para manipulação de arrays e visualização de dados. Exercícios práticos aplicam essas poderosas ferramentas.
 
 Finalmente, no oitavo capítulo, concentramo-nos na manipulação de arquivos, tratamento de exceções e trabalhando com diferentes tipos de arquivos, como csv, json e bin. Exercícios práticos oferecem a chance de aplicar esses conhecimentos de forma concreta.
 
-Este livro é um recurso valioso para qualquer estudante que deseje iniciar e aprimorar seus conhecimentos em Python. A clareza, a concisão e os numerosos exemplos e exercícios tornam o aprendizado eficiente e agradável. 
+Este material é um recurso valioso para qualquer estudante que deseje iniciar e aprimorar seus conhecimentos em Python. A clareza, a concisão e os numerosos exemplos e exercícios tornam o aprendizado eficiente e agradável. 
 
 ```{tableofcontents}
 ```
