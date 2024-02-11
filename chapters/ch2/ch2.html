@@ -361,7 +361,7 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
 </pre></div>
 </div>
-<p>Para acessar o valor armazenado em uma variável, basta utilizar o seu nome. O código a seguir, por exemplo, imprime o valor da variável <code class="docutils literal notranslate"><span class="pre">nome</span></code>:</p>
+<p>Para acessar o valor armazenado em uma variável, basta utilizar o seu nome. O código a seguir, por exemplo, imprime o que foi armazenado na variável <code class="docutils literal notranslate"><span class="pre">nome</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -398,7 +398,7 @@ document.write(`
 </section>
 <section id="numeros-de-ponto-flutuante">
 <h3>Números de Ponto Flutuante<a class="headerlink" href="#numeros-de-ponto-flutuante" title="Permalink to this heading">#</a></h3>
-<p>O tipo de dado ponto flutuante, representado pelo tipo float em Python, é utilizado para expressar valores decimais, como 1.0, 2.5, 3.14, -1.0, -2.5, -3.14, entre outros. Esses valores são apropriados para representar grandezas que envolvem medidas, preços, e outras grandezas fracionárias.</p>
+<p>O tipo de dado ponto flutuante, representado pelo tipo float em Python, é utilizado para expressar valores decimais, como 1.0, 2.5, 3.14, -1.0, -2.5, -3.14, entre outros. Tais valores são apropriados para representar grandezas que envolvem medidas, preços, e outras grandezas fracionárias.</p>
 <p>Aqui estão alguns exemplos de uso de números de ponto flutuante:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,12 +422,12 @@ document.write(`
 </section>
 <section id="strings">
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
-<p>O tipo de dado string epresenta sequências de caracteres, como “Olá, pessoal!”, “123”, “abc”, etc. Essas estruturas são comumente utilizadas para representar texto e nomes.</p>
+<p>O tipo de dado string representa sequências de caracteres, como “Olá, turma!”, “123”, “abc”, etc. Essas estruturas são comumente utilizadas para representar texto e nomes.</p>
 <p>Aqui estão alguns exemplos de uso de strings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaração de uma variável do tipo string</span>
-<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;Olá, pessoal!&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;Olá, turma!&quot;</span>
 
 <span class="c1"># Atribuição de um valor a uma variável do tipo string</span>
 <span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
@@ -460,7 +460,8 @@ document.write(`
 </section>
 <section id="booleanos">
 <h3>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this heading">#</a></h3>
-<p>Os tipos booleanos em Python representam valores lógicos, ou seja, podem ser True ou False. Esses valores são comumente utilizados para representar condições, resultados de testes e expressões lógicas.</p>
+<p>Os tipos booleanos representam valores lógicos, ou seja, podem ser True ou False. Esses valores são comumente utilizados para representar condições, resultados de testes e expressões lógicas.</p>
+<p>Os tipos booleanos representam valores lógicos, sendo esses valores True (verdadeiro) ou False (falso). Além disso, é importante destacar que em Python, 0 é frequentemente interpretado como False e 1 como True em contextos booleanos, ampliando a flexibilidade na expressão de condições, resultados de testes e avaliação de expressões lógicas.</p>
 <p>Aqui estão alguns exemplos de uso de booleanos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,7 +494,7 @@ Listas podem conter valores de qualquer tipo, incluindo inteiros, números de po
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaração de uma lista com três valores inteiros</span>
 <span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
-<span class="c1"># Declaração de uma lista com três valores reais</span>
+<span class="c1"># Declaração de uma lista com três valores do tipo float</span>
 <span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
 
 <span class="c1"># Declaração de uma lista com três valores strings</span>
@@ -611,7 +612,7 @@ Lista modificada: [10, 20, 35, 40, 50]
 <section id="tuplas">
 <h3>Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this heading">#</a></h3>
 <p>As tuplas são uma sequência de valores imutáveis. Isso significa que, uma vez criadas, as tuplas não podem ser alteradas.
-As tuplas são declaradas usando parênteses, com os valores separados por vírgulas. Por exemplo, a seguinte declaração cria uma tupla com três valores:</p>
+Elas são declaradas usando parênteses, com os valores separados por vírgulas. Por exemplo, a seguinte declaração cria uma tupla com três valores:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -620,7 +621,7 @@ As tuplas são declaradas usando parênteses, com os valores separados por vírg
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaração de uma tupla com três valores inteiros</span>
 <span class="n">inteiros</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># Declaração de uma tupla com três valores reais</span>
+<span class="c1"># Declaração de uma tupla com três valores do tipo float</span>
 <span class="n">reais</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
 
 <span class="c1"># Declaração de uma tupla com três valores strings</span>
@@ -781,21 +782,6 @@ Retorna o índice da primeira ocorrência do valor especificado. Você pode opci
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dicionário após remoção:&quot;</span><span class="p">,</span> <span class="n">dicionario</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Acesso a Elementos Individualmente:</strong></p>
-<p>Podemos acessar cada valor individualmente no dicionário utilizando suas chaves:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acesso a elementos individualmente</span>
-<span class="n">telefone</span> <span class="o">=</span> <span class="n">contato</span><span class="p">[</span><span class="s2">&quot;telefone&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Telefone de contato:&quot;</span><span class="p">,</span> <span class="n">telefone</span><span class="p">)</span>
-
-<span class="c1"># Acesso a configuração de idioma</span>
-<span class="n">idioma_config</span> <span class="o">=</span> <span class="n">configuracoes</span><span class="p">[</span><span class="s2">&quot;idioma&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configuração de idioma:&quot;</span><span class="p">,</span> <span class="n">idioma_config</span><span class="p">)</span>
-
-<span class="c1"># Acesso à cor do produto</span>
-<span class="n">cor_produto</span> <span class="o">=</span> <span class="n">produto</span><span class="p">[</span><span class="s2">&quot;cor&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cor do produto:&quot;</span><span class="p">,</span> <span class="n">cor_produto</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>A capacidade de acessar elementos individualmente nos dicionários permite recuperar informações específicas de maneira direta e eficiente. Essa característica torna os dicionários uma estrutura de dados poderosa para representar e manipular dados em Python.</p>
 <p>Os dicionários oferecem uma variedade de métodos para manipular e acessar os dados armazenados. Aqui estão alguns dos principais métodos de dicionários:</p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">clear()</span></code>:</strong>
@@ -830,7 +816,7 @@ Retorna uma cópia do dicionário.</p>
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">get(chave[,</span> <span class="pre">valor_padrão])</span></code>:</strong>
+<p><strong><code class="docutils literal notranslate"><span class="pre">get(chave[,</span> <span class="pre">valor])</span></code>:</strong>
 Retorna o valor associado à chave especificada. Se a chave não existir, retorna um valor padrão (ou <code class="docutils literal notranslate"><span class="pre">None</span></code> se não fornecido).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,7 +880,7 @@ Retorna uma lista contendo todos os valores do dicionário.</p>
 </div>
 </div>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">pop(chave[,</span> <span class="pre">valor_padrão])</span></code>:</strong>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pop(chave[,</span> <span class="pre">valor])</span></code>:</strong>
 Remove e retorna o valor associado à chave especificada. Se a chave não existir, retorna um valor padrão (ou gera um erro se não fornecido).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,13 +933,13 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </section>
 <section id="conjuntos">
 <h3>Conjuntos<a class="headerlink" href="#conjuntos" title="Permalink to this heading">#</a></h3>
-<p>Os conjuntos são uma estrutura de dados em Python que permite armazenar uma coleção de elementos únicos. Isso significa que, cada elemento de um conjunto deve ser diferente de todos os outros elementos do conjunto.</p>
+<p>Os conjuntos são uma estrutura de dados em Python que permite armazenar uma coleção de elementos únicos. Isso significa que, cada elemento de um conjunto deve ser diferente de todos os outros elementos deste conjunto.</p>
 <p>Os conjuntos são declarados usando chaves, com os elementos separados por vírgulas. Por exemplo, a seguinte declaração cria um conjunto com três elementos:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Os elementos dos conjuntos podem ser de qualquer tipo de dados, incluindo inteiros, reais, strings, booleanos, etc.
-Aqui estão alguns exemplos de uso de conjuntos em Python:</p>
+<p>Os elementos dos conjuntos podem ser de qualquer tipo de dados, incluindo inteiros, floats, strings, booleanos, etc. É importante saber que você não pode acessar os elementos de um conjunto em Python da mesma forma que você acessa por exemplo, os elementos de uma lista. No entanto, quando estudarmos estruturas de repetição, vamos descobrir algumas formas de como manipular esses elementos.</p>
+<p>Aqui estão alguns exemplos de uso de conjuntos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declaração de um conjunto com três elementos</span>
