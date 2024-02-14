@@ -595,12 +595,13 @@ Atribuição com módulo (%=): 3
 </section>
 <section id="operadores-unarios">
 <h2>Operadores Unários<a class="headerlink" href="#operadores-unarios" title="Permalink to this heading">#</a></h2>
-<p>Os operadores unários atuam em um único operando, ou seja, em um único valor. Eles realizam operações sobre esse valor. Vamos ver alguns exemplos:</p>
+<p>Os operadores unários são ferramentas poderosas em Python, permitindo a realização de operações em um único valor.</p>
 <section id="operador-negativo">
 <h3>Operador Negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>):<a class="headerlink" href="#operador-negativo" title="Permalink to this heading">#</a></h3>
-<p>Muda o sinal do número para negativo.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">resultado</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+<p>O operador negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>) transforma um valor positivo em negativo e vice-versa. Utilize-o para inverter o sinal de um número.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_positivo</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">numero_negativo</span> <span class="o">=</span> <span class="o">-</span><span class="n">numero_positivo</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">5</span>
@@ -609,26 +610,49 @@ Atribuição com módulo (%=): 3
 </section>
 <section id="operador-positivo">
 <h3>Operador Positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>):<a class="headerlink" href="#operador-positivo" title="Permalink to this heading">#</a></h3>
-<p>Mantém o sinal do número (raramente usado, já que os números são positivos por padrão).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
-<span class="n">resultado</span> <span class="o">=</span> <span class="o">+</span><span class="n">y</span>  <span class="c1"># O valor de resultado é sem mudança de sinal.</span>
+<p>O operador positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>) mantém o sinal de um número positivo. Embora seja geralmente redundante quando aplicado a valores positivos, pode ser útil em situações específicas. Além disso, o operador <code class="docutils literal notranslate"><span class="pre">+</span></code> pode ser empregado para forçar a conversão de um valor para o tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valor_string</span> <span class="o">=</span> <span class="s2">&quot;3.14&quot;</span>
+<span class="n">valor_float</span> <span class="o">=</span> <span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">valor_string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor_float</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">3</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14</span>
 </pre></div>
 </div>
 </section>
 <section id="operador-de-inversao-bit-a-bit">
 <h3>Operador de Inversão Bit a Bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>):<a class="headerlink" href="#operador-de-inversao-bit-a-bit" title="Permalink to this heading">#</a></h3>
-<p>Inverte cada bit do número.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">resultado</span> <span class="o">=</span> <span class="o">~</span><span class="n">z</span>
+<p>O operador de inversão bit a bit (~), também conhecido como complemento bit a bit, é uma ferramenta poderosa para manipular números binários em Python. Ele inverte cada bit de um número inteiro, abrindo um mundo de possibilidades para operações em nível de bit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_binario</span> <span class="o">=</span> <span class="mb">0b1100</span> <span class="c1"># Equivale ao decimal 12</span>
+<span class="n">inversao_bit_a_bit</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero_binario</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">inversao_bit_a_bit</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">8</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mb">0b1101</span> <span class="c1"># Equivale ao decimal -13</span>
 </pre></div>
 </div>
-<p>O operador negativo e o operador positivo lidam com números inteiros e de ponto flutuante, enquanto o operador de inversão bit a bit opera em valores inteiros.</p>
+<p><strong>Exemplo: Desmascarando o Mistério dos Números Negativos</strong></p>
+<p>Imagine que você tem um número binário armazenado na variável <code class="docutils literal notranslate"><span class="pre">numero</span></code>. Ao aplicar o operador <code class="docutils literal notranslate"><span class="pre">~</span></code> a <code class="docutils literal notranslate"><span class="pre">numero</span></code>, você obtém a sua representação em complemento de dois, que é a forma como os números negativos são armazenados na memória do computador.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mb">0b1011</span> <span class="c1"># Equivale ao decimal 11</span>
+
+<span class="n">numero_negativo</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número original: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Representação em complemento de dois: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número decimal equivalente: </span><span class="si">{</span><span class="o">-</span><span class="mi">11</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span><span class="p">:</span> <span class="mb">0b1011</span>
+<span class="n">Representação</span> <span class="n">em</span> <span class="n">complemento</span> <span class="n">de</span> <span class="n">dois</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b1011</span>
+<span class="n">Número</span> <span class="n">decimal</span> <span class="n">equivalente</span><span class="p">:</span> <span class="o">-</span><span class="mi">11</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>O operador <code class="docutils literal notranslate"><span class="pre">~</span></code> inverte cada bit de <code class="docutils literal notranslate"><span class="pre">numero</span></code>, resultando em 0b0100.</p></li>
+<li><p>Adicionamos 1 ao resultado da inversão para obter a representação em complemento de dois do número negativo.</p></li>
+<li><p>O valor final, 0b0101, é equivalente ao decimal -11, que é a representação do número original como um número negativo.</p></li>
+</ul>
+<p>Ao utilizar operadores unários em expressões mais complexas, é importante considerar a ordem de precedência dos operadores em Python. A combinação de operadores unários com outros operadores permite a realização de operações mais elaboradas.</p>
 </section>
 </section>
 <section id="exercicios">
