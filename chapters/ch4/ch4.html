@@ -364,23 +364,23 @@ document.write(`
 <p><img alt="ch4" src="../../_images/ch4.jpeg" /></p>
 <section id="estruturas-condicionais">
 <h2>Estruturas condicionais<a class="headerlink" href="#estruturas-condicionais" title="Permalink to this heading">#</a></h2>
-<p>As estruturas condicionais permitem ao programador tomar decisões sobre o fluxo de execução do programa. As estruturas condicionais mais comuns em Python são:</p>
+<p>As estruturas condicionais possibilitam ao programador controlar o fluxo de execução do programa. Em Python, as estruturas condicionais mais usadas são:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">if</span></code>:</strong> Testa uma condição e executa um bloco de código se a condição for verdadeira.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code>:</strong> Testa uma condição e executa um bloco de código se a condição for verdadeira, mas apenas se a condição anterior for falsa.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong> Executa um bloco de código se nenhuma das condições anteriores for verdadeira.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">if</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira, mas somente se a condição anterior for falsa.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong> Executa um bloco de código se todas as condições anteriores forem falsas.</p></li>
 </ul>
-<p>As estruturas condicionais em Python, especificamente as instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, e <code class="docutils literal notranslate"><span class="pre">else</span></code>, são essenciais para tomar decisões em um programa com base em diferentes condições.</p>
+<p>As instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, e <code class="docutils literal notranslate"><span class="pre">else</span></code> em Python são fundamentais para tomar decisões em um programa dependendo de diferentes condições.</p>
 <section id="a-instrucao-if">
 <h3>A Instrução <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#a-instrucao-if" title="Permalink to this heading">#</a></h3>
-<p>A instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> é utilizada para executar um bloco de código se uma condição especificada for avaliada como verdadeira. Vejamos um exemplo prático:</p>
+<p>A instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> serve para controlar o fluxo de execução do programa, dependendo de uma condição. Por exemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
 
 <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Neste exemplo, o bloco de código dentro do <code class="docutils literal notranslate"><span class="pre">if</span></code> só será executado se a variável <code class="docutils literal notranslate"><span class="pre">idade</span></code> for maior ou igual a 18. Caso contrário, o bloco será ignorado.</p>
+<p>Neste código, a condição é <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code>, que significa “idade maior ou igual a 18”. Se essa condição for verdadeira, o bloco de código após os dois pontos (<code class="docutils literal notranslate"><span class="pre">:</span></code>) será executado. O bloco de código é identificado pela indentação (espaço em branco no início da linha). Se a condição for falsa, o bloco de código será ignorado. Os dois pontos (<code class="docutils literal notranslate"><span class="pre">:</span></code>) são usados para indicar o início de um bloco de código em Python.</p>
 </section>
 <section id="instrucoes-elif-e-else">
 <h3>Instruções <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#instrucoes-elif-e-else" title="Permalink to this heading">#</a></h3>
@@ -419,7 +419,7 @@ document.write(`
 </section>
 <section id="aninhamento-de-estruturas-condicionais">
 <h3>Aninhamento de Estruturas Condicionais<a class="headerlink" href="#aninhamento-de-estruturas-condicionais" title="Permalink to this heading">#</a></h3>
-<p>É possível aninhar instruções <code class="docutils literal notranslate"><span class="pre">if</span></code> dentro de outras instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, ou <code class="docutils literal notranslate"><span class="pre">else</span></code>. Isso permite lidar com condições mais complexas. No entanto, deve-se ter cuidado para não tornar o código muito complexo.</p>
+<p>É possível aninhar instruções <code class="docutils literal notranslate"><span class="pre">if</span></code> dentro de outras instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, ou <code class="docutils literal notranslate"><span class="pre">else</span></code>. Isso permite lidar com condições mais complexas.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">sexo</span> <span class="o">=</span> <span class="s2">&quot;Feminino&quot;</span>
 
@@ -609,6 +609,7 @@ document.write(`
 </li>
 </ol>
 <p>A estrutura <code class="docutils literal notranslate"><span class="pre">while</span></code> é uma ferramenta poderosa quando o número de iterações não é fixo antecipadamente, proporcionando flexibilidade na execução de código em situações dinâmicas.</p>
+<p>Em geral, o <code class="docutils literal notranslate"><span class="pre">for</span></code> é utilizado quando você sabe quantas vezes deseja repetir o código (com base na sequência), enquanto o <code class="docutils literal notranslate"><span class="pre">while</span></code> é mais adequado quando a repetição depende de uma condição específica.</p>
 </section>
 </section>
 </section>
