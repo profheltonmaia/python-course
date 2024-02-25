@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 2: Váriáveis e Tipos de dados</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e Expressões</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
@@ -326,6 +327,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 2: Váriáveis e Tipos de dados</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-variaveis-e-tipos-de-dados">Definindo Variáveis e Tipos de Dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
@@ -343,6 +345,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teste-2">Teste 2</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -1018,71 +1024,242 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Declare duas variáveis, uma do tipo int e
-outra do tipo float. Em seguida, atribuir a elas valores e imprimir o resultado da soma, da subtração, da multiplicação e da divisão entre as duas variáveis.</p></li>
-<li><p>Declarar uma variável do tipo str e atribuir a ela uma string. Em seguida, imprimir o comprimento da string, a primeira letra da string, a última letra da string e a string invertida.</p></li>
-<li><p>Declare uma variável do tipo bool e atribuir a ela um valor. Em seguida, imprimir o resultado da operação de negação sobre a variável.</p></li>
-<li><p>Faça um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. O IMC é calculado dividindo-se o peso da pessoa pela sua altura ao quadrado. O IMC é uma medida da relação entre o peso e a altura de uma pessoa.
-O programa deve imprimir o IMC da pessoa, classificando-o de acordo com a tabela abaixo:</p></li>
-</ol>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>IMC</p></th>
-<th class="head"><p>Classificação</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>&lt; 18,5</p></td>
-<td><p>Abaixo do peso</p></td>
-</tr>
-<tr class="row-odd"><td><p>18,5 - 24,9</p></td>
-<td><p>Saudável</p></td>
-</tr>
-<tr class="row-even"><td><p>25,0 - 29,9</p></td>
-<td><p>Sobrepeso</p></td>
-</tr>
-<tr class="row-odd"><td><p>30,0 - 34,9</p></td>
-<td><p>Obesidade grau I</p></td>
-</tr>
-<tr class="row-even"><td><p>35,0 - 39,9</p></td>
-<td><p>Obesidade grau II</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p>= 40,0 | Obesidade grau III</p>
-</div></blockquote>
-<ol class="arabic simple" start="5">
-<li><p>Crie uma lista chamada <code class="docutils literal notranslate"><span class="pre">frutas</span></code> com as seguintes frutas: maçã, banana, laranja, pera e melancia. Em seguida, imprima a lista.</p></li>
-<li><p>Criar uma tupla chamada <code class="docutils literal notranslate"><span class="pre">coordenadas</span></code> com as coordenadas (2, 3). Em seguida, imprima as coordenadas.</p></li>
-<li><p>Crie um dicionário chamado contato. Peça ao usuário para fornecer os dados para as chaves “nome”, “telefone” e “endereço”. Em seguida, imprima o conteúdo do dicionário.</p></li>
-</ol>
-<p>Exemplo de execução:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">o</span> <span class="n">nome</span> <span class="n">do</span> <span class="n">contato</span><span class="p">:</span> <span class="n">Python</span> <span class="n">da</span> <span class="n">Silva</span>
-<span class="n">Digite</span> <span class="n">o</span> <span class="n">telefone</span> <span class="n">do</span> <span class="n">contato</span><span class="p">:</span> <span class="p">(</span><span class="mi">84</span><span class="p">)</span> <span class="mi">9999</span><span class="o">-</span><span class="mi">9999</span>
-<span class="n">Digite</span> <span class="n">o</span> <span class="n">endereço</span> <span class="n">do</span> <span class="n">contato</span><span class="p">:</span> <span class="n">Rua</span> <span class="n">da</span> <span class="n">Programação</span><span class="p">,</span> <span class="mi">123</span>
+<ol class="arabic">
+<li><p>Declare duas variáveis, uma do tipo int e outra do tipo float. Em seguida, atribuir a elas valores e imprimir o resultado da soma, da subtração, da multiplicação e da divisão entre as duas variáveis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">10</span>
+<span class="mf">2.5</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Soma</span><span class="p">:</span> <span class="mf">12.5</span>
+<span class="n">Subtração</span><span class="p">:</span> <span class="mf">7.5</span>
+<span class="n">Multiplicação</span><span class="p">:</span> <span class="mf">25.0</span>
+<span class="n">Divisão</span><span class="p">:</span> <span class="mf">4.0</span>
 
-<span class="n">Nome</span><span class="p">:</span> <span class="n">Python</span> <span class="n">da</span> <span class="n">Silva</span><span class="p">,</span> <span class="n">Telefone</span><span class="p">:</span> <span class="p">(</span><span class="mi">84</span><span class="p">)</span> <span class="mi">9999</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">Endereço</span><span class="p">:</span> <span class="n">Rua</span> <span class="n">da</span> <span class="n">Programação</span><span class="p">,</span> <span class="mf">123.</span>
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">15</span>
+<span class="mf">3.0</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Soma</span><span class="p">:</span> <span class="mf">18.0</span>
+<span class="n">Subtração</span><span class="p">:</span> <span class="mf">12.0</span>
+<span class="n">Multiplicação</span><span class="p">:</span> <span class="mf">45.0</span>
+<span class="n">Divisão</span><span class="p">:</span> <span class="mf">5.0</span> 
 </pre></div>
 </div>
-<ol class="arabic simple" start="8">
-<li><p>Crie um conjunto chamado <code class="docutils literal notranslate"><span class="pre">numeros</span></code> com os números 1, 2, 3, 4 e 5. Imprima o conjunto.</p></li>
-<li><p>Criar dois conjuntos, <code class="docutils literal notranslate"><span class="pre">conjunto_a</span></code> e <code class="docutils literal notranslate"><span class="pre">conjunto_b</span></code>, com alguns números. Realizar as seguintes operações e imprimir os resultados:</p>
-<ul class="simple">
+</li>
+<li><p>Escreva um programa que solicite ao usuário que insira uma palavra ou frase. Em seguida, o programa deve imprimir o comprimento da string, a primeira letra da string, a última letra da string e a string invertida.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">A</span> <span class="n">felicidade</span> <span class="n">está</span> <span class="n">nas</span> <span class="n">pequenas</span> <span class="n">coisas</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="mi">37</span>
+<span class="n">A</span>
+<span class="n">s</span>
+<span class="n">sasioc</span> <span class="n">saneuqep</span> <span class="n">san</span> <span class="n">átse</span> <span class="n">edadicilef</span> <span class="n">A</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">A</span> <span class="n">verdadeira</span> <span class="n">liberdade</span> <span class="n">está</span> <span class="n">em</span> <span class="n">conhecer</span> <span class="n">a</span> <span class="n">si</span> <span class="n">mesmo</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="mi">37</span>
+<span class="n">A</span>
+<span class="n">s</span>
+<span class="n">sasioc</span> <span class="n">saneuqep</span> <span class="n">san</span> <span class="n">átse</span> <span class="n">edadicilef</span> <span class="n">A</span>
+</pre></div>
+</div>
+</li>
+<li><p>Faça um programa que solicite ao usuário que insira um valor booleano (True ou False). Em seguida, atribua esse valor a uma variável e use o operador de negação (not) para inverter o valor da variável. Por fim, exiba o resultado na saída.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Valor</span> <span class="n">original</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">Resultado</span> <span class="n">da</span> <span class="n">negação</span><span class="p">:</span> <span class="kc">False</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="kc">False</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Valor</span> <span class="n">original</span><span class="p">:</span> <span class="kc">False</span>
+<span class="n">Resultado</span> <span class="n">da</span> <span class="n">negação</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+<li><p>Faça um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. O IMC é calculado dividindo-se o peso da pessoa pela sua altura ao quadrado. O IMC é uma medida da relação entre o peso e a altura de uma pessoa. O programa deve imprimir o IMC da pessoa, classificando-o de acordo com a tabela abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IMC</span> <span class="o">|</span> <span class="n">Classificação</span>
+
+<span class="o">&lt;</span> <span class="mi">18</span><span class="p">,</span><span class="mi">5</span>      <span class="o">|</span> <span class="n">Abaixo</span> <span class="n">do</span> <span class="n">peso</span>
+<span class="mi">18</span><span class="p">,</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">24</span><span class="p">,</span><span class="mi">9</span> <span class="o">|</span> <span class="n">Saudável</span>
+<span class="mi">25</span><span class="p">,</span><span class="mi">0</span> <span class="o">-</span> <span class="mi">29</span><span class="p">,</span><span class="mi">9</span> <span class="o">|</span> <span class="n">Sobrepeso</span>
+<span class="mi">30</span><span class="p">,</span><span class="mi">0</span> <span class="o">-</span> <span class="mi">34</span><span class="p">,</span><span class="mi">9</span> <span class="o">|</span> <span class="n">Obesidade</span> <span class="n">grau</span> <span class="n">I</span>
+<span class="mi">35</span><span class="p">,</span><span class="mi">0</span> <span class="o">-</span> <span class="mi">39</span><span class="p">,</span><span class="mi">9</span> <span class="o">|</span> <span class="n">Obesidade</span> <span class="n">grau</span> <span class="n">II</span>
+<span class="o">&gt;=</span> <span class="mi">40</span><span class="p">,</span><span class="mi">0</span>     <span class="o">|</span> <span class="n">Obesidade</span> <span class="n">grau</span> <span class="n">III</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="mi">71</span>
+<span class="mf">1.70</span>
+<span class="n">Saída</span><span class="p">:</span> 
+<span class="n">Seu</span> <span class="n">IMC</span> <span class="n">é</span> <span class="mf">24.57</span> <span class="p">(</span><span class="n">Saudável</span><span class="p">)</span><span class="o">.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="mi">85</span>
+<span class="mf">1.60</span>
+<span class="n">Saída</span><span class="p">:</span> 
+<span class="n">Seu</span> <span class="n">IMC</span> <span class="n">é</span> <span class="mf">33.20</span> <span class="p">(</span><span class="n">Obesidade</span> <span class="n">grau</span> <span class="n">I</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Crie um programa que solicite ao usuário que insira cinco diferentes frutas. Em seguida, crie uma lista chamada “frutas” com as frutas fornecidas pelo usuário e imprima a lista completa na tela.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="n">maçã</span>
+<span class="n">banana</span>
+<span class="n">laranja</span>
+<span class="n">pera</span>
+<span class="n">melancia</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Lista</span> <span class="n">de</span> <span class="n">frutas</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;laranja&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;melancia&#39;</span><span class="p">]</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="n">uva</span>
+<span class="n">abacaxi</span>
+<span class="n">morango</span>
+<span class="n">manga</span>
+<span class="n">kiwi</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Lista</span> <span class="n">de</span> <span class="n">frutas</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uva&#39;</span><span class="p">,</span> <span class="s1">&#39;abacaxi&#39;</span><span class="p">,</span> <span class="s1">&#39;morango&#39;</span><span class="p">,</span> <span class="s1">&#39;manga&#39;</span><span class="p">,</span> <span class="s1">&#39;kiwi&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>Escreva um programa em solicite ao usuário que insira duas coordenadas (x e y). Em seguida, crie uma tupla chamada coordenadas com essas coordenadas e imprima o conteúdo da tupla na tela.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="mf">2.5</span>
+<span class="mf">3.8</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Coordenadas</span><span class="p">:</span> <span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">)</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="o">-</span><span class="mf">1.0</span>
+<span class="mf">0.0</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Coordenadas</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Crie um dicionário chamado contato. Peça ao usuário para fornecer os dados para as chaves “nome”, “telefone” e “endereço”. Em seguida, imprima o conteúdo do dicionário.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="n">Python</span> <span class="n">da</span> <span class="n">Silva</span>
+<span class="mi">8499999999</span>
+<span class="n">Rua</span> <span class="n">da</span> <span class="n">Programação</span><span class="p">,</span> <span class="mi">123</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Nome</span><span class="p">:</span> <span class="n">Python</span> <span class="n">da</span> <span class="n">Silva</span><span class="p">,</span> <span class="n">Telefone</span><span class="p">:</span> <span class="mi">8499999999</span><span class="p">,</span> <span class="n">Endereço</span><span class="p">:</span> <span class="n">Rua</span> <span class="n">da</span> <span class="n">Programação</span><span class="p">,</span> <span class="mf">123.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="n">João</span> <span class="n">da</span> <span class="n">Silva</span>
+<span class="mi">9876543210</span>
+<span class="n">Avenida</span> <span class="n">dos</span> <span class="n">Códigos</span><span class="p">,</span> <span class="mi">456</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">Nome</span><span class="p">:</span> <span class="n">João</span> <span class="n">da</span> <span class="n">Silva</span><span class="p">,</span> <span class="n">Telefone</span><span class="p">:</span> <span class="mi">9876543210</span><span class="p">,</span> <span class="n">Endereço</span><span class="p">:</span> <span class="n">Avenida</span> <span class="n">dos</span> <span class="n">Códigos</span><span class="p">,</span> <span class="mf">456.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Crie um programa que solicite ao usuário que insira cinco diferentes números inteiros. Em seguida, crie um conjunto chamado “numeros” com os números fornecidos pelo usuário usando o método .add() e imprima o conjunto completo na saída.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">7</span>
+<span class="mi">9</span>
+<span class="mi">11</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="o">-</span><span class="mi">2</span>
+<span class="mi">0</span>
+<span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mi">8</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Faça um programa que solicite ao usuário que insira três diferentes números inteiros. Em seguida, crie dois conjuntos chamados “conjunto_a” e “conjunto_b” com os números fornecidos pelo usuário usando o método .add(). Realize as seguintes operações e imprima os resultados:</p></li>
+</ol>
+<ul>
 <li><p>União: Combinar os elementos únicos de ambos os conjuntos.</p></li>
 <li><p>Interseção: Encontrar os elementos que estão presentes em ambos os conjuntos.</p></li>
-<li><p>Diferença: Identificar os elementos que estão em <code class="docutils literal notranslate"><span class="pre">conjunto_a</span></code> mas não em <code class="docutils literal notranslate"><span class="pre">conjunto_b</span></code>.</p></li>
-</ul>
+<li><p>Diferença: Identificar os elementos que estão em “conjunto_a” mas não em “conjunto_b”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">7</span>
+<span class="mi">7</span>
+<span class="mi">9</span>
+<span class="mi">11</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">União</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span>
+<span class="n">Interseção</span><span class="p">:</span> <span class="p">{</span><span class="mi">7</span><span class="p">}</span>
+<span class="n">Diferença</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+<span class="mi">1</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">União</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">Interseção</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">Diferença</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
 </li>
-<li><p>Criar uma string original, por exemplo, “Python é uma linguagem de programação poderosa!”. Realizar as seguintes operações e imprimir os resultados:</p></li>
+</ul>
+<ol class="arabic simple" start="10">
+<li><p>Dada duas strings fornecidas pelo usuário, realize as seguintes operações e imprima os resultados:</p></li>
 </ol>
-<ul class="simple">
-<li><p>Transformar em maiúsculas: Converter toda a string para letras maiúsculas.</p></li>
-<li><p>Transformar em minúsculas: Converter toda a string para letras minúsculas.</p></li>
-<li><p>Substituir parte da string: Substituir uma parte específica da string por outra (por exemplo, substituir “poderosa” por “versátil”).</p></li>
+<ul>
+<li><p>Transformar em maiúsculas: Converta toda a primeira string para letras maiúsculas.</p></li>
+<li><p>Transformar em minúsculas: Converta toda a segunda string para letras minúsculas.</p></li>
+<li><p>Concatenar as strings: Combine a primeira e a segunda string em uma única string.</p></li>
+<li><p>Imprimir o resultado: Exiba a string concatenada na tela.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Teste 1
+Entrada:
+Olá, mundo!
+Mundo
+Saída:
+OLÁ, MUNDO!
+mundo
+OLÁ, MUNDO! mundo
+</pre></div>
+</div>
+</li>
 </ul>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="teste-2">
+<h1>Teste 2<a class="headerlink" href="#teste-2" title="Permalink to this heading">#</a></h1>
+<p>Entrada:
+A Verdade Está Lá Fora, Neo!
+Mas Você Tem Que Escolher Se Quer Vê-la.
+Saída:
+A VERDADE ESTÁ LÁ FORA, NEO!
+mas você tem que escolher se quer vê-la.
+A VERDADE ESTÁ LÁ FORA, NEO! mas você tem que escolher se quer vê-la.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1148,6 +1325,7 @@ O programa deve imprimir o IMC da pessoa, classificando-o de acordo com a tabela
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 2: Váriáveis e Tipos de dados</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-variaveis-e-tipos-de-dados">Definindo Variáveis e Tipos de Dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
@@ -1165,6 +1343,10 @@ O programa deve imprimir o IMC da pessoa, classificando-o de acordo com a tabela
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teste-2">Teste 2</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
