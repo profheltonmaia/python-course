@@ -22,5 +22,9 @@ Finalmente, no oitavo capítulo, concentramo-nos na manipulação de arquivos, t
 
 Este material é um recurso valioso para qualquer estudante que deseje iniciar e aprimorar seus conhecimentos em Python. A clareza, a concisão e os numerosos exemplos e exercícios tornam o aprendizado eficiente e agradável. 
 
+
 ```{tableofcontents}
 ```
+
+---
+[Playlist no YouTube com Material Auxiliar](https://www.youtube.com/playlist?list=PLgZW4krsqK2RUiuyoErk2zClgZmc5tUXh)
