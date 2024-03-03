@@ -533,45 +533,47 @@ Listas podem conter valores de qualquer tipo, incluindo inteiros, números de po
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Criando a Lista inicial</span>
 <span class="n">lista_mista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;Estou&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lista Inicial: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
 <span class="c1"># Adiciona um elemento ao final da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Append: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
 <span class="c1"># Adiciona vários elementos ao final da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extend: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
-<span class="c1"># Insere um elemento em uma posição específica da lista</span>
+<span class="c1"># Insere por exemplo, um elemento (Olá) em uma posição específica(2) da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Olá&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insert: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
 <span class="c1"># Remove um elemento da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Estou&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Remove: &quot;</span><span class="p">,</span><span class="n">lista_mista</span><span class="p">)</span>
 
 <span class="c1"># Remove o último elemento da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pop: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
 <span class="c1"># Conta quantas vezes um elemento aparece na lista</span>
 <span class="n">ocorrencias</span> <span class="o">=</span> <span class="n">lista_mista</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ocorrencias</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count:&quot;</span><span class="p">,</span> <span class="n">ocorrencias</span><span class="p">)</span>
 
 <span class="c1"># Inverte a ordem da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista invertida:&quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reverse: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2.5, &#39;Estou&#39;, True, 4]
-[1, 2.5, &#39;Estou&#39;, True, 4, 5, 6, 7]
-[1, 2.5, &#39;Olá&#39;, &#39;Estou&#39;, True, 4, 5, 6, 7]
-[1, 2.5, &#39;Olá&#39;, True, 4, 5, 6, 7]
-[1, 2.5, &#39;Olá&#39;, True, 4, 5, 6]
-1
-Lista invertida: [6, 5, 4, True, &#39;Olá&#39;, 2.5, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lista Inicial:  [1, 2.5, &#39;Estou&#39;, True]
+Append:  [1, 2.5, &#39;Estou&#39;, True, 4]
+Extend:  [1, 2.5, &#39;Estou&#39;, True, 4, 5, 6, 7]
+Insert:  [1, 2.5, &#39;Olá&#39;, &#39;Estou&#39;, True, 4, 5, 6, 7]
+Remove:  [1, 2.5, &#39;Olá&#39;, True, 4, 5, 6, 7]
+Pop:  [1, 2.5, &#39;Olá&#39;, True, 4, 5, 6]
+Count: 1
+Reverse:  [6, 5, 4, True, &#39;Olá&#39;, 2.5, 1]
 </pre></div>
 </div>
 </div>
@@ -1231,23 +1233,23 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <li><p>Transformar em minúsculas: Converta toda a segunda string para letras minúsculas.</p></li>
 <li><p>Concatenar as strings: Combine a primeira e a segunda string em uma única string.</p></li>
 <li><p>Imprimir o resultado: Exiba a string concatenada na tela.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Teste 1
-Entrada:
-Olá, mundo!
-Mundo
-Saída:
-OLÁ, MUNDO!
-mundo
-OLÁ, MUNDO! mundo
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="n">Olá</span><span class="p">,</span> <span class="n">mundo</span><span class="o">.</span>
+<span class="n">Mundo</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">OLÁ</span><span class="p">,</span> <span class="n">MUNDO</span><span class="o">.</span>
+<span class="n">mundo</span>
+<span class="n">OLÁ</span><span class="p">,</span> <span class="n">MUNDO</span><span class="o">.</span> <span class="n">mundo</span>
 
-# Teste 2
-Entrada:
-A Verdade Está Lá Fora, Neo!
-Mas Você Tem Que Escolher Se Quer Vê-la.
-Saída:
-A VERDADE ESTÁ LÁ FORA, NEO!
-mas você tem que escolher se quer vê-la.
-A VERDADE ESTÁ LÁ FORA, NEO! mas você tem que escolher se quer vê-la.
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="n">A</span> <span class="n">Verdade</span> <span class="n">Está</span> <span class="n">Lá</span> <span class="n">Fora</span><span class="p">,</span> <span class="n">Neo</span><span class="o">.</span>
+<span class="n">Mas</span> <span class="n">Você</span> <span class="n">Tem</span> <span class="n">Que</span> <span class="n">Escolher</span> <span class="n">Se</span> <span class="n">Quer</span> <span class="n">Vê</span><span class="o">-</span><span class="n">la</span><span class="o">.</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">A</span> <span class="n">VERDADE</span> <span class="n">ESTÁ</span> <span class="n">LÁ</span> <span class="n">FORA</span><span class="p">,</span> <span class="n">NEO</span><span class="o">.</span>
+<span class="n">mas</span> <span class="n">você</span> <span class="n">tem</span> <span class="n">que</span> <span class="n">escolher</span> <span class="n">se</span> <span class="n">quer</span> <span class="n">vê</span><span class="o">-</span><span class="n">la</span><span class="o">.</span>
+<span class="n">A</span> <span class="n">VERDADE</span> <span class="n">ESTÁ</span> <span class="n">LÁ</span> <span class="n">FORA</span><span class="p">,</span> <span class="n">NEO</span><span class="o">.</span> <span class="n">mas</span> <span class="n">você</span> <span class="n">tem</span> <span class="n">que</span> <span class="n">escolher</span> <span class="n">se</span> <span class="n">quer</span> <span class="n">vê</span><span class="o">-</span><span class="n">la</span><span class="o">.</span>
 </pre></div>
 </div>
 </li>
