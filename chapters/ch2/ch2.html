@@ -330,7 +330,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-ponto-flutuante">Números de Ponto Flutuante</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizacao-do-len-para-calcular-o-tamanho-da-string">Utilização do len para calcular o tamanho da string</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funcionam-os-indices-em-uma-string">Como funcionam os índices em uma string</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleanos">Booleanos</a></li>
 </ul>
 </li>
@@ -460,6 +464,44 @@ document.write(`
 </pre></div>
 </div>
 <p>Ambos os exemplos são válidos, e o Python permite que você use aspas simples dentro de uma string delimitada por aspas duplas e vice-versa.</p>
+<section id="utilizacao-do-len-para-calcular-o-tamanho-da-string">
+<h4>Utilização do len para calcular o tamanho da string<a class="headerlink" href="#utilizacao-do-len-para-calcular-o-tamanho-da-string" title="Permalink to this heading">#</a></h4>
+<p>O <code class="docutils literal notranslate"><span class="pre">len</span></code> é uma função incorporada em Python que retorna o comprimento (número de caracteres) de uma sequência, como uma string. Vamos calcular o tamanho da string “Olá, turma!” usando <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Olá, turma!&quot;</span>
+<span class="n">tamanho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O tamanho da string é:&quot;</span><span class="p">,</span> <span class="n">tamanho</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">tamanho</span> <span class="n">da</span> <span class="n">string</span> <span class="n">é</span><span class="p">:</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</section>
+<section id="como-funcionam-os-indices-em-uma-string">
+<h4>Como funcionam os índices em uma string<a class="headerlink" href="#como-funcionam-os-indices-em-uma-string" title="Permalink to this heading">#</a></h4>
+<p>Em Python, os índices de uma string começam em 0 e vão até (comprimento da string - 1). Isso significa que o primeiro caractere está no índice 0, o segundo no índice 1, e assim por diante. Podemos imprimir caracteres específicos e partes da string usando índices:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Olá, turma!&quot;</span>
+
+<span class="c1"># Impressão de caracteres usando índices</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeiro caractere:&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segundo caractere:&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Impressão de partes da string usando índices</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parte da string:&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+
+<span class="c1"># Impressão da string invertida</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;String invertida:&quot;</span><span class="p">,</span> <span class="n">texto</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Primeiro caractere: O
+Segundo caractere: l
+Parte da string: turma
+String invertida: !amrut ,álO
+</pre></div>
+</div>
+<p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">texto[4:9]</span></code> imprime a parte da string que vai do índice 4 até o índice 8 (o índice 9 não é incluído).</p>
+</section>
 </section>
 <section id="booleanos">
 <h3>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this heading">#</a></h3>
@@ -1324,7 +1366,11 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-ponto-flutuante">Números de Ponto Flutuante</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilizacao-do-len-para-calcular-o-tamanho-da-string">Utilização do len para calcular o tamanho da string</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-funcionam-os-indices-em-uma-string">Como funcionam os índices em uma string</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleanos">Booleanos</a></li>
 </ul>
 </li>

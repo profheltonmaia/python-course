@@ -331,7 +331,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-seu-primeiro-programa-em-python">Escrevendo seu primeiro programa em python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-um-programa-em-python-funciona">Como um programa em Python funciona?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-basica-de-um-programa-em-python">Estrutura básica de um programa em Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentando-seu-codigo">Comentando seu código</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao">Estratégias cientificamente fundamentadas para estudar programação</a></li>
 </ul>
             </nav>
@@ -481,6 +484,38 @@ Qual é a sua idade? 25
 </li>
 </ol>
 <p>Este exemplo ilustra o uso da função <code class="docutils literal notranslate"><span class="pre">input</span></code> para interagir com o usuário, capturando dados e exibindo as informações posteriormente. A utilização de <code class="docutils literal notranslate"><span class="pre">input</span></code> é fundamental para criar programas interativos e dinâmicos.</p>
+<section id="comentando-seu-codigo">
+<h3>Comentando seu código<a class="headerlink" href="#comentando-seu-codigo" title="Permalink to this heading">#</a></h3>
+<p>Comentar o código é essencial para a compreensão. Use <code class="docutils literal notranslate"><span class="pre">#</span></code> para comentários de uma linha e <code class="docutils literal notranslate"><span class="pre">'''</span></code> ou <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> para comentários de várias linhas. Explique a lógica e evite comentários óbvios. Exemplo:</p>
+<p><strong>Comentário de uma linha:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicita o nome do usuário através da entrada de dados</span>
+<span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Qual é o seu nome? &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Comentário de várias linhas usando aspas simples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Este bloco de código solicita a idade do usuário</span>
+<span class="sd">e armazena o valor na variável &#39;idade&#39;.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Qual é a sua idade? &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Comentário de várias linhas usando aspas duplas:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A seguir, exibimos o nome e a idade inseridos pelo usuário.</span>
+<span class="sd">Esta parte do código é responsável pela saída de dados.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome:&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade:&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Comentário explicativo sobre a lógica:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verifica se a idade é maior que 18 para determinar a elegibilidade</span>
+<span class="n">elegivel</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">18</span>
+</pre></div>
+</div>
+<p>Lembrando que comentários devem ser utilizados para esclarecer a lógica do código e fornecer informações úteis.</p>
+</section>
 </section>
 <section id="estrategias-cientificamente-fundamentadas-para-estudar-programacao">
 <h2>Estratégias cientificamente fundamentadas para estudar programação<a class="headerlink" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao" title="Permalink to this heading">#</a></h2>
@@ -577,7 +612,10 @@ Participe de grupos de estudo, fóruns online ou projetos colaborativos. A apren
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escrevendo-seu-primeiro-programa-em-python">Escrevendo seu primeiro programa em python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-um-programa-em-python-funciona">Como um programa em Python funciona?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-basica-de-um-programa-em-python">Estrutura básica de um programa em Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-aprimorado-capturando-nome-e-idade">Exemplo aprimorado: capturando nome e idade</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentando-seu-codigo">Comentando seu código</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-cientificamente-fundamentadas-para-estudar-programacao">Estratégias cientificamente fundamentadas para estudar programação</a></li>
 </ul>
   </nav></div>
