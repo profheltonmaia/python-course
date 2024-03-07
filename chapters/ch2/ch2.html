@@ -373,7 +373,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Olá, mundo!
 </pre></div>
 </div>
-<p><strong>Exibindo informações concatenadas com vírgulas</strong></p>
+<p><strong>Mostrando informações concatenadas com vírgulas</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
 <span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome dela é&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="s2">&quot;e ela tem&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="s2">&quot;anos.&quot;</span><span class="p">)</span>
@@ -384,7 +384,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Aqui, as variáveis <code class="docutils literal notranslate"><span class="pre">nome</span></code> e <code class="docutils literal notranslate"><span class="pre">idade</span></code> são concatenadas com strings e separadas por vírgulas para criar a mensagem de saída.</p>
-<p><strong>Exibindo informações com f-string</strong></p>
+<p><strong>Utilizando f-string</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
 <span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O nome dela é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e ela tem </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span><span class="p">)</span>
@@ -398,15 +398,25 @@ document.write(`
 <p><strong>Exibindo informações em múltiplas linhas com <code class="docutils literal notranslate"><span class="pre">\n</span></code></strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
 <span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome dela é&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">e ela tem&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="s2">&quot;anos.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome dela é&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">e ela possui&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="s2">&quot;anos.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Saída formatada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">nome</span> <span class="n">dela</span> <span class="n">é</span> <span class="n">Maria</span> 
-<span class="n">e</span> <span class="n">ela</span> <span class="n">tem</span> <span class="mi">30</span> <span class="n">anos</span><span class="o">.</span>
+<span class="n">e</span> <span class="n">ela</span> <span class="n">possui</span> <span class="mi">30</span> <span class="n">anos</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Neste caso, quebras de linha (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) são inseridas para formatar a saída em múltiplas linhas.</p>
+<p><strong>Formatando número com casas decimais</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valor</span> <span class="o">=</span> <span class="mf">123.456789</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O valor formatado é: </span><span class="si">{</span><span class="n">valor</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída formatada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">valor</span> <span class="n">formatado</span> <span class="n">é</span><span class="p">:</span> <span class="mf">123.46</span>
+</pre></div>
+</div>
+<p>O número armazenado em <code class="docutils literal notranslate"><span class="pre">valor</span></code> é formatado para exibir apenas duas casas decimais utilizando a expressão <code class="docutils literal notranslate"><span class="pre">:.2f</span></code> dentro da f-string.</p>
 </section>
 <section id="definindo-variaveis-e-tipos-de-dados">
 <h2>Definindo Variáveis e Tipos de Dados<a class="headerlink" href="#definindo-variaveis-e-tipos-de-dados" title="Permalink to this heading">#</a></h2>
