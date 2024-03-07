@@ -326,6 +326,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatando-a-saida-de-dados">Formatando a saída de dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-variaveis-e-tipos-de-dados">Definindo Variáveis e Tipos de Dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
@@ -361,6 +362,52 @@ document.write(`
 <h1>Capítulo 2: Váriáveis e Tipos de dados<a class="headerlink" href="#capitulo-2-variaveis-e-tipos-de-dados" title="Permalink to this heading">#</a></h1>
 <p><img alt="ch2" src="../../_images/ch2.jpeg" /></p>
 <p>Variáveis são fundamentais para armazenar informações durante a execução de um programa. Além disso, compreender os tipos de dados é essencial para escrever programas funcionais e legíveis. Cada tipo de dado é especializado em guardar um tipo específico de informação, como inteiros, números reais, strings e booleanos.</p>
+<section id="formatando-a-saida-de-dados">
+<h2>Formatando a saída de dados<a class="headerlink" href="#formatando-a-saida-de-dados" title="Permalink to this heading">#</a></h2>
+<p>A função <code class="docutils literal notranslate"><span class="pre">print()</span></code> é usada para exibir informações na tela. Ela pode imprimir strings, números e outros tipos de informações.</p>
+<p><strong>Exibindo uma mensagem simples</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá, mundo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída formatada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Olá, mundo!
+</pre></div>
+</div>
+<p><strong>Exibindo informações concatenadas com vírgulas</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome dela é&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="s2">&quot;e ela tem&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="s2">&quot;anos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída formatada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">nome</span> <span class="n">dela</span> <span class="n">é</span> <span class="n">Maria</span> <span class="n">e</span> <span class="n">ela</span> <span class="n">tem</span> <span class="mi">30</span> <span class="n">anos</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Aqui, as variáveis <code class="docutils literal notranslate"><span class="pre">nome</span></code> e <code class="docutils literal notranslate"><span class="pre">idade</span></code> são concatenadas com strings e separadas por vírgulas para criar a mensagem de saída.</p>
+<p><strong>Exibindo informações com f-string</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O nome dela é </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e ela tem </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída formatada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">nome</span> <span class="n">dela</span> <span class="n">é</span> <span class="n">Maria</span> <span class="n">e</span> <span class="n">ela</span> <span class="n">tem</span> <span class="mi">30</span> <span class="n">anos</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Utilizando f-string, as variáveis são incorporadas diretamente na string formatada.</p>
+<p><strong>Exibindo informações em múltiplas linhas com <code class="docutils literal notranslate"><span class="pre">\n</span></code></strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Maria&quot;</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome dela é&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">e ela tem&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="s2">&quot;anos.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída formatada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">nome</span> <span class="n">dela</span> <span class="n">é</span> <span class="n">Maria</span> 
+<span class="n">e</span> <span class="n">ela</span> <span class="n">tem</span> <span class="mi">30</span> <span class="n">anos</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Neste caso, quebras de linha (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) são inseridas para formatar a saída em múltiplas linhas.</p>
+</section>
 <section id="definindo-variaveis-e-tipos-de-dados">
 <h2>Definindo Variáveis e Tipos de Dados<a class="headerlink" href="#definindo-variaveis-e-tipos-de-dados" title="Permalink to this heading">#</a></h2>
 <p>Uma variável é um identificador que representa um valor. A declaração de uma variável é feita usando o operador de atribuição (<code class="docutils literal notranslate"><span class="pre">=</span></code>). Por exemplo, a linha a seguir cria uma variável chamada <code class="docutils literal notranslate"><span class="pre">nome</span></code> e atribui o valor “Maria” a ela:</p>
@@ -1362,6 +1409,7 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatando-a-saida-de-dados">Formatando a saída de dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-variaveis-e-tipos-de-dados">Definindo Variáveis e Tipos de Dados</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-basicos">Tipos de dados Básicos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-inteiros">Números Inteiros</a></li>
