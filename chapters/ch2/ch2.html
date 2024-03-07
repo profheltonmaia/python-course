@@ -337,6 +337,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleanos">Booleanos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipos-em-python">Características da Dinamicidade de Tipos em Python:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
@@ -584,6 +585,28 @@ String invertida: !amrut ,álO
 </div>
 </div>
 </div>
+</section>
+<section id="caracteristicas-da-dinamicidade-de-tipos-em-python">
+<h3>Características da Dinamicidade de Tipos em Python:<a class="headerlink" href="#caracteristicas-da-dinamicidade-de-tipos-em-python" title="Permalink to this heading">#</a></h3>
+<p>Conforme abordado anteriormente, o Python é uma linguagem de programação dinamicamente tipada, o que significa que o tipo de uma variável é determinado durante a execução do programa e não durante a fase de compilação. Ao contrário de linguagens estaticamente tipadas, como C++ ou Java, onde o tipo de uma variável deve ser declarado explicitamente antes de ser utilizada, o Python permite que valores sejam atribuídos a variáveis sem a necessidade de declarar o tipo previamente.</p>
+<p>É importante destacar a possibilidade de utilizar a Atribuição Dinâmica em conjunto com <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Atribuição dinâmica de valores</span>
+<span class="n">variavel_dinamica</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>  <span class="c1"># Saída: 42</span>
+
+<span class="n">variavel_dinamica</span> <span class="o">=</span> <span class="s2">&quot;Olá, mundo!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>  <span class="c1"># Saída: Olá, mundo!</span>
+
+<span class="c1"># Declarando variáveis como None</span>
+<span class="n">variavel_nula</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>  <span class="c1"># Saída: None</span>
+
+<span class="c1"># Atribuindo um valor posteriormente</span>
+<span class="n">variavel_nula</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>  <span class="c1"># Saída: 100</span>
+</pre></div>
+</div>
+<p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">variavel_dinamica</span></code> é inicialmente atribuída ao inteiro 42 e, posteriormente, à string “Olá, mundo!”. Isso ilustra a flexibilidade e a dinamicidade de tipos em Python. Além disso, <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code> é inicializada com <code class="docutils literal notranslate"><span class="pre">None</span></code>, indicando a ausência de valor, e mais tarde é atribuída ao valor inteiro 100.</p>
 </section>
 </section>
 <section id="tipos-de-dados-compostos">
@@ -1430,6 +1453,7 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleanos">Booleanos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipos-em-python">Características da Dinamicidade de Tipos em Python:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
