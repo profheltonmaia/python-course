@@ -340,6 +340,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
@@ -608,6 +609,33 @@ String invertida: !amrut ,álO
 </pre></div>
 </div>
 <p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">variavel_dinamica</span></code> é inicialmente atribuída ao inteiro 42 e, posteriormente, à string “Olá, mundo!”. Isso ilustra a flexibilidade e a dinamicidade de tipos em Python. Além disso, <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code> é inicializada com <code class="docutils literal notranslate"><span class="pre">None</span></code>, indicando a ausência de valor, e mais tarde é atribuída ao valor inteiro 100.</p>
+</section>
+<section id="casting-conversao-de-tipos">
+<h2>Casting (conversão de tipos)<a class="headerlink" href="#casting-conversao-de-tipos" title="Permalink to this heading">#</a></h2>
+<p>Refere-se à conversão de um tipo de dado para outro. Isso pode ser necessário quando você deseja operar ou comparar valores de tipos diferentes. Um exemplo comum é a conversão de uma string para um número, como ao utilizar <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> para converter a entrada do usuário em um número de ponto flutuante.</p>
+<p><strong>Conversão de String para Inteiro</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicita ao usuário para digitar um número inteiro</span>
+<span class="n">entrada_usuario</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número inteiro: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Converte a entrada para um número inteiro</span>
+<span class="n">numero_inteiro</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entrada_usuario</span><span class="p">)</span>
+
+<span class="c1"># Imprime o resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número inteiro digitado:&quot;</span><span class="p">,</span> <span class="n">numero_inteiro</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Conversão de String para Ponto Flutuante</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicita ao usuário para digitar um número de ponto flutuante</span>
+<span class="n">entrada_usuario</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número de ponto flutuante: &quot;</span><span class="p">)</span>
+
+<span class="c1"># Converte a entrada para um número de ponto flutuante</span>
+<span class="n">numero_float</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">entrada_usuario</span><span class="p">)</span>
+
+<span class="c1"># Imprime o resultado</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de ponto flutuante digitado:&quot;</span><span class="p">,</span> <span class="n">numero_float</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> é usado para converter a entrada do usuário em um número de ponto flutuante. A função <code class="docutils literal notranslate"><span class="pre">float()</span></code> realiza a conversão, e o <code class="docutils literal notranslate"><span class="pre">input()</span></code> é utilizado para receber a entrada do usuário como uma string. É importante notar que, se o usuário inserir algo que não pode ser convertido para um número de ponto flutuante, um erro <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> pode ocorrer.</p>
 </section>
 <section id="tipos-de-dados-compostos">
 <h2>Tipos de dados compostos<a class="headerlink" href="#tipos-de-dados-compostos" title="Permalink to this heading">#</a></h2>
@@ -1456,6 +1484,7 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
