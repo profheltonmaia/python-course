@@ -341,6 +341,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
@@ -636,6 +641,36 @@ String invertida: !amrut ,álO
 </pre></div>
 </div>
 <p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> é usado para converter a entrada do usuário em um número de ponto flutuante. A função <code class="docutils literal notranslate"><span class="pre">float()</span></code> realiza a conversão, e o <code class="docutils literal notranslate"><span class="pre">input()</span></code> é utilizado para receber a entrada do usuário como uma string. É importante notar que, se o usuário inserir algo que não pode ser convertido para um número de ponto flutuante, um erro <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> pode ocorrer.</p>
+</section>
+<section id="estruturas-de-decisao-simples">
+<h2>Estruturas de decisão (simples)<a class="headerlink" href="#estruturas-de-decisao-simples" title="Permalink to this heading">#</a></h2>
+<p>No Capítulo 4, estudaremos com detalhes as estruturas de decisão. No entanto, vale a pena, por enquanto, conhecer a sua forma mais básica para aplicação dos conhecimentos que estudaremos até lá.</p>
+<section id="estrutura-if">
+<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#estrutura-if" title="Permalink to this heading">#</a></h3>
+<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> permite executar um bloco de código se uma condição for avaliada como verdadeira (True). Aqui está um exemplo simples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste exemplo, o bloco de código dentro do <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado apenas se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira. Portanto, a mensagem “Você é maior de idade.” será impressa.</p>
+</section>
+<section id="estrutura-if-else">
+<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code><a class="headerlink" href="#estrutura-if-else" title="Permalink to this heading">#</a></h3>
+<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code> permite executar um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa (False). Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if-else</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste caso, se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira, o primeiro bloco será executado; caso contrário, o bloco dentro do <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado. Portanto, se <code class="docutils literal notranslate"><span class="pre">idade</span></code> for menor que 18, a mensagem “Você é menor de idade.” será impressa.</p>
+</section>
 </section>
 <section id="tipos-de-dados-compostos">
 <h2>Tipos de dados compostos<a class="headerlink" href="#tipos-de-dados-compostos" title="Permalink to this heading">#</a></h2>
@@ -1094,6 +1129,10 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 </pre></div>
 </div>
+<p>Você pode inicializar um conjunto vazio utilizando o comando <code class="docutils literal notranslate"><span class="pre">set()</span></code>. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conjunto_vazio</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>Os elementos dos conjuntos podem ser de qualquer tipo de dados, incluindo inteiros, floats, strings, booleanos, etc. É importante saber que você não pode acessar os elementos de um conjunto em Python da mesma forma que você acessa por exemplo, os elementos de uma lista. No entanto, quando estudarmos estruturas de repetição, vamos descobrir algumas formas de como manipular esses elementos.</p>
 <p>Aqui estão alguns exemplos de uso de conjuntos:</p>
 <div class="cell docutils container">
@@ -1485,6 +1524,11 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
