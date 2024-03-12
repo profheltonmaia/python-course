@@ -598,25 +598,47 @@ String invertida: !amrut ,álO
 </section>
 <section id="caracteristicas-da-dinamicidade-de-tipo">
 <h2>Características da Dinamicidade de Tipo<a class="headerlink" href="#caracteristicas-da-dinamicidade-de-tipo" title="Permalink to this heading">#</a></h2>
-<p>Conforme abordado anteriormente, o Python é uma linguagem de programação dinamicamente tipada, o que significa que o tipo de uma variável é determinado durante a execução do programa e não durante a fase de compilação. Ao contrário de linguagens estaticamente tipadas, como C++ ou Java, onde o tipo de uma variável deve ser declarado explicitamente antes de ser utilizada, o Python permite que valores sejam atribuídos a variáveis sem a necessidade de declarar o tipo previamente.</p>
-<p>É importante destacar a possibilidade de utilizar a Atribuição Dinâmica em conjunto com <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<p>Conforme discutido anteriormente, o Python se destaca como uma linguagem de programação dinamicamente tipada, o que implica que o tipo de uma variável é determinado durante a execução do programa, não durante a compilação. Ao contrário de linguagens estaticamente tipadas, como C++ ou Java, onde o tipo de uma variável deve ser declarado explicitamente antes de ser utilizada, o Python permite atribuir valores a variáveis sem a necessidade de declarar o tipo previamente.</p>
+<p>É fundamental ressaltar a flexibilidade proporcionada pela Atribuição Dinâmica, especialmente quando combinada com <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Atribuição dinâmica de valores</span>
 <span class="n">variavel_dinamica</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>  <span class="c1"># Saída: 42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>
 
 <span class="n">variavel_dinamica</span> <span class="o">=</span> <span class="s2">&quot;Olá, mundo!&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>  <span class="c1"># Saída: Olá, mundo!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_dinamica</span><span class="p">)</span>
 
 <span class="c1"># Declarando variáveis como None</span>
 <span class="n">variavel_nula</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>  <span class="c1"># Saída: None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>
 
 <span class="c1"># Atribuindo um valor posteriormente</span>
 <span class="n">variavel_nula</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>  <span class="c1"># Saída: 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">variavel_dinamica</span></code> é inicialmente atribuída ao inteiro 42 e, posteriormente, à string “Olá, mundo!”. Isso ilustra a flexibilidade e a dinamicidade de tipos em Python. Além disso, <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code> é inicializada com <code class="docutils literal notranslate"><span class="pre">None</span></code>, indicando a ausência de valor, e mais tarde é atribuída ao valor inteiro 100.</p>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>42
+Olá, mundo!
+None
+100
+</pre></div>
+</div>
+<p>No exemplo acima, a variável <code class="docutils literal notranslate"><span class="pre">variavel_dinamica</span></code> é inicialmente atribuída ao inteiro 42 e, posteriormente, à string “Olá, mundo!”. Isso ilustra a flexibilidade e a dinamicidade de tipos em Python. Além disso, a variável <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code> é inicializada com <code class="docutils literal notranslate"><span class="pre">None</span></code>, indicando a ausência de valor, e mais tarde é atribuída ao valor inteiro 100.</p>
+<p>Outro recurso importante a ser mencionado é a instrução <code class="docutils literal notranslate"><span class="pre">del</span></code>, que possibilita remover uma variável existente.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Removendo uma variável com o comando &#39;del&#39;</span>
+<span class="k">del</span> <span class="n">variavel_nula</span>
+<span class="c1"># Tentar imprimir a variável após deletá-la resultará em um erro</span>
+<span class="c1"># print(variavel_nula)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;filename&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">variavel_nula</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;variavel_nula&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>No exemplo acima, o comando <code class="docutils literal notranslate"><span class="pre">del</span></code> é usado para remover a variável <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code>. Tentar imprimir essa variável após deletá-la resultará em um erro <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, indicando que a variável não está mais definida. O uso de <code class="docutils literal notranslate"><span class="pre">del</span></code> é útil para liberar recursos e gerenciar a estrutura do programa de forma mais eficiente.</p>
 </section>
 <section id="casting-conversao-de-tipos">
 <h2>Casting (conversão de tipos)<a class="headerlink" href="#casting-conversao-de-tipos" title="Permalink to this heading">#</a></h2>
