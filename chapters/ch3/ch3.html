@@ -332,11 +332,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionais">Operadores Relacionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de Atribuição</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-incremento-e-decremento">Operadores de Incremento e Decremento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-de-incremento">Operador de Incremento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-de-decremento">Operador de Decremento</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-incremento-e-decremento">Operadores de Incremento e Decremento</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-unarios">Operadores Unários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-negativo">Operador Negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>):</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-positivo">Operador Positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>):</a></li>
@@ -366,29 +362,45 @@ document.write(`
 <thead>
 <tr class="row-odd"><th class="head"><p>Operador</p></th>
 <th class="head"><p>Descrição</p></th>
+<th class="head"><p>Exemplo</p></th>
+<th class="head"><p>Resultado</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>+</p></td>
 <td><p>Soma dois valores.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>-</p></td>
 <td><p>Subtrai o operando direito do operando esquerdo.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">-</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>*</p></td>
 <td><p>Multiplica dois valores.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>/</p></td>
 <td><p>Divide o operando esquerdo pelo operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">/</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5.0</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>%</p></td>
 <td><p>Retorna o resto da divisão do operando esquerdo pelo operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>//</p></td>
 <td><p>Retorna a parte inteira da divisão do operando esquerdo pelo operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">//</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>**</p></td>
 <td><p>Eleva o operando esquerdo à potência do operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">**</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -475,26 +487,40 @@ document.write(`
 <thead>
 <tr class="row-odd"><th class="head"><p>Operador</p></th>
 <th class="head"><p>Descrição</p></th>
+<th class="head"><p>Exemplo</p></th>
+<th class="head"><p>Resultado</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
 <td><p>Retorna True se os operandos forem iguais.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">==</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
 <td><p>Retorna True se os operandos não forem iguais.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">!=</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
 <td><p>Retorna True se o operando esquerdo for menor que o operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
 <td><p>Retorna True se o operando esquerdo for maior que o operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&gt;</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
 <td><p>Retorna True se o operando esquerdo for menor ou igual ao operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
 <td><p>Retorna True se o operando esquerdo for maior ou igual ao operando direito.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -582,22 +608,26 @@ document.write(`
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Operador</p></th>
-<th class="head"><p>Símbolo</p></th>
 <th class="head"><p>Descrição</p></th>
+<th class="head"><p>Exemplo</p></th>
+<th class="head"><p>Resultado</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
 <td><p>E lógico: Retorna True se ambos os operandos forem True.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
 <td><p>Ou lógico: Retorna True se pelo menos um dos operandos for True.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
 <td><p>Negação lógica: Inverte o valor do operando.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -652,150 +682,235 @@ document.write(`
 <li><p>É fundamental considerar os tipos de dados dos operandos sendo comparados. Operadores lógicos funcionam apenas com valores booleanos.</p></li>
 <li><p>O operador <code class="docutils literal notranslate"><span class="pre">not</span></code> pode ser utilizado para negar o resultado de qualquer expressão booleana.</p></li>
 </ul>
+<p>Claro! Vou melhorar o texto para você:</p>
 </section>
 <section id="operadores-de-atribuicao">
 <h2>Operadores de Atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code> (atribuição): Atribui o valor do operando direito ao operando esquerdo.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code>, <code class="docutils literal notranslate"><span class="pre">%=</span></code> (atribuições com operações aritméticas): Realiza a operação aritmética indicada e atribui o resultado à variável à esquerda.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Operadores de Atribuição em Python</span>
+<p>São utilizados para <strong>armazenar dados</strong> em variáveis e <strong>atualizar seus valores</strong> posteriormente. Esses operadores são essenciais para a manipulação de dados e a criação de programas mais precisos.</p>
+<p><strong>Tabela de Operadores de Atribuição:</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descrição</p></th>
+<th class="head"><p>Exemplo</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p>Atribuição simples</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> recebe o valor <code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td><p>Soma e atribui</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">a</span></code> é incrementado em <code class="docutils literal notranslate"><span class="pre">2</span></code> (equivalente a <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">2</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td><p>Subtrai e atribui</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-=</span> <span class="pre">3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">b</span></code> é decrementado em <code class="docutils literal notranslate"><span class="pre">3</span></code> (equivalente a <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">-</span> <span class="pre">3</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td><p>Multiplica e atribui</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">*=</span> <span class="pre">5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">c</span></code> é multiplicado por <code class="docutils literal notranslate"><span class="pre">5</span></code> (equivalente a <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">5</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/=</span></code></p></td>
+<td><p>Divide e atribui</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">/=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d</span></code> é dividido por <code class="docutils literal notranslate"><span class="pre">2</span></code> (equivalente a <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">d</span> <span class="pre">/</span> <span class="pre">2</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%=</span></code></p></td>
+<td><p>Calcula o módulo e atribui</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">%=</span> <span class="pre">4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">e</span></code> recebe o resto da divisão por <code class="docutils literal notranslate"><span class="pre">4</span></code> (equivalente a <code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">=</span> <span class="pre">e</span> <span class="pre">%</span> <span class="pre">4</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplos de Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Atribuição simples</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;João&quot;</span>
 
-<span class="c1"># Atribuição (=): Atribui o valor do operando direito ao operando esquerdo.</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="c1"># Atribuição com operações aritméticas</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">valor</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># Equivalente a: valor = valor + 3</span>
 
-<span class="c1"># Atribuições com operações aritméticas: Realiza a operação aritmética e atribui o resultado à variável à esquerda.</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">a</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># Equivalente a: a = a + 2</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">resultado</span> <span class="o">/=</span> <span class="mi">3</span>  <span class="c1"># Equivalente a: resultado = resultado / 3</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">b</span> <span class="o">-=</span> <span class="mi">3</span>  <span class="c1"># Equivalente a: b = b - 3</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">*=</span> <span class="mi">5</span>  <span class="c1"># Equivalente a: c = c * 5</span>
-
-<span class="n">d</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">d</span> <span class="o">/=</span> <span class="mi">2</span>  <span class="c1"># Equivalente a: d = d / 2</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="n">e</span> <span class="o">%=</span> <span class="mi">4</span>  <span class="c1"># Equivalente a: e = e % 4</span>
-
-<span class="c1"># Exibição dos valores após as operações</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição (=):&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição com soma (+=):&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição com subtração (-=):&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição com multiplicação (*=):&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição com divisão (/=):&quot;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Atribuição com módulo (%=):&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="c1"># Exibindo os valores</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número:&quot;</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome:&quot;</span><span class="p">,</span> <span class="n">nome</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor:&quot;</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Atribuição (=): 5 5
-Atribuição com soma (+=): 12
-Atribuição com subtração (-=): 4
-Atribuição com multiplicação (*=): 15
-Atribuição com divisão (/=): 4.0
-Atribuição com módulo (%=): 3
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">Nome</span><span class="p">:</span> <span class="n">João</span>
+<span class="n">Valor</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">Resultado</span><span class="p">:</span> <span class="mf">5.0</span>
 </pre></div>
 </div>
-</div>
-</div>
+<p>Os operadores de atribuição com operações aritméticas são uma maneira conveniente de realizar cálculos e atribuir o resultado diretamente em uma única etapa. Lembre-se sempre da ordem de precedência dos operadores para garantir avaliações corretas. Além disso, certifique-se de que o tipo de dado da variável seja compatível com o valor atribuído.</p>
 </section>
 <section id="operadores-de-incremento-e-decremento">
 <h2>Operadores de Incremento e Decremento<a class="headerlink" href="#operadores-de-incremento-e-decremento" title="Permalink to this heading">#</a></h2>
-<p>Em Python, ao contrário de algumas outras linguagens de programação, não há operadores de incremento (<code class="docutils literal notranslate"><span class="pre">++</span></code>) e decremento (<code class="docutils literal notranslate"><span class="pre">--</span></code>) específicos. No entanto, você pode alcançar o mesmo efeito usando operadores de atribuição e aritméticos. Vamos ver como isso pode ser feito:</p>
-<section id="operador-de-incremento">
-<h3>Operador de Incremento<a class="headerlink" href="#operador-de-incremento" title="Permalink to this heading">#</a></h3>
-<p>Para incrementar o valor de uma variável em 1, você pode usar o operador de adição (<code class="docutils literal notranslate"><span class="pre">+=</span></code>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de incremento</span>
-<span class="n">contador</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Incrementa o valor de contador em 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+<p>Embora o Python não possua operadores específicos de incremento (<code class="docutils literal notranslate"><span class="pre">++</span></code>) e decremento (<code class="docutils literal notranslate"><span class="pre">--</span></code>) como outras linguagens, você pode alcançar o mesmo efeito com operadores de atribuição e aritméticos.</p>
+<p><strong>Operador de Incremento:</strong></p>
+<ul class="simple">
+<li><p>Aumenta o valor de uma variável em 1.</p></li>
+<li><p>Permite realizar contagem e iteração de forma eficiente.</p></li>
+</ul>
+<p><strong>Operador de Decremento:</strong></p>
+<ul class="simple">
+<li><p>Diminui o valor de uma variável em 1.</p></li>
+<li><p>Útil para contagem regressiva e retrocesso em loops.</p></li>
+</ul>
+<p><strong>Tabela Detalhada de Operadores:</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operador</p></th>
+<th class="head"><p>Descrição</p></th>
+<th class="head"><p>Exemplo</p></th>
+<th class="head"><p>Saída</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td><p>Incrementa o valor da variável em 1.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">5;</span> <span class="pre">x</span> <span class="pre">+=</span> <span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td><p>Decrementa o valor da variável em 1.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">10;</span> <span class="pre">y</span> <span class="pre">-=</span> <span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">9</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplos de Incremento:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Incrementa x em 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span>
 </pre></div>
 </div>
-</section>
-<section id="operador-de-decremento">
-<h3>Operador de Decremento<a class="headerlink" href="#operador-de-decremento" title="Permalink to this heading">#</a></h3>
-<p>Para decrementar o valor de uma variável em 1, você pode usar o operador de subtração (<code class="docutils literal notranslate"><span class="pre">-=</span></code>):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de decremento</span>
-<span class="n">contador</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">contador</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># Decrementa o valor de contador em 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+<p><strong>Exemplos de Decremento:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># Decrementa y em 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
 </pre></div>
 </div>
-<p>Esses exemplos ilustram como realizar operações de incremento e decremento em Python. A sintaxe <code class="docutils literal notranslate"><span class="pre">+=</span></code> é uma forma concisa de escrever “atribua à variável o valor atual da variável mais alguma quantidade”. O mesmo princípio se aplica ao operador <code class="docutils literal notranslate"><span class="pre">-=</span></code> para decremento.</p>
-</section>
+<p><strong>Observações Importantes:</strong></p>
+<ul class="simple">
+<li><p>Os operadores de incremento e decremento podem ser usados em qualquer tipo de variável numérica (int, float, etc.).</p></li>
+<li><p>É importante verificar se a variável foi inicializada antes de usar esses operadores.</p></li>
+<li><p>O uso excessivo de operadores de incremento e decremento pode tornar o código menos legível. Utilize-os com moderação e com comentários explicativos.</p></li>
+<li><p>Mais a frente, ao estudarmos as estrututas de repetição, será comum sua utilização em diversos problemas.</p></li>
+</ul>
 </section>
 <section id="operadores-unarios">
 <h2>Operadores Unários<a class="headerlink" href="#operadores-unarios" title="Permalink to this heading">#</a></h2>
-<p>Os operadores unários são ferramentas poderosas em Python, permitindo a realização de operações em um único valor.</p>
+<p>Os operadores unários permitem realizar operações em um único valor. Entender sobre os operadores unários pode te ajudar a escrever códigos mais concisos, eficiente e expressivo.</p>
 <section id="operador-negativo">
 <h3>Operador Negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>):<a class="headerlink" href="#operador-negativo" title="Permalink to this heading">#</a></h3>
-<p>O operador negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>) transforma um valor positivo em negativo e vice-versa. Utilize-o para inverter o sinal de um número.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_positivo</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">numero_negativo</span> <span class="o">=</span> <span class="o">-</span><span class="n">numero_positivo</span>
+<ul class="simple">
+<li><p>Inverte o sinal de um número, transformando positivo em negativo e vice-versa.</p></li>
+<li><p>Útil para inverter o valor de variáveis, realizar cálculos com valores absolutos e negar valores em expressões lógicas.</p></li>
+</ul>
+<p><strong>Exemplos:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inverter o sinal de um número</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">numero_negativo</span> <span class="o">=</span> <span class="o">-</span><span class="n">numero</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">)</span>
+
+<span class="c1"># Calcular o valor absoluto</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.14</span>
+<span class="n">valor_absoluto</span> <span class="o">=</span> <span class="o">-</span><span class="n">valor</span> <span class="k">if</span> <span class="n">valor</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">valor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor_absoluto</span><span class="p">)</span>
+
+<span class="c1"># Negar um valor em uma expressão lógica</span>
+<span class="n">condicao</span> <span class="o">=</span> <span class="ow">not</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">condicao</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Saída do Código:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">5</span>
+<span class="mf">3.14</span>
+<span class="kc">False</span>
 </pre></div>
 </div>
 </section>
 <section id="operador-positivo">
 <h3>Operador Positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>):<a class="headerlink" href="#operador-positivo" title="Permalink to this heading">#</a></h3>
-<p>O operador positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>) mantém o sinal de um número positivo. Embora seja geralmente redundante quando aplicado a valores positivos, pode ser útil em situações específicas. Além disso, o operador <code class="docutils literal notranslate"><span class="pre">+</span></code> pode ser empregado para forçar a conversão de um valor para o tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valor_string</span> <span class="o">=</span> <span class="s2">&quot;3.14&quot;</span>
+<ul class="simple">
+<li><p>Mantém o sinal de um número positivo e converte strings numéricas para <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p>Em geral, é redundante para valores positivos, mas pode ser útil em conversões de tipo.</p></li>
+</ul>
+<p><strong>Exemplos:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manter o sinal de um número positivo</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">numero_positivo</span> <span class="o">=</span> <span class="o">+</span><span class="n">numero</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_positivo</span><span class="p">)</span>
+
+<span class="c1"># Converter string numérica para float</span>
+<span class="n">valor_string</span> <span class="o">=</span> <span class="s2">&quot;3.14&quot;</span>
 <span class="n">valor_float</span> <span class="o">=</span> <span class="o">+</span><span class="nb">float</span><span class="p">(</span><span class="n">valor_string</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">valor_float</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14</span>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+<span class="mf">3.14</span>
 </pre></div>
 </div>
 </section>
 <section id="operador-de-inversao-bit-a-bit">
 <h3>Operador de Inversão Bit a Bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>):<a class="headerlink" href="#operador-de-inversao-bit-a-bit" title="Permalink to this heading">#</a></h3>
-<p>O operador de inversão bit a bit (~), também conhecido como complemento bit a bit, é uma ferramenta poderosa para manipular números binários em Python. Ele inverte cada bit de um número inteiro, abrindo um mundo de possibilidades para operações em nível de bit.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_binario</span> <span class="o">=</span> <span class="mb">0b1100</span> <span class="c1"># Equivale ao decimal 12</span>
+<p>Sobre o operador de inversão bit a bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>). Este operador é usado para inverter cada bit de um número inteiro, realizando a operação conhecida como “complemento de dois”. Vamos analisar os exemplos para entender melhor:</p>
+<p><strong>Inverter bits de um número:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_binario</span> <span class="o">=</span> <span class="mb">0b1011</span>
 <span class="n">inversao_bit_a_bit</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero_binario</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">inversao_bit_a_bit</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mb">0b1101</span> <span class="c1"># Equivale ao decimal -13</span>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mb">0b1100</span>
 </pre></div>
 </div>
-<p><strong>Exemplo: Desmascarando o Mistério dos Números Negativos</strong></p>
-<p>Imagine que você tem um número binário armazenado na variável <code class="docutils literal notranslate"><span class="pre">numero</span></code>. Ao aplicar o operador <code class="docutils literal notranslate"><span class="pre">~</span></code> a <code class="docutils literal notranslate"><span class="pre">numero</span></code>, você obtém a sua representação em complemento de dois, que é a forma como os números negativos são armazenados na memória do computador.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mb">0b1011</span> <span class="c1"># Equivale ao decimal 11</span>
-
+<p>Neste exemplo, começamos com o número binário <code class="docutils literal notranslate"><span class="pre">0b1011</span></code>, que é equivalente ao decimal <code class="docutils literal notranslate"><span class="pre">11</span></code>. O operador <code class="docutils literal notranslate"><span class="pre">~</span></code> inverte cada bit desse número, resultando em <code class="docutils literal notranslate"><span class="pre">-0b1100</span></code>. O prefixo <code class="docutils literal notranslate"><span class="pre">-</span></code> indica que estamos trabalhando com um número negativo em complemento de dois.</p>
+<p><strong>Desmascarando o mistério dos números negativos:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mb">0b1011</span>
 <span class="n">numero_negativo</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número original: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Representação em complemento de dois: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número decimal equivalente: </span><span class="si">{</span><span class="o">-</span><span class="mi">11</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Saída do Código:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span><span class="p">:</span> <span class="mb">0b1011</span>
 <span class="n">Representação</span> <span class="n">em</span> <span class="n">complemento</span> <span class="n">de</span> <span class="n">dois</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b1011</span>
 <span class="n">Número</span> <span class="n">decimal</span> <span class="n">equivalente</span><span class="p">:</span> <span class="o">-</span><span class="mi">11</span>
 </pre></div>
 </div>
+<p>Aqui, começamos com o mesmo número binário <code class="docutils literal notranslate"><span class="pre">0b1011</span></code>. Primeiro, aplicamos a inversão bit a bit com <code class="docutils literal notranslate"><span class="pre">~</span></code>. Em seguida, adicionamos <code class="docutils literal notranslate"><span class="pre">1</span></code> ao resultado. Isso nos dá a representação em complemento de dois do número original. A saída mostra:</p>
 <ul class="simple">
-<li><p>O operador <code class="docutils literal notranslate"><span class="pre">~</span></code> inverte cada bit de <code class="docutils literal notranslate"><span class="pre">numero</span></code>, resultando em 0b0100.</p></li>
-<li><p>Adicionamos 1 ao resultado da inversão para obter a representação em complemento de dois do número negativo.</p></li>
-<li><p>O valor final, 0b0101, é equivalente ao decimal -11, que é a representação do número original como um número negativo.</p></li>
+<li><p>Número original: <code class="docutils literal notranslate"><span class="pre">0b1011</span></code></p></li>
+<li><p>Representação em complemento de dois: <code class="docutils literal notranslate"><span class="pre">-0b1011</span></code></p></li>
+<li><p>Número decimal equivalente: <code class="docutils literal notranslate"><span class="pre">-11</span></code></p></li>
 </ul>
-<p>Ao utilizar operadores unários em expressões mais complexas, é importante considerar a ordem de precedência dos operadores em Python. A combinação de operadores unários com outros operadores permite a realização de operações mais elaboradas.</p>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">~</span></code> é fundamental para manipulação de bits e é usado em várias situações, como cálculos de checksum, criptografia e otimização de código. Lembre-se de que, ao trabalhar com números negativos em complemento de dois, o bit mais significativo (o primeiro à esquerda) é usado para representar o sinal (0 para positivo e 1 para negativo).</p>
 </section>
 </section>
 <section id="exercicios">
@@ -882,11 +997,7 @@ Atribuição com módulo (%=): 3
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionais">Operadores Relacionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de Atribuição</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-incremento-e-decremento">Operadores de Incremento e Decremento</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-de-incremento">Operador de Incremento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-de-decremento">Operador de Decremento</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-incremento-e-decremento">Operadores de Incremento e Decremento</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-unarios">Operadores Unários</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-negativo">Operador Negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>):</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-positivo">Operador Positivo (<code class="docutils literal notranslate"><span class="pre">+</span></code>):</a></li>
