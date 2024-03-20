@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch3/ch3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -899,7 +897,7 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span><span class="p">:</span> <span class="mb">0b1011</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span><span class="p">:</span> <span class="mb">0b1011</span> <span class="c1"># 11</span>
 <span class="n">Representação</span> <span class="n">em</span> <span class="n">complemento</span> <span class="n">de</span> <span class="n">dois</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b1011</span>
 <span class="n">Número</span> <span class="n">decimal</span> <span class="n">equivalente</span><span class="p">:</span> <span class="o">-</span><span class="mi">11</span>
 </pre></div>
@@ -916,16 +914,39 @@ document.write(`
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Dada a expressão matemática: <span class="math notranslate nohighlight">\((a = 4 \times (2 + 3))\)</span>, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Imprima o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
-<li><p>Escreva um programa em Python que recebe dois números do usuário, realiza a soma desses números e exibe o resultado.</p></li>
-<li><p>Calcule o resto da divisão de 17 por 5 e armazene o resultado em uma variável chamada <code class="docutils literal notranslate"><span class="pre">resto</span></code>. Imprima o valor de <code class="docutils literal notranslate"><span class="pre">resto</span></code>.</p></li>
-<li><p>Crie uma expressão lógica que seja verdadeira se um número for par e maior que 10. Teste a expressão com diferentes valores e imprima os resultados.</p></li>
-<li><p>Dada a variável <code class="docutils literal notranslate"><span class="pre">preco_produto</span></code> com o valor 150, aplique um desconto de 20% utilizando operadores aritméticos e de atribuição. Imprima o novo valor.</p></li>
-<li><p>Implemente um programa que recebe a idade de uma pessoa e verifica se ela é maior de idade (idade maior ou igual a 18). Exiba a mensagem adequada.</p></li>
-<li><p>Crie uma expressão lógica que seja verdadeira apenas se um número for ímpar ou menor que 5. Teste a expressão com diferentes valores e imprima os resultados.</p></li>
-<li><p>Dado o raio de um círculo, calcule a área utilizando o operador de potência (**) para elevar o raio ao quadrado. Imprima o resultado.</p></li>
-<li><p>Escreva um programa que converta uma temperatura de Celsius para Fahrenheit. Utilize a fórmula <span class="math notranslate nohighlight">\((F = \frac{9}{5}C + 32)\)</span>.</p></li>
-<li><p>Dada a expressão <span class="math notranslate nohighlight">\((x = 3)\)</span> e <span class="math notranslate nohighlight">\((y = 5)\)</span>, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">resultado</span></code> que armazene o valor da expressão <span class="math notranslate nohighlight">\((x^2 + y^2)\)</span> e imprima o resultado.</p></li>
+<li><p>Dada a expressão matemática: a = 4 * (2 + 3) - 7. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entrada</span>
+
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">O</span> <span class="n">valor</span> <span class="n">de</span> <span class="s1">&#39;a&#39;</span> <span class="n">é</span><span class="p">:</span> <span class="mi">13</span>
+<span class="n">O</span> <span class="n">valor</span> <span class="n">de</span> <span class="s1">&#39;b&#39;</span> <span class="n">é</span><span class="p">:</span> <span class="mi">26</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Escreva um programa que solicita ao usuário um número inteiro positivo entre 100 e 1000. Em seguida, o programa deve calcular o resto da divisão desse número por 5, armazenar o resultado em uma variável chamada resto e imprimir este valor.</p></li>
+</ol>
+<p>Certifique-se de que o programa lide adequadamente com entradas inválidas. Caso o usuário insira um número negativo ou fora do intervalo especificado, exiba a seguinte mensagem de erro: “Por favor, insira um número inteiro positivo entre 100 e 1000.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">172</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">resto</span> <span class="n">da</span> <span class="n">divisão</span> <span class="n">de</span> <span class="mi">172</span> <span class="n">por</span> <span class="mi">5</span> <span class="n">é</span> <span class="mf">2.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Por</span> <span class="n">favor</span><span class="p">,</span> <span class="n">insira</span> <span class="n">um</span> <span class="n">número</span> <span class="n">inteiro</span> <span class="n">positivo</span> <span class="n">entre</span> <span class="mi">100</span> <span class="n">e</span> <span class="mf">1000.</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">2000</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Por</span> <span class="n">favor</span><span class="p">,</span> <span class="n">insira</span> <span class="n">um</span> <span class="n">número</span> <span class="n">inteiro</span> <span class="n">positivo</span> <span class="n">entre</span> <span class="mi">100</span> <span class="n">e</span> <span class="mf">1000.</span>
+
+<span class="c1"># Teste 4</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">500</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">resto</span> <span class="n">da</span> <span class="n">divisão</span> <span class="n">de</span> <span class="mi">500</span> <span class="n">por</span> <span class="mi">5</span> <span class="n">é</span> <span class="mf">0.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li></li>
 </ol>
 </section>
 </section>
