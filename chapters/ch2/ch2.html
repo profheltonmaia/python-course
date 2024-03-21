@@ -340,7 +340,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos(Casting) e Base numéricas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
@@ -640,8 +640,8 @@ None
 </div>
 <p>No exemplo acima, o comando <code class="docutils literal notranslate"><span class="pre">del</span></code> é usado para remover a variável <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code>. Tentar imprimir essa variável após deletá-la resultará em um erro <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, indicando que a variável não está mais definida. O uso de <code class="docutils literal notranslate"><span class="pre">del</span></code> é útil para liberar recursos e gerenciar a estrutura do programa de forma mais eficiente.</p>
 </section>
-<section id="casting-conversao-de-tipos">
-<h2>Casting (conversão de tipos)<a class="headerlink" href="#casting-conversao-de-tipos" title="Permalink to this heading">#</a></h2>
+<section id="conversao-de-tipos-casting-e-base-numericas">
+<h2>Conversão de tipos(Casting) e Base numéricas<a class="headerlink" href="#conversao-de-tipos-casting-e-base-numericas" title="Permalink to this heading">#</a></h2>
 <p>Refere-se à conversão de um tipo de dado para outro. Isso pode ser necessário quando você deseja operar ou comparar valores de tipos diferentes. Um exemplo comum é a conversão de uma string para um número, como ao utilizar <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> para converter a entrada do usuário em um número de ponto flutuante.</p>
 <p><strong>Conversão de String para Inteiro</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicita ao usuário para digitar um número inteiro</span>
@@ -652,6 +652,11 @@ None
 
 <span class="c1"># Imprime o resultado</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número inteiro digitado:&quot;</span><span class="p">,</span> <span class="n">numero_inteiro</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">um</span> <span class="n">número</span> <span class="n">inteiro</span><span class="p">:</span> <span class="mi">15</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">digitado</span><span class="p">:</span> <span class="mi">15</span>
 </pre></div>
 </div>
 <p><strong>Conversão de String para Ponto Flutuante</strong></p>
@@ -665,7 +670,54 @@ None
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de ponto flutuante digitado:&quot;</span><span class="p">,</span> <span class="n">numero_float</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>No exemplo acima, <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> é usado para converter a entrada do usuário em um número de ponto flutuante. A função <code class="docutils literal notranslate"><span class="pre">float()</span></code> realiza a conversão, e o <code class="docutils literal notranslate"><span class="pre">input()</span></code> é utilizado para receber a entrada do usuário como uma string. É importante notar que, se o usuário inserir algo que não pode ser convertido para um número de ponto flutuante, um erro <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> pode ocorrer.</p>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Digite</span> <span class="n">um</span> <span class="n">número</span> <span class="n">de</span> <span class="n">ponto</span> <span class="n">flutuante</span><span class="p">:</span> <span class="mf">3.14</span>
+<span class="n">Número</span> <span class="n">de</span> <span class="n">ponto</span> <span class="n">flutuante</span> <span class="n">digitado</span><span class="p">:</span> <span class="mf">3.14</span>
+</pre></div>
+</div>
+<p><strong>Conversão entre Bases Numéricas</strong></p>
+<p>Além das conversões de tipo, também é possível converter entre diferentes bases numéricas, como binária, decimal, octal e hexadecimal.</p>
+<p><strong>Decimal para Binário:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_decimal</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">numero_binario</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">numero_decimal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_binario</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mb">0b1010</span>
+</pre></div>
+</div>
+<p><strong>Binário para Decimal:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_binario</span> <span class="o">=</span> <span class="mb">0b1010</span>
+<span class="n">numero_decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numero_binario</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_decimal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
+</pre></div>
+</div>
+<p><strong>Decimal para Hexadecimal:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_decimal</span> <span class="o">=</span> <span class="mi">255</span>
+<span class="n">numero_hexadecimal</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">numero_decimal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_hexadecimal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0xff</span>
+</pre></div>
+</div>
+<p><strong>Hexadecimal para Decimal:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_hexadecimal</span> <span class="o">=</span> <span class="mh">0xff</span>
+<span class="n">numero_decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numero_hexadecimal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero_decimal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">255</span>
+</pre></div>
+</div>
+<p>É importante entender como essas conversões funcionam e quando são úteis em diferentes contextos de programação.</p>
 </section>
 <section id="estruturas-de-decisao-simples">
 <h2>Estruturas de decisão (simples)<a class="headerlink" href="#estruturas-de-decisao-simples" title="Permalink to this heading">#</a></h2>
@@ -1631,7 +1683,7 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-conversao-de-tipos">Casting (conversão de tipos)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos(Casting) e Base numéricas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
