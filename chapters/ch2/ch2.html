@@ -748,6 +748,11 @@ Listas podem conter valores de qualquer tipo, incluindo inteiros, números de po
 <span class="n">lista_mista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;Estou&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lista Inicial: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
 
+<span class="c1"># Convertendo uma string em uma lista de caracteres</span>
+<span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">lista_caracteres</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;String convertida em lista:&quot;</span><span class="p">,</span> <span class="n">lista_caracteres</span><span class="p">)</span>
+
 <span class="c1"># Adiciona um elemento ao final da lista</span>
 <span class="n">lista_mista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Append: &quot;</span><span class="p">,</span> <span class="n">lista_mista</span><span class="p">)</span>
@@ -780,6 +785,7 @@ Listas podem conter valores de qualquer tipo, incluindo inteiros, números de po
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lista Inicial:  [1, 2.5, &#39;Estou&#39;, True]
+String convertida em lista: [&#39;P&#39;, &#39;y&#39;, &#39;t&#39;, &#39;h&#39;, &#39;o&#39;, &#39;n&#39;]
 Append:  [1, 2.5, &#39;Estou&#39;, True, 4]
 Extend:  [1, 2.5, &#39;Estou&#39;, True, 4, 5, 6, 7]
 Insert:  [1, 2.5, &#39;Olá&#39;, &#39;Estou&#39;, True, 4, 5, 6, 7]
