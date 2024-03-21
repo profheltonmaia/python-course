@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch3/ch3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -914,7 +916,7 @@ document.write(`
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Dada a expressão matemática: a = 4 * (2 + 3) - 7. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Dada a expressão matemática: <span class="math notranslate nohighlight">\(a = 4 * (2 + 3) - 7\)</span>. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entrada</span>
@@ -946,8 +948,22 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li></li>
+<li><p>Escreva um programa que converta uma temperatura de Celsius para Fahrenheit. Utilize a fórmula: <span class="math notranslate nohighlight">\(F = \frac{9}{5} * C + 32\)</span>.</p></li>
 </ol>
+<ul class="simple">
+<li><p>Solicite ao usuário que digite a temperatura em Celsius.</p></li>
+<li><p>Em seguida, converta a temperatura digitada para Fahrenheit utilizando a fórmula fornecida.</p></li>
+<li><p>Por fim, exiba na tela o resultado da conversão para o usuário, formatado com 2 casas decimais.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mf">20.5</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">A</span> <span class="n">temperatura</span> <span class="n">em</span> <span class="n">Fahrenheit</span> <span class="n">é</span><span class="p">:</span> <span class="mf">68.90</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mf">0.75</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">A</span> <span class="n">temperatura</span> <span class="n">em</span> <span class="n">Fahrenheit</span> <span class="n">é</span><span class="p">:</span> <span class="mf">33.35</span>
+</pre></div>
+</div>
 </section>
 </section>
 
