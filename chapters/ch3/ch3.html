@@ -631,6 +631,30 @@ document.write(`
 </tr>
 </tbody>
 </table>
+<p><strong>Tabelas Verdade dos Operadores Lógicos:</strong></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">### Tabela Verdade do Operador `and`</span>
+| A     | B     | A and B |
+|-------|-------|---------|
+| True  | True  | True    |
+| True  | False | False   |
+| False | True  | False   |
+| False | False | False   |
+
+<span class="gu">### Tabela Verdade do Operador `or`</span>
+| A     | B     | A or B  |
+|-------|-------|---------|
+| True  | True  | True    |
+| True  | False | True    |
+| False | True  | True    |
+| False | False | False   |
+
+<span class="gu">### Tabela Verdade do Operador `not`</span>
+| A     | not A |
+|-------|-------|
+| True  | False |
+| False | True  |
+</pre></div>
+</div>
 <p><strong>Exemplos de Uso dos Operadores Lógicos</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificando se um número é par e maior que 10</span>
 <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
@@ -682,6 +706,7 @@ document.write(`
 <li><p>É fundamental considerar os tipos de dados dos operandos sendo comparados. Operadores lógicos funcionam apenas com valores booleanos.</p></li>
 <li><p>O operador <code class="docutils literal notranslate"><span class="pre">not</span></code> pode ser utilizado para negar o resultado de qualquer expressão booleana.</p></li>
 </ul>
+<p>As tabelas verdade são uma representação visual que mostra todas as possíveis combinações de valores booleanos para os operandos e o resultado da operação lógica. Elas são extremamente úteis para entender o funcionamento dos operadores lógicos e prever o resultado de expressões complexas.</p>
 </section>
 <section id="operadores-de-atribuicao">
 <h2>Operadores de Atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permalink to this heading">#</a></h2>
@@ -1045,7 +1070,7 @@ document.write(`
 <span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">tocando</span> <span class="n">a</span> <span class="n">borda</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="7">
+<ol class="arabic simple" start="6">
 <li><p>Desenvolva um sistema de autenticação que utilize um dicionário chamado <code class="docutils literal notranslate"><span class="pre">usuarios_senhas</span></code> para armazenar os nomes e as senhas de dois usuários. O programa deve solicitar que o usuário insira seu nome de usuário e senha. Em seguida, o sistema deve verificar se as credenciais inseridas correspondem às armazenadas no dicionário. Se as credenciais estiverem corretas, o programa deve exibir uma mensagem de “Login bem-sucedido! Bem-vindo, usuario.”. Caso contrário, deve informar ao usuário “Acesso negado. Credenciais inválidas.”.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Teste 1
@@ -1070,11 +1095,104 @@ Saída: &gt;&gt; Acesso negado. Credenciais inválidas.
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li><p>Conjuntos</p></li>
+<li><p>Imagine que você é um biólogo trabalhando em um parque natural e está monitorando duas espécies de aves migratórias. Cada espécie tem um conjunto de ilhas que prefere para nidificação durante a temporada de migração. O conjunto <code class="docutils literal notranslate"><span class="pre">A</span></code> representa as ilhas preferidas pela primeira espécie e o conjunto <code class="docutils literal notranslate"><span class="pre">B</span></code> pelas da segunda espécie. Algumas ilhas são compartilhadas entre as duas espécies, o que pode levar a competição por recursos. Seu trabalho é identificar quais ilhas são compartilhadas para implementar medidas de conservação.</p></li>
 </ol>
+<p>Dados fixos:</p>
+<ul class="simple">
+<li><p>Espécie 1 prefere as ilhas com IDs de 1 a 10.</p></li>
+<li><p>Espécie 2 prefere as ilhas com IDs de 6 a 15.</p></li>
+</ul>
+<p>Tarefas:</p>
+<ul class="simple">
+<li><p>Identificar as ilhas compartilhadas entre as duas espécies.</p></li>
+<li><p>Determinar quais ilhas são exclusivas para cada espécie.</p></li>
+<li><p>Verificar se uma ilha específica, informada pelo usuário, é uma área de competição ou se é exclusiva de uma espécie.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">A</span> <span class="n">ilha</span> <span class="mi">2</span> <span class="n">é</span> <span class="n">exclusiva</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mf">1.</span>
+<span class="n">Ilhas</span> <span class="n">compartilhadas</span><span class="p">:</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Saída</span><span class="p">:</span>
+<span class="n">A</span> <span class="n">ilha</span> <span class="mi">6</span> <span class="n">é</span> <span class="n">uma</span> <span class="n">área</span> <span class="n">de</span> <span class="n">competição</span> <span class="n">entre</span> <span class="k">as</span> <span class="n">espécies</span><span class="o">.</span>
+<span class="n">Ilhas</span> <span class="n">compartilhadas</span><span class="p">:</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="8">
-<li><p>Tabelas verdade</p></li>
+<li><p>Auxiliando o Hacker Neo a Desvendar a Verdade Sobre a Realidade.</p></li>
 </ol>
+<p><strong>Recursos Disponíveis:</strong></p>
+<ul class="simple">
+<li><p>Variáveis</p></li>
+<li><p>Operadores lógicos (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>)</p></li>
+<li><p>Estruturas de controle (<code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>)</p></li>
+</ul>
+<p><strong>História da Matrix:</strong>
+Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é um programador comum. Mas, e se existisse uma realidade escondida, uma verdade que ele nunca imaginou?</p>
+<p>Após ser contatado por Morpheus, Neo se depara com uma escolha crítica: tomar a pílula vermelha e desvendar a verdade, ou tomar a pílula azul e continuar vivendo sua vida como sempre.</p>
+<p><strong>Fases do Programa:</strong></p>
+<p><strong>Fase 1: A Escolha</strong> <span style="color: red;">●</span> <span style="color: blue;">●</span></p>
+<ul class="simple">
+<li><p>Neo deve escolher entre a pílula vermelha e a pílula azul. A escolha é feita através de um input do usuário:</p>
+<ul>
+<li><p>Se o usuário digitar “vermelha”, Neo avança para a fase 2.</p></li>
+<li><p>Se o usuário digitar “azul”, Neo continua vivendo sua vida normal e o programa termina.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Fase 2: Desvendando a Realidade</strong></p>
+<ul class="simple">
+<li><p>Neo precisa questionar a realidade em que vive. Ele deve responder a três perguntas:</p>
+<ul>
+<li><p>A realidade que você conhece é real? (Sim ou Não)</p></li>
+<li><p>Existe uma realidade escondida? (Sim ou Não)</p></li>
+<li><p>Você quer desvendar a verdade? (Sim ou Não)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Fase 3: Explorando a Verdade</strong></p>
+<ul class="simple">
+<li><p>Se Neo responder “Sim” a todas as perguntas da fase 2, ele terá acesso a informações sobre a verdade, e o programa termina com uma mensagem de sucesso.</p></li>
+<li><p>Se Neo responder “Não” a qualquer uma das perguntas da fase 2, ele continua vivendo sua vida normal, e o programa termina com uma mensagem de que a escolha é dele.</p></li>
+</ul>
+<p><strong>Exemplos de Teste:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="n">vermelha</span>
+<span class="n">Sim</span>
+<span class="n">Não</span>
+<span class="n">Sim</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">A</span> <span class="n">escolha</span> <span class="n">é</span> <span class="n">sua</span><span class="p">,</span> <span class="n">Neo</span> <span class="n">continua</span> <span class="n">vivendo</span> <span class="n">sua</span> <span class="n">vida</span> <span class="n">normal</span><span class="o">.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="n">azul</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Neo</span> <span class="n">continua</span> <span class="n">vivendo</span> <span class="n">sua</span> <span class="n">vida</span> <span class="n">normal</span><span class="o">.</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span>
+<span class="n">vermelha</span>
+<span class="n">Não</span>
+<span class="n">Sim</span>
+<span class="n">Sim</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">A</span> <span class="n">escolha</span> <span class="n">é</span> <span class="n">sua</span><span class="p">,</span> <span class="n">Neo</span> <span class="n">continua</span> <span class="n">vivendo</span> <span class="n">sua</span> <span class="n">vida</span> <span class="n">normal</span><span class="o">.</span>
+
+<span class="c1"># Teste 4</span>
+<span class="n">Entrada</span><span class="p">:</span> 
+<span class="n">vermelha</span>
+<span class="n">Sim</span>
+<span class="n">Sim</span>
+<span class="n">Sim</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Neo</span> <span class="n">terá</span> <span class="n">acesso</span> <span class="n">a</span> <span class="n">informações</span> <span class="n">sobre</span> <span class="n">a</span> <span class="n">verdade</span><span class="o">.</span>
+</pre></div>
+</div>
 </section>
 </section>
 
