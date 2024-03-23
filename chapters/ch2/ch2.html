@@ -340,17 +340,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos(Casting) e Base numéricas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos (Casting) e Base numéricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos-colecoes">Tipos de dados compostos (coleções)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios">Dicionários</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos">Conjuntos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao">Verificando a presença de um elemento em uma coleção</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
@@ -641,7 +642,7 @@ None
 <p>No exemplo acima, o comando <code class="docutils literal notranslate"><span class="pre">del</span></code> é usado para remover a variável <code class="docutils literal notranslate"><span class="pre">variavel_nula</span></code>. Tentar imprimir essa variável após deletá-la resultará em um erro <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, indicando que a variável não está mais definida. O uso de <code class="docutils literal notranslate"><span class="pre">del</span></code> é útil para liberar recursos e gerenciar a estrutura do programa de forma mais eficiente.</p>
 </section>
 <section id="conversao-de-tipos-casting-e-base-numericas">
-<h2>Conversão de tipos(Casting) e Base numéricas<a class="headerlink" href="#conversao-de-tipos-casting-e-base-numericas" title="Permalink to this heading">#</a></h2>
+<h2>Conversão de tipos (Casting) e Base numéricas<a class="headerlink" href="#conversao-de-tipos-casting-e-base-numericas" title="Permalink to this heading">#</a></h2>
 <p>Refere-se à conversão de um tipo de dado para outro. Isso pode ser necessário quando você deseja operar ou comparar valores de tipos diferentes. Um exemplo comum é a conversão de uma string para um número, como ao utilizar <code class="docutils literal notranslate"><span class="pre">float(input())</span></code> para converter a entrada do usuário em um número de ponto flutuante.</p>
 <p><strong>Conversão de String para Inteiro</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicita ao usuário para digitar um número inteiro</span>
@@ -719,38 +720,8 @@ None
 </div>
 <p>É importante entender como essas conversões funcionam e quando são úteis em diferentes contextos de programação.</p>
 </section>
-<section id="estruturas-de-decisao-simples">
-<h2>Estruturas de decisão (simples)<a class="headerlink" href="#estruturas-de-decisao-simples" title="Permalink to this heading">#</a></h2>
-<p>No Capítulo 4, estudaremos com detalhes as estruturas de decisão. No entanto, vale a pena, por enquanto, conhecer a sua forma mais básica para aplicação dos conhecimentos que estudaremos até lá.</p>
-<section id="estrutura-if">
-<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#estrutura-if" title="Permalink to this heading">#</a></h3>
-<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> permite executar um bloco de código se uma condição for avaliada como verdadeira (True). Aqui está um exemplo simples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if</span>
-<span class="n">idade</span> <span class="o">=</span> <span class="mi">21</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Neste exemplo, o bloco de código dentro do <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado apenas se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira. Portanto, a mensagem “Você é maior de idade.” será impressa.</p>
-</section>
-<section id="estrutura-if-else">
-<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code><a class="headerlink" href="#estrutura-if-else" title="Permalink to this heading">#</a></h3>
-<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code> permite executar um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa (False). Aqui está um exemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if-else</span>
-<span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Neste caso, se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira, o primeiro bloco será executado; caso contrário, o bloco dentro do <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado. Portanto, se <code class="docutils literal notranslate"><span class="pre">idade</span></code> for menor que 18, a mensagem “Você é menor de idade.” será impressa.</p>
-</section>
-</section>
-<section id="tipos-de-dados-compostos">
-<h2>Tipos de dados compostos<a class="headerlink" href="#tipos-de-dados-compostos" title="Permalink to this heading">#</a></h2>
+<section id="tipos-de-dados-compostos-colecoes">
+<h2>Tipos de dados compostos (coleções)<a class="headerlink" href="#tipos-de-dados-compostos-colecoes" title="Permalink to this heading">#</a></h2>
 <p>São estruturas que possibilitam o armazenamento e organização eficientes de coleções de dados variados. Essas estruturas oferecem flexibilidade ao permitir a inclusão de diferentes tipos de dados, facilitando a manipulação e análise de informações de maneira mais abrangente.</p>
 <section id="listas">
 <h3>Listas<a class="headerlink" href="#listas" title="Permalink to this heading">#</a></h3>
@@ -1296,6 +1267,70 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <p>A escolha do nome ideal para um conjunto depende do contexto em que ele será usado.</p>
 </section>
 </section>
+<section id="estruturas-de-decisao-simples">
+<h2>Estruturas de decisão (simples)<a class="headerlink" href="#estruturas-de-decisao-simples" title="Permalink to this heading">#</a></h2>
+<p>No Capítulo 4, estudaremos com detalhes as estruturas de decisão. No entanto, vale a pena, por enquanto, conhecer a sua forma mais básica para aplicação dos conhecimentos que estudaremos até lá.</p>
+<section id="estrutura-if">
+<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#estrutura-if" title="Permalink to this heading">#</a></h3>
+<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> permite executar um bloco de código se uma condição for avaliada como verdadeira (True). Aqui está um exemplo simples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste exemplo, o bloco de código dentro do <code class="docutils literal notranslate"><span class="pre">if</span></code> será executado apenas se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira. Portanto, a mensagem “Você é maior de idade.” será impressa.</p>
+</section>
+<section id="estrutura-if-else">
+<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code><a class="headerlink" href="#estrutura-if-else" title="Permalink to this heading">#</a></h3>
+<p>A estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code> permite executar um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa (False). Aqui está um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if-else</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste caso, se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira, o primeiro bloco será executado; caso contrário, o bloco dentro do <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado. Portanto, se <code class="docutils literal notranslate"><span class="pre">idade</span></code> for menor que 18, a mensagem “Você é menor de idade.” será impressa.</p>
+</section>
+<section id="verificando-a-presenca-de-um-elemento-em-uma-colecao">
+<h3>Verificando a presença de um elemento em uma coleção<a class="headerlink" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao" title="Permalink to this heading">#</a></h3>
+<p>Podemos também usar a estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> para verificar se um elemento faz parte de uma lista, tupla, dicionário ou conjunto. Isso é feito com a palavra-chave <code class="docutils literal notranslate"><span class="pre">in</span></code>. Veja os exemplos abaixo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificando em uma lista</span>
+<span class="n">lista_de_compras</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cenoura&#39;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="s1">&#39;banana&#39;</span> <span class="ow">in</span> <span class="n">lista_de_compras</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A banana está na lista de compras.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verificando em uma tupla</span>
+<span class="n">cores_favoritas</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;verde&#39;</span><span class="p">,</span> <span class="s1">&#39;azul&#39;</span><span class="p">,</span> <span class="s1">&#39;amarelo&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s1">&#39;vermelho&#39;</span> <span class="ow">in</span> <span class="n">cores_favoritas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vermelho está entre as cores favoritas.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vermelho não está entre as cores favoritas.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verificando em um dicionário (pelas chaves)</span>
+<span class="n">informacoes_usuario</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;idade&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">}</span>
+
+<span class="k">if</span> <span class="s1">&#39;nome&#39;</span> <span class="ow">in</span> <span class="n">informacoes_usuario</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome está registrado nas informações do usuário.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verificando em um conjunto</span>
+<span class="n">numeros_primos</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span>
+
+<span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">numeros_primos</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 é um número primo.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 não é um número primo.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esses exemplos mostram como você pode verificar facilmente a presença de um elemento em diferentes tipos de coleções de dados em Python.</p>
+</section>
+</section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -1683,17 +1718,18 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-da-dinamicidade-de-tipo">Características da Dinamicidade de Tipo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos(Casting) e Base numéricas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos">Tipos de dados compostos</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversao-de-tipos-casting-e-base-numericas">Conversão de tipos (Casting) e Base numéricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-compostos-colecoes">Tipos de dados compostos (coleções)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">Listas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuplas">Tuplas</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios">Dicionários</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos">Conjuntos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao">Verificando a presença de um elemento em uma coleção</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>

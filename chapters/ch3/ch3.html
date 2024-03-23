@@ -682,7 +682,6 @@ document.write(`
 <li><p>É fundamental considerar os tipos de dados dos operandos sendo comparados. Operadores lógicos funcionam apenas com valores booleanos.</p></li>
 <li><p>O operador <code class="docutils literal notranslate"><span class="pre">not</span></code> pode ser utilizado para negar o resultado de qualquer expressão booleana.</p></li>
 </ul>
-<p>Claro! Vou melhorar o texto para você:</p>
 </section>
 <section id="operadores-de-atribuicao">
 <h2>Operadores de Atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permalink to this heading">#</a></h2>
@@ -981,7 +980,7 @@ document.write(`
 <span class="n">Saída</span><span class="p">:</span> <span class="n">A</span> <span class="n">temperatura</span> <span class="n">em</span> <span class="n">Fahrenheit</span> <span class="n">é</span><span class="p">:</span> <span class="mf">33.35</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="arabic simple" start="4">
 <li><p>Escreva um programa que recebe na entrada um número inteiro entre 10 e 20. O programa deverá converter esse número para sua representação binária, removendo o prefixo <code class="docutils literal notranslate"><span class="pre">'0b'</span></code> da conversão. Em seguida, cada bit dessa representação binária será salvo em uma lista, onde cada posição da lista conterá um dos bits. Por fim, o programa deverá imprimir o resultado.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
@@ -997,6 +996,85 @@ document.write(`
 <span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">número</span> <span class="n">inserido</span> <span class="n">não</span> <span class="n">está</span> <span class="n">dentro</span> <span class="n">do</span> <span class="n">intervalo</span> <span class="n">permitido</span><span class="o">.</span>
 </pre></div>
 </div>
+<ol class="arabic simple" start="5">
+<li><p>Utilizando tuplas, você deve receber as coordenadas de um retângulo no plano cartesiano, onde <code class="docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min)</span></code> representa o canto inferior esquerdo e <code class="docutils literal notranslate"><span class="pre">(x_max,</span> <span class="pre">y_max)</span></code> representa o canto superior direito. Além disso, você tem um ponto representado por um par de coordenadas <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>.</p></li>
+</ol>
+<p>Sua tarefa é escrever um programa que determine se o ponto está dentro, tocando na borda ou fora do retângulo. O programa deve imprimir uma mensagem na saída padrão indicando o resultado da verificação.</p>
+<p>Como desafio, considere que sua ferramenta para testes será apenas a condição <code class="docutils literal notranslate"><span class="pre">if</span></code>. Portanto, todos os testes precisam ser feitos sem utilizar <code class="docutils literal notranslate"><span class="pre">elif</span></code> ou <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Veja o exemplo didático do desenho ASCII para o Teste 1:</p>
+<ul class="simple">
+<li><p>O <code class="docutils literal notranslate"><span class="pre">+</span></code> representa os cantos do retângulo.</p></li>
+<li><p>O <code class="docutils literal notranslate"><span class="pre">.</span></code> representa o ponto.</p></li>
+<li><p>As coordenadas do retângulo são <code class="docutils literal notranslate"><span class="pre">(x_min,</span> <span class="pre">y_min)</span> <span class="pre">=</span> <span class="pre">(1,1)</span></code> e <code class="docutils literal notranslate"><span class="pre">(x_max,</span> <span class="pre">y_max)</span> <span class="pre">=</span> <span class="pre">(6,6)</span></code>.</p></li>
+<li><p>As coordenadas do ponto são <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">(4,4)</span></code>.</p></li>
+</ul>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>7 |          
+6 |      +-----------+ (6,6)
+5 |      |           |
+4 |      |    .(4,4) |
+3 |      |           |
+2 |      |           |
+1 | (1,1)+-----------+
+0 |          
+  -+--+--+--+--+--+--+--+
+   0  1  2  3  4  5  6  7
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">4</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">dentro</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">6</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">tocando</span> <span class="n">a</span> <span class="n">borda</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">fora</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+
+<span class="c1"># Teste 4</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">1</span> <span class="mi">7</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">fora</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+
+<span class="c1"># Teste 5</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">1</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">tocando</span> <span class="n">a</span> <span class="n">borda</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+
+<span class="c1"># Teste 6</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">6</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">tocando</span> <span class="n">a</span> <span class="n">borda</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Desenvolva um sistema de autenticação que utilize um dicionário chamado <code class="docutils literal notranslate"><span class="pre">usuarios_senhas</span></code> para armazenar os nomes e as senhas de dois usuários. O programa deve solicitar que o usuário insira seu nome de usuário e senha. Em seguida, o sistema deve verificar se as credenciais inseridas correspondem às armazenadas no dicionário. Se as credenciais estiverem corretas, o programa deve exibir uma mensagem de “Login bem-sucedido! Bem-vindo, usuario.”. Caso contrário, deve informar ao usuário “Acesso negado. Credenciais inválidas.”.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Teste 1
+Entrada:
+usuario1
+senha123
+usuario2
+abc456
+usuario1
+senha123
+Saída: &gt;&gt; Login bem-sucedido! Bem-vindo, usuario1.
+
+# Teste 2
+Entrada:
+usuario1
+senha143
+usuario2
+abc452
+usuario2
+123abc
+Saída: &gt;&gt; Acesso negado. Credenciais inválidas.
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Conjuntos</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Tabelas verdade</p></li>
+</ol>
 </section>
 </section>
 
