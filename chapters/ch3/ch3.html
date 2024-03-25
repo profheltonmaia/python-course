@@ -1084,34 +1084,31 @@ Saída: &gt;&gt; Acesso negado. Credenciais inválidas.
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li><p>Imagine que você é um biólogo trabalhando em um parque natural e está monitorando duas espécies de aves migratórias. Cada espécie tem um conjunto de ilhas que prefere para nidificação durante a temporada de migração. O conjunto <code class="docutils literal notranslate"><span class="pre">A</span></code> representa as ilhas preferidas pela primeira espécie e o conjunto <code class="docutils literal notranslate"><span class="pre">B</span></code> pelas da segunda espécie. Algumas ilhas são compartilhadas entre as duas espécies, o que pode levar a competição por recursos. Seu trabalho é identificar quais ilhas são compartilhadas para implementar medidas de conservação.</p></li>
+<li><p>Você é um biólogo trabalhando em um parque natural e está encarregado de monitorar três espécies de aves migratórias. Cada espécie tem um conjunto de ilhas preferidas para nidificação durante a temporada de migração. As preferências das espécies são as seguintes:</p></li>
 </ol>
-<p>Dados fixos:</p>
 <ul class="simple">
-<li><p>Espécie 1 prefere as ilhas com IDs de 1 a 10.</p></li>
-<li><p>Espécie 2 prefere as ilhas com IDs de 6 a 15.</p></li>
+<li><p><strong>Espécie 1</strong>: Prefere as ilhas com IDs de 1 a 10.</p></li>
+<li><p><strong>Espécie 2</strong>: Prefere as ilhas com IDs de 6 a 17.</p></li>
 </ul>
-<p>Tarefas:</p>
-<ul class="simple">
-<li><p>Identificar as ilhas compartilhadas entre as duas espécies.</p></li>
-<li><p>Determinar quais ilhas são exclusivas para cada espécie.</p></li>
-<li><p>Verificar se uma ilha específica, informada pelo usuário, é uma área de competição ou se é exclusiva de uma espécie.</p></li>
-</ul>
+<p>Algumas ilhas são compartilhadas entre as espécies, o que pode levar à competição por recursos. Seu trabalho é identificar quais ilhas são compartilhadas para implementar medidas de conservação. Dessa forma, dada uma entrada do usuário correspondente ao ID de uma das ilhas, verifique se essa ilha específica é uma área de competição ou se é exclusiva de uma das espécies.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">2</span>
-<span class="n">Saída</span><span class="p">:</span>
-<span class="n">A</span> <span class="n">ilha</span> <span class="mi">2</span> <span class="n">é</span> <span class="n">exclusiva</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mf">1.</span>
-<span class="n">Ilhas</span> <span class="n">compartilhadas</span><span class="p">:</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Ilha</span> <span class="mi">2</span> <span class="n">é</span> <span class="n">exclusiva</span> <span class="n">da</span> <span class="n">Espécie</span> <span class="mf">1.</span> 
+<span class="n">Portanto</span><span class="p">,</span> <span class="n">não</span> <span class="n">é</span> <span class="n">compartilhada</span> <span class="n">com</span> <span class="n">outras</span> <span class="n">espécies</span><span class="o">.</span>
 
 <span class="c1"># Teste 2</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">6</span>
-<span class="n">Saída</span><span class="p">:</span>
-<span class="n">A</span> <span class="n">ilha</span> <span class="mi">6</span> <span class="n">é</span> <span class="n">uma</span> <span class="n">área</span> <span class="n">de</span> <span class="n">competição</span> <span class="n">entre</span> <span class="k">as</span> <span class="n">espécies</span><span class="o">.</span>
-<span class="n">Ilhas</span> <span class="n">compartilhadas</span><span class="p">:</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="n">Ilhas</span> <span class="n">exclusivas</span> <span class="n">da</span> <span class="n">espécie</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Ilha</span> <span class="mi">6</span> <span class="n">é</span> <span class="n">compartilhada</span> <span class="n">entre</span> <span class="n">espécie</span><span class="p">(</span><span class="n">s</span><span class="p">):</span><span class="mi">1</span> <span class="mf">2.</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Ilha</span> <span class="mi">10</span> <span class="n">é</span> <span class="n">compartilhada</span> <span class="n">entre</span> <span class="n">espécie</span><span class="p">(</span><span class="n">s</span><span class="p">):</span><span class="mi">1</span> <span class="mf">2.</span>
+
+<span class="c1"># Teste 4</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">17</span>
+<span class="n">Saída</span><span class="p">:</span> 
+<span class="n">Ilha</span> <span class="mi">17</span> <span class="n">é</span> <span class="n">exclusiva</span> <span class="n">da</span> <span class="n">Espécie</span> <span class="mf">2.</span> 
+<span class="n">Portanto</span><span class="p">,</span> <span class="n">não</span> <span class="n">é</span> <span class="n">compartilhada</span> <span class="n">com</span> <span class="n">outras</span> <span class="n">espécies</span><span class="o">.</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="8">
