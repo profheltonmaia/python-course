@@ -328,7 +328,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-dos-operadores-aritmeticos">Precedência dos Operadores Aritméticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-de-precedencia">Tabela de Precedência</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionais">Operadores Relacionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de Atribuição</a></li>
@@ -471,6 +477,74 @@ document.write(`
 </pre></div>
 </div>
 <p>Esses exemplos ilustram como a precedência dos operadores pode afetar o resultado das expressões aritméticas. Sendo importante compreender essa precedência para escrever um código claro e sem erros.</p>
+<section id="precedencia-dos-operadores-aritmeticos">
+<h3>Precedência dos Operadores Aritméticos<a class="headerlink" href="#precedencia-dos-operadores-aritmeticos" title="Permalink to this heading">#</a></h3>
+<p>A ordem de precedência dos operadores determina a sequência em que as operações matemáticas são realizadas. Essa ordem é importante para garantir que os resultados das expressões sejam os esperados.</p>
+<section id="tabela-de-precedencia">
+<h4>Tabela de Precedência<a class="headerlink" href="#tabela-de-precedencia" title="Permalink to this heading">#</a></h4>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Nível de Precedência</strong></p></th>
+<th class="head"><p><strong>Operadores</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Potênciação e Radiciação</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Multiplicação e Divisão</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Adição e Subtração</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>A ordem de precedência pode ser alterada usando parênteses. Por exemplo, <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">4</span></code> é igual a 20, enquanto <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code> é igual a 14.</p></li>
+<li><p>Operadores unários, como <code class="docutils literal notranslate"><span class="pre">+</span></code> e <code class="docutils literal notranslate"><span class="pre">-</span></code>, têm precedência sobre operadores binários. Por exemplo, <code class="docutils literal notranslate"><span class="pre">-5</span></code> é igual a -5, enquanto <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">5</span></code> é igual a 0.</p></li>
+</ul>
+<p><strong>Mais Exemplos</strong></p>
+<p><strong>Combinação de Operadores:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Primeiro, realizamos a exponenciação: 2 elevado a 3 é 8.</p></li>
+<li><p>Em seguida, multiplicamos e dividimos da esquerda para a direita: 4 vezes 5 é 20 e 10 dividido por 2 é 5.</p></li>
+<li><p>Finalmente, somamos e subtraímos da esquerda para a direita: 8 mais 20 é 28 e 28 menos 5 é 23.</p></li>
+</ul>
+<p><strong>Resultado:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="mf">23.0</span>
+</pre></div>
+</div>
+<p><strong>Uso de Parênteses:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Primeiro, resolvemos as operações dentro dos parênteses: 2 mais 3 é 5 e 5 menos 1 é 4.</p></li>
+<li><p>Em seguida, multiplicamos e dividimos da esquerda para a direita: 5 vezes 4 é 20 e 20 menos 4 é 16.</p></li>
+</ul>
+<p><strong>Resultado:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="mi">16</span>
+</pre></div>
+</div>
+<p><strong>Operadores Unários:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Primeiro, aplicamos o operador unário <code class="docutils literal notranslate"><span class="pre">-</span></code> a 5, resultando em -5.</p></li>
+<li><p>Em seguida, multiplicamos 2 por 3, resultando em 6.</p></li>
+<li><p>Finalmente, somamos -5 e 6, resultando em 1.</p></li>
+</ul>
+<p><strong>Resultado:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="operadores-relacionais">
 <h2>Operadores Relacionais<a class="headerlink" href="#operadores-relacionais" title="Permalink to this heading">#</a></h2>
@@ -1226,7 +1300,13 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-dos-operadores-aritmeticos">Precedência dos Operadores Aritméticos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-de-precedencia">Tabela de Precedência</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionais">Operadores Relacionais</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">Operadores Lógicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-atribuicao">Operadores de Atribuição</a></li>
