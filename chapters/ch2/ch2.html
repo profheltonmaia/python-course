@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Capítulo 2: Váriáveis e Tipos de dados &#8212; Curso de Python</title>
+    <title>Capítulo 2: Tipos de dados e Estruturas Condicionais &#8212; Curso de Python</title>
   
   
   
@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Python Básico</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 2: Váriáveis e Tipos de dados</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e Expressões</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
@@ -316,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capítulo 2: Váriáveis e Tipos de dados</h1>
+    <h1>Capítulo 2: Tipos de dados e Estruturas Condicionais</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -348,10 +348,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos">Conjuntos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao">Estruturas de decisão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao">Verificando a presença de um elemento em uma coleção</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-elif-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
@@ -366,8 +366,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-2-variaveis-e-tipos-de-dados">
-<h1>Capítulo 2: Váriáveis e Tipos de dados<a class="headerlink" href="#capitulo-2-variaveis-e-tipos-de-dados" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-2-tipos-de-dados-e-estruturas-condicionais">
+<h1>Capítulo 2: Tipos de dados e Estruturas Condicionais<a class="headerlink" href="#capitulo-2-tipos-de-dados-e-estruturas-condicionais" title="Permalink to this heading">#</a></h1>
 <p><img alt="ch2" src="../../_images/ch2.jpeg" /></p>
 <p>Variáveis são fundamentais para armazenar informações durante a execução de um programa. Além disso, compreender os tipos de dados é essencial para escrever programas funcionais e legíveis. Cada tipo de dado é especializado em guardar um tipo específico de informação, como inteiros, números reais, strings e booleanos.</p>
 <section id="formatando-a-saida-de-dados">
@@ -1267,9 +1267,9 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <p>A escolha do nome ideal para um conjunto depende do contexto em que ele será usado.</p>
 </section>
 </section>
-<section id="estruturas-de-decisao-simples">
-<h2>Estruturas de decisão (simples)<a class="headerlink" href="#estruturas-de-decisao-simples" title="Permalink to this heading">#</a></h2>
-<p>No Capítulo 4, estudaremos com detalhes as estruturas de decisão. No entanto, vale a pena, por enquanto, conhecer a sua forma mais básica para aplicação dos conhecimentos que estudaremos até lá.</p>
+<section id="estruturas-de-decisao">
+<h2>Estruturas de decisão<a class="headerlink" href="#estruturas-de-decisao" title="Permalink to this heading">#</a></h2>
+<p>Estruturas de decisão permitem controlar o fluxo de execução de um programa. Elas possibilitam que o programa tome decisões com base em condições específicas e execute diferentes ações de acordo com o resultado da avaliação.</p>
 <section id="estrutura-if">
 <h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#estrutura-if" title="Permalink to this heading">#</a></h3>
 <p>A estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> permite executar um bloco de código se uma condição for avaliada como verdadeira (True). Aqui está um exemplo simples:</p>
@@ -1296,39 +1296,22 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 </div>
 <p>Neste caso, se a condição <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code> for verdadeira, o primeiro bloco será executado; caso contrário, o bloco dentro do <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado. Portanto, se <code class="docutils literal notranslate"><span class="pre">idade</span></code> for menor que 18, a mensagem “Você é menor de idade.” será impressa.</p>
 </section>
-<section id="verificando-a-presenca-de-um-elemento-em-uma-colecao">
-<h3>Verificando a presença de um elemento em uma coleção<a class="headerlink" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao" title="Permalink to this heading">#</a></h3>
-<p>Podemos também usar a estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> para verificar se um elemento faz parte de uma lista, tupla, dicionário ou conjunto. Isso é feito com a palavra-chave <code class="docutils literal notranslate"><span class="pre">in</span></code>. Veja os exemplos abaixo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificando em uma lista</span>
-<span class="n">lista_de_compras</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cenoura&#39;</span><span class="p">]</span>
+<section id="estrutura-if-elif-else">
+<h3>Estrutura <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code><a class="headerlink" href="#estrutura-if-elif-else" title="Permalink to this heading">#</a></h3>
+<p>Além disso, podemos usar a estrutura <code class="docutils literal notranslate"><span class="pre">elif</span></code> para lidar com mais de duas condições. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemplo de estrutura if-elif-else</span>
+<span class="n">idade</span> <span class="o">=</span> <span class="mi">30</span>
 
-<span class="k">if</span> <span class="s1">&#39;banana&#39;</span> <span class="ow">in</span> <span class="n">lista_de_compras</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A banana está na lista de compras.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando em uma tupla</span>
-<span class="n">cores_favoritas</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;verde&#39;</span><span class="p">,</span> <span class="s1">&#39;azul&#39;</span><span class="p">,</span> <span class="s1">&#39;amarelo&#39;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="s1">&#39;vermelho&#39;</span> <span class="ow">in</span> <span class="n">cores_favoritas</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vermelho está entre as cores favoritas.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é adulto.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vermelho não está entre as cores favoritas.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando em um dicionário (pelas chaves)</span>
-<span class="n">informacoes_usuario</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;idade&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">}</span>
-
-<span class="k">if</span> <span class="s1">&#39;nome&#39;</span> <span class="ow">in</span> <span class="n">informacoes_usuario</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O nome está registrado nas informações do usuário.&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando em um conjunto</span>
-<span class="n">numeros_primos</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">}</span>
-
-<span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">numeros_primos</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 é um número primo.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4 não é um número primo.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é um idoso.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Esses exemplos mostram como você pode verificar facilmente a presença de um elemento em diferentes tipos de coleções de dados em Python.</p>
+<p>Neste caso, se a idade for menor que 18, a mensagem “Você é menor de idade.” será exibida. Se a idade estiver entre 18 e 64 (inclusive), a mensagem “Você é adulto.” será exibida. Caso contrário, a mensagem “Você é um idoso.” será exibida.</p>
+<p>No Capítulo 4, estudaremos estruturas de decisão mais complexas. No entanto, por enquanto, é importante o conhecimento de sua forma mais básica.</p>
 </section>
 </section>
 <section id="exercicios">
@@ -1726,10 +1709,10 @@ Atualiza o dicionário com pares chave-valor de outro dicionário ou iterável.<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos">Conjuntos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-simples">Estruturas de decisão (simples)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao">Estruturas de decisão</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if">Estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-else</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificando-a-presenca-de-um-elemento-em-uma-colecao">Verificando a presença de um elemento em uma coleção</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-if-elif-else">Estrutura <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
