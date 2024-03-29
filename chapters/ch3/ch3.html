@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Capítulo 4: Controle de Fluxo" href="../ch4/ch4.html" />
-    <link rel="prev" title="Capítulo 2: Váriáveis e Tipos de dados" href="../ch2/ch2.html" />
+    <link rel="prev" title="Capítulo 2: Tipos de dados e Estruturas Condicionais" href="../ch2/ch2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Python Básico</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Váriáveis e Tipos de dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 3: Operadores e Expressões</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
@@ -769,70 +769,52 @@ document.write(`
 <p>As tabelas verdade são uma representação visual que mostra todas as possíveis combinações de valores booleanos para os operandos e o resultado da operação lógica. Elas são extremamente úteis para entender o funcionamento dos operadores lógicos e prever o resultado de expressões complexas.</p>
 <section id="operadores-de-comparacao-especiais">
 <h3>Operadores de Comparação Especiais<a class="headerlink" href="#operadores-de-comparacao-especiais" title="Permalink to this heading">#</a></h3>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Operador</p></th>
-<th class="head"><p>Descrição</p></th>
-<th class="head"><p>Exemplo</p></th>
-<th class="head"><p>Detalhes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></td>
-<td><p>Verifica se um valor está presente em uma sequência.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'a'</span> <span class="pre">in</span> <span class="pre">'banana'</span></code></p></td>
-<td><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se o valor for encontrado na sequência, <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário. Funciona com strings, listas, tuplas, dicionários e outras sequências.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></p></td>
-<td><p>Verifica se um valor não está presente em uma sequência.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">'x'</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">'banana'</span></code></p></td>
-<td><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se o valor não for encontrado na sequência, <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">is</span></code></p></td>
-<td><p>Verifica se dois objetos são o mesmo objeto na memória.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span></code></p></td>
-<td><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os dois objetos forem o mesmo objeto na memória, <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário. Útil para comparar se duas variáveis referenciam o mesmo objeto.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></p></td>
-<td><p>Verifica se dois objetos não são o mesmo objeto na memória.</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">y</span></code></p></td>
-<td><p>Retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os dois objetos não forem o mesmo objeto na memória, <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Exemplos de Uso:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificando se a letra &quot;a&quot; está presente na palavra &quot;banana&quot;</span>
-<span class="n">letra_presente</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="s2">&quot;banana&quot;</span>
-
+<p>A linguagem Python oferece alguns operadores especiais para realizar comparações específicas. Vamos explorar alguns desses operadores:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">in</span></code></strong>: Verifica se um valor está presente em uma sequência (como uma string, lista, tupla, dicionário ou conjunto). Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letra_presente</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="s2">&quot;banana&quot;</span>
 <span class="k">if</span> <span class="n">letra_presente</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A letra &#39;a&#39; está presente na palavra &#39;banana&#39;&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando se o número 5 está presente na lista</span>
-<span class="n">numero_presente</span> <span class="o">=</span> <span class="mi">5</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-
-<span class="k">if</span> <span class="n">numero_presente</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O número 5 está presente na lista&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando se duas variáveis referenciam o mesmo objeto</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
-
-<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As variáveis x e y referenciam o mesmo objeto&quot;</span><span class="p">)</span>
-
-<span class="c1"># Verificando se duas variáveis não referenciam o mesmo objeto</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;banana&quot;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;banana&quot;</span>
-
-<span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As variáveis a e b não referenciam o mesmo objeto&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Os operadores <code class="docutils literal notranslate"><span class="pre">in</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> podem ser usados ​​com qualquer sequência, incluindo strings, listas, tuplas, dicionários e conjuntos.</p></li>
-<li><p>Os operadores <code class="docutils literal notranslate"><span class="pre">is</span></code> e <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> são usados ​​para comparar a identidade de objetos, não seus valores. Isso significa que dois objetos com o mesmo valor podem ser diferentes se forem armazenados em locais diferentes na memória.</p></li>
-<li><p>O operador <code class="docutils literal notranslate"><span class="pre">is</span></code> pode ser usado para verificar se um objeto é <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-</ul>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">letra</span> <span class="s1">&#39;a&#39;</span> <span class="n">está</span> <span class="n">presente</span> <span class="n">na</span> <span class="n">palavra</span> <span class="s1">&#39;banana&#39;</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></strong>: Verifica se um valor <strong>não</strong> está presente em uma sequência. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_presente</span> <span class="o">=</span> <span class="mi">5</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">numero_presente</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O número 5 está presente na lista&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">número</span> <span class="mi">5</span> <span class="n">está</span> <span class="n">presente</span> <span class="n">na</span> <span class="n">lista</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">is</span></code></strong>: Compara se dois objetos são o mesmo objeto na memória. É útil para verificar se duas variáveis referenciam o mesmo objeto. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span>
+<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As variáveis x e y referenciam o mesmo objeto&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="n">z</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As variáveis x e z referenciam o mesmo objeto&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="n">variáveis</span> <span class="n">x</span> <span class="n">e</span> <span class="n">z</span> <span class="n">referenciam</span> <span class="n">o</span> <span class="n">mesmo</span> <span class="n">objeto</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code></strong>: Verifica se dois objetos <strong>não</strong> são o mesmo objeto na memória. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As variáveis x e y não referenciam o mesmo objeto&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="n">variáveis</span> <span class="n">x</span> <span class="n">e</span> <span class="n">y</span> <span class="n">não</span> <span class="n">referenciam</span> <span class="n">o</span> <span class="n">mesmo</span> <span class="n">objeto</span>
+
+</pre></div>
+</div>
+<p>Lembre-se de que os operadores <code class="docutils literal notranslate"><span class="pre">in</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> podem ser usados com qualquer sequência, enquanto os operadores <code class="docutils literal notranslate"><span class="pre">is</span></code> e <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> comparam a identidade dos objetos, não seus valores.</p>
 </section>
 </section>
 <section id="operadores-de-atribuicao">
@@ -1373,7 +1355,7 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Capítulo 2: Váriáveis e Tipos de dados</p>
+        <p class="prev-next-title">Capítulo 2: Tipos de dados e Estruturas Condicionais</p>
       </div>
     </a>
     <a class="right-next"
