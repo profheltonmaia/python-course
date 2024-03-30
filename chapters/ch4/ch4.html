@@ -326,16 +326,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-condicionais">Estruturas condicionais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-instrucao-if">A Instrução <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-elif-e-else">Instruções <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-elif">Exemplo com <code class="docutils literal notranslate"><span class="pre">elif</span></code>:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-verificacao-de-numeros-pares-e-impares">Exemplo Prático: Verificação de Números Pares e Ímpares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aninhamento-de-estruturas-condicionais">Aninhamento de Estruturas Condicionais</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
@@ -355,93 +346,36 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-controle-de-fluxo">
 <h1>Capítulo 4: Controle de Fluxo<a class="headerlink" href="#capitulo-4-controle-de-fluxo" title="Permalink to this heading">#</a></h1>
-<p><img alt="ch4" src="../../_images/ch4.jpeg" /></p>
-<section id="estruturas-condicionais">
-<h2>Estruturas condicionais<a class="headerlink" href="#estruturas-condicionais" title="Permalink to this heading">#</a></h2>
-<p>As estruturas condicionais possibilitam ao programador controlar o fluxo de execução do programa. Em Python, as estruturas condicionais mais usadas são:</p>
-<ul class="simple">
+<section id="estruturas-de-decisao-aninhadas">
+<h2>Estruturas de Decisão Aninhadas<a class="headerlink" href="#estruturas-de-decisao-aninhadas" title="Permalink to this heading">#</a></h2>
+<p>As estruturas condicionais permitem que o programador controle o fluxo do programa, executando diferentes blocos de código de acordo com condições específicas. Vamos revisar as estruturas mais utilizadas:</p>
+<ol class="arabic simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">if</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira, mas somente se a condição anterior for falsa.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong> Executa um bloco de código se todas as condições anteriores forem falsas.</p></li>
-</ul>
-<p>As instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, e <code class="docutils literal notranslate"><span class="pre">else</span></code> em Python são fundamentais para tomar decisões em um programa dependendo de diferentes condições.</p>
-<section id="a-instrucao-if">
-<h3>A Instrução <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#a-instrucao-if" title="Permalink to this heading">#</a></h3>
-<p>A instrução <code class="docutils literal notranslate"><span class="pre">if</span></code> serve para controlar o fluxo de execução do programa, dependendo de uma condição. Por exemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Neste código, a condição é <code class="docutils literal notranslate"><span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code>, que significa “idade maior ou igual a 18”. Se essa condição for verdadeira, o bloco de código após os dois pontos (<code class="docutils literal notranslate"><span class="pre">:</span></code>) será executado. O bloco de código é identificado pela indentação (espaço em branco no início da linha). Se a condição for falsa, o bloco de código será ignorado. Os dois pontos (<code class="docutils literal notranslate"><span class="pre">:</span></code>) são usados para indicar o início de um bloco de código em Python.</p>
-</section>
-<section id="instrucoes-elif-e-else">
-<h3>Instruções <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#instrucoes-elif-e-else" title="Permalink to this heading">#</a></h3>
-<p>Quando lidamos com múltiplas condições, as instruções <code class="docutils literal notranslate"><span class="pre">elif</span></code> (abreviação de “else if”) e <code class="docutils literal notranslate"><span class="pre">else</span></code> podem ser empregadas.</p>
-<section id="exemplo-com-elif">
-<h4>Exemplo com <code class="docutils literal notranslate"><span class="pre">elif</span></code>:<a class="headerlink" href="#exemplo-com-elif" title="Permalink to this heading">#</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">16</span>
-
-<span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">idade</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você acabou de atingir a maioridade.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Neste exemplo, o programa verifica a idade e imprime uma mensagem apropriada com base nas condições. Se a idade for menor que 18, imprime “Você é menor de idade”. Se a idade for exatamente 18, imprime “Você acabou de atingir a maioridade”. Caso contrário, o bloco dentro do <code class="docutils literal notranslate"><span class="pre">else</span></code> é executado, imprimindo “Você é maior de idade”.</p>
-</section>
-</section>
-<section id="exemplo-pratico-verificacao-de-numeros-pares-e-impares">
-<h3>Exemplo Prático: Verificação de Números Pares e Ímpares<a class="headerlink" href="#exemplo-pratico-verificacao-de-numeros-pares-e-impares" title="Permalink to this heading">#</a></h3>
-<p>Vamos criar um exemplo mais prático usando estruturas condicionais para verificar se um número é par ou ímpar:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">15</span>
-
-<span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> é um número par.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> é um número ímpar.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">15</span> <span class="n">é</span> <span class="n">um</span> <span class="n">número</span> <span class="n">ímpar</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>Neste exemplo, o operador <code class="docutils literal notranslate"><span class="pre">%</span></code> calcula o resto da divisão por 2. Se o resto for zero, o número é par; caso contrário, é ímpar.</p>
-<p><strong>Observação:</strong> O trecho <code class="docutils literal notranslate"><span class="pre">print(f&quot;{numero}</span> <span class="pre">é</span> <span class="pre">um</span> <span class="pre">número</span> <span class="pre">ímpar.&quot;)</span></code> utiliza uma f-string para criar uma string formatada, onde <code class="docutils literal notranslate"><span class="pre">{numero}</span></code> é substituído pelo valor atual da variável <code class="docutils literal notranslate"><span class="pre">numero</span></code>.</p>
-</section>
-<section id="aninhamento-de-estruturas-condicionais">
-<h3>Aninhamento de Estruturas Condicionais<a class="headerlink" href="#aninhamento-de-estruturas-condicionais" title="Permalink to this heading">#</a></h3>
-<p>É possível aninhar instruções <code class="docutils literal notranslate"><span class="pre">if</span></code> dentro de outras instruções <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, ou <code class="docutils literal notranslate"><span class="pre">else</span></code>. Isso permite lidar com condições mais complexas.</p>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira, <strong>mas somente se a condição anterior for falsa</strong>.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong> Executa um bloco de código se <strong>todas as condições anteriores forem falsas</strong>.</p></li>
+</ol>
+<p><strong>Aninhamento de Estruturas Condicionais:</strong></p>
+<p>O poder real das estruturas condicionais reside na capacidade de <strong>aninhá-las</strong>, criando lógica complexa para lidar com diferentes cenários.</p>
+<p><strong>Exemplos:</strong></p>
+<p><strong>Verificação de Maioridade e Sexo:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">sexo</span> <span class="o">=</span> <span class="s2">&quot;Feminino&quot;</span>
 
 <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade.&quot;</span><span class="p">)</span>
-    
     <span class="k">if</span> <span class="n">sexo</span> <span class="o">==</span> <span class="s2">&quot;Feminino&quot;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E também do sexo feminino.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Analisando o exemplo:</p>
-<p><strong>Avaliação Externa (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">idade</span> <span class="pre">&gt;=</span> <span class="pre">18</span></code>):</strong></p>
-<ul class="simple">
-<li><p>Se a idade for maior ou igual a 18, o bloco interno é executado.</p></li>
-<li><p>A mensagem “Você é maior de idade.” será impressa.</p></li>
-</ul>
-<p><strong>Bloco Interno (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">sexo</span> <span class="pre">==</span> <span class="pre">&quot;Feminino&quot;</span></code>):</strong></p>
-<ul class="simple">
-<li><p>Este bloco só será executado se a condição externa (idade &gt;= 18) for verdadeira.</p></li>
-<li><p>Se o sexo for “Feminino”, a mensagem “E também do sexo feminino.” será impressa.</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code> Externo:</strong></p>
-<ul class="simple">
-<li><p>Se a condição externa não for atendida (idade &lt; 18), a mensagem “Você é menor de idade.” será impressa.</p></li>
-</ul>
-<p>Agora, como segundo exemplo, considere uma situação em que você está classificando alunos com base em suas notas em uma disciplina:</p>
+<p><strong>Saída do código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Você</span> <span class="n">é</span> <span class="n">maior</span> <span class="n">de</span> <span class="n">idade</span><span class="o">.</span>
+<span class="n">E</span> <span class="n">também</span> <span class="n">do</span> <span class="n">sexo</span> <span class="n">feminino</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Neste exemplo, verificamos a idade e o sexo da pessoa. Se a pessoa for maior de idade, verificamos o sexo e imprimimos uma mensagem adicional se for feminino.</p>
+<p><strong>Classificação de Notas:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota</span> <span class="o">=</span> <span class="mi">75</span>
 
 <span class="k">if</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
@@ -454,24 +388,11 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Infelizmente, você não atingiu a nota mínima. Sua nota é D.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Avaliação da Nota (<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">nota</span> <span class="pre">&gt;=</span> <span class="pre">90</span></code>):</strong></p>
-<ul class="simple">
-<li><p>Se a nota for 90 ou superior, o aluno recebe uma nota A.</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">nota</span> <span class="pre">&gt;=</span> <span class="pre">80</span></code>:</strong></p>
-<ul class="simple">
-<li><p>Se a condição anterior não for atendida, mas a nota for 80 ou superior, o aluno recebe uma nota B.</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">nota</span> <span class="pre">&gt;=</span> <span class="pre">70</span></code>:</strong></p>
-<ul class="simple">
-<li><p>Se a condição anterior não for atendida, mas a nota for 70 ou superior, o aluno recebe uma nota C.</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong></p>
-<ul class="simple">
-<li><p>Se nenhuma das condições anteriores for atendida, o aluno recebe uma nota D.</p></li>
-</ul>
-<p>Esses exemplos mostram como você pode aninhar estruturas condicionais para lidar com várias situações e condições em seu código de maneira organizada.</p>
-</section>
+<p><strong>Saída do código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Bom trabalho! Sua nota é C.
+</pre></div>
+</div>
+<p>Essas saídas correspondem aos exemplos fornecidos, demonstrando o comportamento das estruturas de decisão aninhadas em Python.</p>
 </section>
 <section id="estruturas-de-repeticao">
 <h2>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Permalink to this heading">#</a></h2>
@@ -690,16 +611,7 @@ Solicite ao usuário os comprimentos dos lados de um triângulo. O programa deve
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-condicionais">Estruturas condicionais</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-instrucao-if">A Instrução <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-elif-e-else">Instruções <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-elif">Exemplo com <code class="docutils literal notranslate"><span class="pre">elif</span></code>:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-verificacao-de-numeros-pares-e-impares">Exemplo Prático: Verificação de Números Pares e Ímpares</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aninhamento-de-estruturas-condicionais">Aninhamento de Estruturas Condicionais</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
