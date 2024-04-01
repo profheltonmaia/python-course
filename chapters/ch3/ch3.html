@@ -345,6 +345,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inversao-bit-a-bit">Inversão Bit a Bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>):</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deslocamento-de-bits">Deslocamento de Bits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores">Precedência de Operadores</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
@@ -955,7 +956,7 @@ document.write(`
 </section>
 <section id="operadores-unarios">
 <h2>Operadores Unários<a class="headerlink" href="#operadores-unarios" title="Permalink to this heading">#</a></h2>
-<p>Os operadores unários permitem realizar operações em um único valor. Entender sobre os operadores unários pode te ajudar a escrever códigos mais concisos, eficiente e expressivo.</p>
+<p>Os operadores unários permitem realizar operações em um único valor. Entender sobre os operadores unários pode ajudar a escrever códigos mais concisos, eficientes e expressivos.</p>
 <section id="operador-negativo">
 <h3>Operador Negativo (<code class="docutils literal notranslate"><span class="pre">-</span></code>):<a class="headerlink" href="#operador-negativo" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -1011,57 +1012,70 @@ document.write(`
 </section>
 <section id="inversao-bit-a-bit">
 <h3>Inversão Bit a Bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>):<a class="headerlink" href="#inversao-bit-a-bit" title="Permalink to this heading">#</a></h3>
-<p>O operador de inversão bit a bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>) é utilizado para inverter cada bit de um número inteiro, realizando a operação conhecida como “complemento de dois”. Vamos analisar os exemplos para entender melhor:</p>
-<p><strong>Conversão de um número inteiro para sua representação binária:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_decimal</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="n">numero_binario</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">numero_decimal</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numero_binario</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1011</span>
-</pre></div>
-</div>
-<p>Neste exemplo, começamos com o número inteiro <code class="docutils literal notranslate"><span class="pre">11</span></code>. Utilizando a função <code class="docutils literal notranslate"><span class="pre">bin()</span></code>, convertemos esse número para sua representação binária, e em seguida, <code class="docutils literal notranslate"><span class="pre">[2:]</span></code> é utilizado para remover, caso seja necessário, os dois primeiros caracteres (que são <code class="docutils literal notranslate"><span class="pre">'0b'</span></code>), deixando apenas a representação binária.</p>
-<p>Agora, um exemplo de <strong>inversão dos bits de um número</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero_binario</span> <span class="o">=</span> <span class="mb">0b1011</span>
-<span class="n">inversao_bit_a_bit</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero_binario</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">inversao_bit_a_bit</span><span class="p">))</span>
-</pre></div>
-</div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mb">0b1100</span>
-</pre></div>
-</div>
-<p>Neste exemplo, começamos com o número binário <code class="docutils literal notranslate"><span class="pre">0b1011</span></code>, equivalente ao decimal <code class="docutils literal notranslate"><span class="pre">11</span></code>. O operador <code class="docutils literal notranslate"><span class="pre">~</span></code> inverte cada bit desse número, resultando em <code class="docutils literal notranslate"><span class="pre">-0b1100</span></code>. O prefixo <code class="docutils literal notranslate"><span class="pre">-</span></code> indica que estamos trabalhando com um número negativo em complemento de dois.</p>
-<p><strong>Entendendo a Representação em Complemento de Dois:</strong></p>
-<p>Quando trabalhamos com números binários em computadores, precisamos de uma forma eficiente de representar números negativos. Uma das técnicas mais comuns é o uso do complemento de dois. Aqui está um exemplo detalhado de como converter um número binário para sua representação negativa em complemento de dois:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos um número binário</span>
-<span class="n">numero</span> <span class="o">=</span> <span class="mb">0b1011</span>  <span class="c1"># Equivalente a 11 em decimal</span>
+<p>O operador unário para inversão de bits é representado pelo caractere <code class="docutils literal notranslate"><span class="pre">~</span></code>. Ele inverte cada bit em uma representação binária de um número, transformando 0 em 1 e 1 em 0.</p>
+<p>Aqui está um exemplo didático usando um número pequeno:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Número original em decimal</span>
+<span class="n">numero_original</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="c1"># Para obter a representação em complemento de dois, primeiro invertemos os bits</span>
-<span class="n">numero_invertido</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero</span>
+<span class="c1"># Representação binária do número original</span>
+<span class="n">binario_original</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">numero_original</span><span class="p">)</span>
 
-<span class="c1"># Em seguida, adicionamos 1 ao número invertido</span>
-<span class="n">numero_negativo</span> <span class="o">=</span> <span class="n">numero_invertido</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="c1"># Inverte os bits usando o operador ~</span>
+<span class="n">numero_invertido</span> <span class="o">=</span> <span class="o">~</span><span class="n">numero_original</span>
 
-<span class="c1"># Agora, vamos imprimir os resultados</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número original em binário: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número invertido em binário: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero_invertido</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Representação em complemento de dois: </span><span class="si">{</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número decimal equivalente: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">numero_negativo</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Representação binária do número invertido</span>
+<span class="n">binario_invertido</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">numero_invertido</span><span class="p">)</span>
+
+<span class="c1"># Exibindo os resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número original:&quot;</span><span class="p">,</span> <span class="n">numero_original</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Representação binária do número original:&quot;</span><span class="p">,</span> <span class="n">binario_original</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número invertido:&quot;</span><span class="p">,</span> <span class="n">numero_invertido</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Representação binária do número invertido:&quot;</span><span class="p">,</span> <span class="n">binario_invertido</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída do Código Melhorada:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span> <span class="n">em</span> <span class="n">binário</span><span class="p">:</span> <span class="mb">0b1011</span>  <span class="c1"># 11 em decimal</span>
-<span class="n">Número</span> <span class="n">invertido</span> <span class="n">em</span> <span class="n">binário</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b100</span>  <span class="c1"># Inversão bit a bit de 0b1011</span>
-<span class="n">Representação</span> <span class="n">em</span> <span class="n">complemento</span> <span class="n">de</span> <span class="n">dois</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b1100</span>  <span class="c1"># 0b1011 invertido + 1</span>
-<span class="n">Número</span> <span class="n">decimal</span> <span class="n">equivalente</span><span class="p">:</span> <span class="o">-</span><span class="mi">12</span>  <span class="c1"># Representação decimal de -0b1100</span>
+<p>A saída deste código será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">original</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Representação</span> <span class="n">binária</span> <span class="n">do</span> <span class="n">número</span> <span class="n">original</span><span class="p">:</span> <span class="mb">0b101</span>
+<span class="n">Número</span> <span class="n">invertido</span><span class="p">:</span> <span class="o">-</span><span class="mi">6</span>
+<span class="n">Representação</span> <span class="n">binária</span> <span class="n">do</span> <span class="n">número</span> <span class="n">invertido</span><span class="p">:</span> <span class="o">-</span><span class="mb">0b110</span>
 </pre></div>
 </div>
-<p>O operador <code class="docutils literal notranslate"><span class="pre">~</span></code>, conhecido como NOT bit a bit, é essencial na manipulação de bits. Ele inverte cada bit do número: <code class="docutils literal notranslate"><span class="pre">0</span></code> vira <code class="docutils literal notranslate"><span class="pre">1</span></code> e <code class="docutils literal notranslate"><span class="pre">1</span></code> vira <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ao adicionar <code class="docutils literal notranslate"><span class="pre">1</span></code> ao resultado, convertemos o número para sua forma negativa em complemento de dois. Este método é amplamente utilizado em programação e sistemas digitais para representar números negativos, realizar cálculos de checksum, criptografia, e otimizar código.</p>
-<p>É importante lembrar que, na representação em complemento de dois, o bit mais significativo (o primeiro à esquerda) indica o sinal do número: <code class="docutils literal notranslate"><span class="pre">0</span></code> para positivo e <code class="docutils literal notranslate"><span class="pre">1</span></code> para negativo. Assim, em nosso exemplo, o número <code class="docutils literal notranslate"><span class="pre">-0b1100</span></code> tem o bit mais significativo <code class="docutils literal notranslate"><span class="pre">1</span></code>, indicando que é um número negativo.</p>
+<p>Inverter os bits de um número não significa inverter o próprio número decimal. A inversão de bits é uma operação específica que atua no nível de bits individuais em uma representação binária de um número.</p>
+<p>Por exemplo, considere o número decimal 5, que em binário é representado como <code class="docutils literal notranslate"><span class="pre">0b101</span></code>. Ao inverter os bits deste número usando o operador <code class="docutils literal notranslate"><span class="pre">~</span></code>, obtemos <code class="docutils literal notranslate"><span class="pre">-0b110</span></code>. Aqui, cada bit foi invertido: o bit 0 tornou-se 1 e os bits 1 tornaram-se 0.</p>
+<p>No entanto, ao converter o resultado de volta para decimal, obtemos -6. Isso ocorre porque o Python usa a representação de complemento de dois para números binários com sinal. Portanto, ao inverter os bits de um número positivo, o resultado será um número negativo.</p>
+<p>Aqui está o texto corrigido:</p>
 </section>
+</section>
+<section id="deslocamento-de-bits">
+<h2>Deslocamento de Bits<a class="headerlink" href="#deslocamento-de-bits" title="Permalink to this heading">#</a></h2>
+<p>Existem dois operadores principais para realizar deslocamentos de bits:</p>
+<ol class="arabic">
+<li><p><strong>Deslocamento à Esquerda</strong>: O operador <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> move os bits para a esquerda, preenchendo com zeros à direita. Cada posição deslocada representa uma multiplicação por 2. Veja o exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">resultado_esquerda</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>  <span class="c1"># Desloca 1 posição à esquerda</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span> <span class="n">resultado_esquerda</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A saída deste código será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Resultado</span><span class="p">:</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Aqui, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&lt;&lt;</span> <span class="pre">1</span></code> resulta em <code class="docutils literal notranslate"><span class="pre">10</span></code> (em decimal), pois estamos multiplicando <code class="docutils literal notranslate"><span class="pre">5</span></code> por <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</li>
+<li><p><strong>Deslocamento à Direita</strong>: O operador <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> move os bits para a direita, preenchendo com o bit de sinal à esquerda (no caso de números com sinal). Cada posição deslocada representa uma divisão por 2. Por exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">resultado_direita</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>  <span class="c1"># Desloca 1 posição à direita</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span> <span class="n">resultado_direita</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A saída deste código será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Resultado</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Neste caso, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">&gt;&gt;</span> <span class="pre">1</span></code> resulta em <code class="docutils literal notranslate"><span class="pre">2</span></code> (em decimal), pois estamos dividindo <code class="docutils literal notranslate"><span class="pre">5</span></code> por <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</li>
+</ol>
+<p>Os operadores de deslocamento de bits são frequentemente utilizados em várias áreas, como criptografia, compressão de dados, manipulação de imagens e comunicação com hardware.</p>
 </section>
 <section id="precedencia-de-operadores">
 <h2>Precedência de Operadores<a class="headerlink" href="#precedencia-de-operadores" title="Permalink to this heading">#</a></h2>
@@ -1084,25 +1098,29 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p><strong>Unário</strong></p></td>
 <td><p>Alta</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">-x</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-x</span></code>, <code class="docutils literal notranslate"><span class="pre">~x</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Multiplicação e Divisão</strong></p></td>
+<tr class="row-odd"><td><p><strong>Deslocamento de Bits</strong></p></td>
+<td><p>Alta</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;&lt;</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">&gt;&gt;</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Multiplicação e Divisão</strong></p></td>
 <td><p>Média</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">/</span> <span class="pre">4</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Adição e Subtração</strong></p></td>
+<tr class="row-odd"><td><p><strong>Adição e Subtração</strong></p></td>
 <td><p>Média</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">-</span> <span class="pre">4</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Comparação</strong></p></td>
+<tr class="row-even"><td><p><strong>Comparação</strong></p></td>
 <td><p>Baixa</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">==</span> <span class="pre">3</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Operadores Lógicos</strong></p></td>
+<tr class="row-odd"><td><p><strong>Operadores Lógicos</strong></p></td>
 <td><p>Baixa</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">or</span> <span class="pre">z</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Atribuição</strong></p></td>
+<tr class="row-even"><td><p><strong>Atribuição</strong></p></td>
 <td><p>Mais baixa</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">2</span></code></p></td>
 </tr>
@@ -1317,30 +1335,14 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
 </pre></div>
 </div>
 <ol class="arabic simple" start="9">
-<li><p>Você é um fotógrafo profissional apaixonado por paisagens. Em sua próxima aventura, você se depara com um lago cristalino cercado por imensas montanhas. Seu objetivo é capturar uma foto aérea épica do lago, utilizando um drone. Para garantir a melhor perspectiva, você precisa determinar a altura ideal de voo do drone. Para isso, será necessário saber a distância horizontal (cateto adjacente) entre você e a margem do lago, bem como a altura vertical (cateto oposto) que deseja alcançar com o drone.</p></li>
+<li><p>Você é um fotógrafo profissional apaixonado por paisagens. Em sua próxima aventura, você se depara com um lago cristalino cercado por imensas montanhas. Seu objetivo é capturar uma foto aérea épica do lago, utilizando um drone. Para garantir a melhor perspectiva, você precisa determinar a altura ideal de voo do drone. Para isso, será necessário saber a distância horizontal entre você e a margem do lago, bem como a altura vertical que deseja alcançar com o drone.</p></li>
 </ol>
 <p>A hipotenusa, que representa a distância diagonal percorrida pelo drone, pode ser calculada utilizando o Teorema de Pitágoras:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hipotenusa = √(Cateto adjacente² + Cateto oposto²)
-</pre></div>
-</div>
+<div class="math notranslate nohighlight">
+\[
+Hipotenusa = \sqrt(CatetoAdjacente^2 + CatetoOposto^2)
+\]</div>
 <p>Seu programa receberá como entrada, em metros, o comprimento do cateto adjacente e do cateto oposto, e calculará a hipotenusa correspondente.</p>
-<p><strong>Representação ASCII:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                           <span class="o">^</span>
-                                          <span class="o">/|</span>
-                                         <span class="o">/</span> <span class="o">|</span>
-                                        <span class="o">/</span>  <span class="o">|</span>
-                                       <span class="o">/</span>   <span class="o">|</span>
-                                      <span class="o">/</span>    <span class="o">|</span>
-                                     <span class="o">/</span>     <span class="o">|</span>
-                                    <span class="o">/</span>      <span class="o">|</span>
-                                   <span class="o">/</span>       <span class="o">|</span>
-                                  <span class="o">/</span>        <span class="o">|</span>
-                                 <span class="o">/</span>         <span class="o">|</span>
-                                <span class="o">/</span>          <span class="o">|</span>
-                               <span class="o">/</span>           <span class="o">|</span>
-                              <span class="o">/</span><span class="n">____________</span><span class="o">|</span>
-</pre></div>
-</div>
 <p><strong>Exemplos de Teste:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">50</span> <span class="mi">30</span>
@@ -1353,12 +1355,37 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
 <span class="c1"># Teste 3</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">70</span> <span class="mi">50</span>
 <span class="n">Saída</span><span class="p">:</span> <span class="mf">86.02</span> <span class="n">metros</span>
-
 </pre></div>
 </div>
 <ol class="arabic simple" start="10">
-<li></li>
+<li><p>Um artesão talentoso está trabalhando em duas peças: um cone de metal e um paralelepípedo de madeira. Para ajudá-lo em seu projeto, você precisa desenvolver um programa que receba as informações de dimensões em cm desses objetos e calcule seus volumes e massas.</p></li>
 </ol>
+<ul class="simple">
+<li><p>Receber na entrada as seguintes informações para o cone: Altura e Raio.</p></li>
+<li><p>Em seguida, receber as informações para o paralelepípedo: Altura, Largura e Comprimento.</p></li>
+</ul>
+<p>Considerando as fórmulas matemáticas adequadas para calcular o volume de cada objeto:</p>
+<p>Volume do Cone: <span class="math notranslate nohighlight">\( V_{\text{cone}} = \frac{1}{3} \pi r^2 h \)</span></p>
+<p>Volume do Paralepípedo: <span class="math notranslate nohighlight">\( V_{\text{paralel}} = l \times w \times h \)</span></p>
+<p>Calcule a massa de cada objeto, considerando que a densidade do metal é de 8 g/cm³ e a densidade da madeira é de 0,5 g/cm³. Qual dos dois objetos, cone ou paralelepípedo, é mais pesado? Condidere que eles também podem ser iguais.</p>
+<p><strong>Exemplos de Teste:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">10</span> <span class="mi">5</span> <span class="mi">19</span> <span class="mi">8</span> <span class="mi">6</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">paralelepípedo</span> <span class="n">com</span> <span class="mf">456.000</span><span class="n">g</span> <span class="n">é</span> <span class="n">mais</span> <span class="n">pesado</span> <span class="n">do</span> <span class="n">que</span> <span class="n">o</span> <span class="n">cone</span> <span class="n">com</span> <span class="mf">2094.392</span><span class="n">g</span><span class="o">.</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">8</span> <span class="mi">4</span> <span class="mi">10</span> <span class="mi">6</span> <span class="mi">6</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">cone</span> <span class="n">com</span> <span class="mf">201.061</span><span class="n">g</span> <span class="n">é</span> <span class="n">mais</span> <span class="n">pesado</span> <span class="n">do</span> <span class="n">que</span> <span class="n">o</span> <span class="n">paralelepípedo</span> <span class="n">com</span> <span class="mf">144.000</span><span class="n">g</span><span class="o">.</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">12</span> <span class="mi">6</span> <span class="mi">15</span> <span class="mi">10</span> <span class="mi">8</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">paralelepípedo</span> <span class="n">com</span> <span class="mf">720.000</span><span class="n">g</span> <span class="n">é</span> <span class="n">mais</span> <span class="n">pesado</span> <span class="n">do</span> <span class="n">que</span> <span class="n">o</span> <span class="n">cone</span> <span class="n">com</span> <span class="mf">2261.946</span><span class="n">g</span><span class="o">.</span>
+
+<span class="c1"># Teste 4</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">6</span> <span class="mi">3</span> <span class="mi">12</span> <span class="mi">6</span> <span class="mi">4</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">paralelepípedo</span> <span class="n">e</span> <span class="n">o</span> <span class="n">cone</span> <span class="n">possuem</span> <span class="n">o</span> <span class="n">mesmo</span> <span class="n">peso</span><span class="o">.</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -1442,6 +1469,7 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inversao-bit-a-bit">Inversão Bit a Bit (<code class="docutils literal notranslate"><span class="pre">~</span></code>):</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deslocamento-de-bits">Deslocamento de Bits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia-de-operadores">Precedência de Operadores</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
