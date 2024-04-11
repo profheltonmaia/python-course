@@ -1123,6 +1123,17 @@ document.write(`
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p>“Antes de começar os exercícios, é importante notar que para testes com múltiplas entradas em uma mesma linha, é útil utilizar o método <code class="docutils literal notranslate"><span class="pre">.split()</span></code>. Este método divide a string recebida pelo <code class="docutils literal notranslate"><span class="pre">input()</span></code> em substrings, utilizando espaços em branco como delimitadores. Ele retorna uma lista contendo as substrings resultantes.</p>
+<p>Por exemplo, para uma entrada: 1 1 6 6 4 4</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ao executar o código acima com a entrada <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">1</span> <span class="pre">6</span> <span class="pre">6</span> <span class="pre">4</span> <span class="pre">4</span></code>, a saída será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 <ol class="arabic simple">
 <li><p>Dada a expressão matemática: <span class="math notranslate nohighlight">\(a = 4 * (2 + 3) - 7\)</span>. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
 </ol>
@@ -1211,7 +1222,6 @@ document.write(`
    0  1  2  3  4  5  6  7
 </pre></div>
 </div>
-<p>Obs: Para testes com múltlipas entradas em uma mesma linha, utilize o método <code class="docutils literal notranslate"><span class="pre">.split()</span></code>: Este método divide a string recebida pelo <code class="docutils literal notranslate"><span class="pre">input()</span></code> em substrings, utilizando espaços em branco como delimitadores. Ele retorna uma lista contendo as substrings resultantes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">4</span>
 <span class="n">Saída</span><span class="p">:</span> <span class="n">O</span> <span class="n">ponto</span> <span class="n">está</span> <span class="n">dentro</span> <span class="n">do</span> <span class="n">retângulo</span><span class="o">.</span>
