@@ -354,6 +354,8 @@ document.write(`
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">elif</span></code>:</strong> Avalia uma condição e executa um bloco de código se a condição for verdadeira, <strong>mas somente se a condição anterior for falsa</strong>.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">else</span></code>:</strong> Executa um bloco de código se <strong>todas as condições anteriores forem falsas</strong>.</p></li>
 </ol>
+<p><strong>Cadeias de Comparação:</strong></p>
+<p>Python permite cadeias de comparação, que são uma maneira concisa de expressar múltiplas comparações. Por exemplo, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c:</span></code> é equivalente a <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span> <span class="pre">and</span> <span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">c:</span></code>.</p>
 <p><strong>Aninhamento de Estruturas Condicionais:</strong></p>
 <p>O poder real das estruturas condicionais reside na capacidade de <strong>aninhá-las</strong>, criando lógica complexa para lidar com diferentes cenários.</p>
 <p><strong>Exemplos:</strong></p>
@@ -375,14 +377,14 @@ document.write(`
 </pre></div>
 </div>
 <p>Neste exemplo, verificamos a idade e o sexo da pessoa. Se a pessoa for maior de idade, verificamos o sexo e imprimimos uma mensagem adicional se for feminino.</p>
-<p><strong>Classificação de Notas:</strong></p>
+<p><strong>Classificação de Notas com Cadeias de Comparação:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota</span> <span class="o">=</span> <span class="mi">75</span>
 
-<span class="k">if</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+<span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parabéns! Você obteve uma nota A.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+<span class="k">elif</span> <span class="mi">80</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ótimo! Sua nota é B.&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+<span class="k">elif</span> <span class="mi">70</span> <span class="o">&lt;=</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bom trabalho! Sua nota é C.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Infelizmente, você não atingiu a nota mínima. Sua nota é D.&quot;</span><span class="p">)</span>
@@ -392,7 +394,7 @@ document.write(`
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Bom trabalho! Sua nota é C.
 </pre></div>
 </div>
-<p>Essas saídas correspondem aos exemplos fornecidos, demonstrando o comportamento das estruturas de decisão aninhadas em Python.</p>
+<p>Essas saídas correspondem aos exemplos fornecidos, demonstrando o comportamento das estruturas de decisão aninhadas em Python. O exemplo de classificação de notas foi atualizado para usar cadeias de comparação.</p>
 </section>
 <section id="estruturas-de-repeticao">
 <h2>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Permalink to this heading">#</a></h2>
