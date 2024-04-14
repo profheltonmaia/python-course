@@ -401,58 +401,157 @@ document.write(`
 <p>As estruturas de repetição em Python, também conhecidas como loops, são utilizadas para executar um bloco de código várias vezes. Python possui duas principais estruturas de repetição: <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>. Vamos explorar cada uma delas com teoria, exemplos práticos e explicações sobre o uso de <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
 <section id="estrutura-de-repeticao-for">
 <h3>Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#estrutura-de-repeticao-for" title="Permalink to this heading">#</a></h3>
-<p><strong>Sintaxe</strong></p>
+<p>O <code class="docutils literal notranslate"><span class="pre">for</span></code> é utilizado para percorrer ou iterar sobre uma sequência de dados, executando um conjunto de instruções em cada item. Sua sintaxe básica é:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variavel</span> <span class="ow">in</span> <span class="n">sequencia</span><span class="p">:</span>
-   <span class="c1"># Bloco de código a ser repetido</span>
+    <span class="c1"># Bloco de código a ser repetido</span>
 </pre></div>
 </div>
-<p><strong>Exemplo Prático: Iterando sobre uma Lista de Frutas</strong></p>
+<p>Antes de nos aprofundarmos no estudo das estruturas de repetição, é importante compreender a função <code class="docutils literal notranslate"><span class="pre">range()</span></code>, pois ela se tornará uma ferramenta valiosa. A função <code class="docutils literal notranslate"><span class="pre">range()</span></code> é utilizada para gerar sequências de números e pode ser configurada de diferentes maneiras, mas a forma mais comum é através do uso da sintaxe <code class="docutils literal notranslate"><span class="pre">range(início,</span> <span class="pre">fim,</span> <span class="pre">passo)</span></code>, onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">início</span></code>: Representa o primeiro número da sequência (inclusive). Caso não seja especificado, o valor padrão é 0.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fim</span></code>: Indica o último número da sequência (exclusivo).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">passo</span></code>: Define o intervalo entre os números da sequência. Se não for especificado, o valor padrão é 1.</p></li>
+</ul>
+<p>Por exemplo, ao utilizar <code class="docutils literal notranslate"><span class="pre">range(5)</span></code>, obtemos a sequência de números de 0 a 4 (incluindo o 0 e excluindo o 5), com um incremento padrão de 1. Compreender como utilizar a função <code class="docutils literal notranslate"><span class="pre">range()</span></code> é fundamental para criar iterações precisas em laços <code class="docutils literal notranslate"><span class="pre">for</span></code>, o que simplifica bastante o trabalho com repetições em Python.</p>
+<p>Aqui está um exemplo prático:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gerando uma sequência de números pares de 0 a 10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">2</span>
+<span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mi">8</span>
+<span class="mi">10</span>
+</pre></div>
+</div>
+<p>Neste exemplo, a chamada <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">11,</span> <span class="pre">2)</span></code> gera a sequência de números pares de 0 a 10, com incrementos de 2. Isso resulta na impressão de todos os números pares dentro do intervalo especificado.</p>
+<p>Além disso, podemos iterar sobre números de 0 a 4 da seguinte maneira:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
+<p><strong>Iterando sobre uma String:</strong>
+Neste exemplo, cada letra da string “Python” é impressa individualmente.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palavra</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palavra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P</span>
+<span class="n">y</span>
+<span class="n">t</span>
+<span class="n">h</span>
+<span class="n">o</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+<p><strong>Iterando sobre uma Lista de Números:</strong>
+Este exemplo itera sobre uma lista de números e imprime o dobro de cada número.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O dobro de </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> é </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">num</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">O</span> <span class="n">dobro</span> <span class="n">de</span> <span class="mi">10</span> <span class="n">é</span> <span class="mf">20.</span>
+<span class="n">O</span> <span class="n">dobro</span> <span class="n">de</span> <span class="mi">20</span> <span class="n">é</span> <span class="mf">40.</span>
+<span class="n">O</span> <span class="n">dobro</span> <span class="n">de</span> <span class="mi">30</span> <span class="n">é</span> <span class="mf">60.</span>
+<span class="n">O</span> <span class="n">dobro</span> <span class="n">de</span> <span class="mi">40</span> <span class="n">é</span> <span class="mf">80.</span>
+<span class="n">O</span> <span class="n">dobro</span> <span class="n">de</span> <span class="mi">50</span> <span class="n">é</span> <span class="mf">100.</span>
+</pre></div>
+</div>
+<p><strong>Executando um Número Específico de Vezes:</strong>
+Este exemplo imprime “Olá, mundo!” três vezes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá, mundo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Olá, mundo!
+Olá, mundo!
+Olá, mundo!
+</pre></div>
+</div>
+<p>O uso do <code class="docutils literal notranslate"><span class="pre">_</span></code> como variável no loop <code class="docutils literal notranslate"><span class="pre">for</span></code> é uma convenção para indicar que o valor dessa variável não será utilizado dentro do loop.</p>
+<p><strong>Variável e Sequência:</strong></p>
+<ul class="simple">
+<li><p>A variável definida no <code class="docutils literal notranslate"><span class="pre">for</span></code> recebe, a cada iteração, um item da sequência.</p></li>
+<li><p>A sequência pode ser uma lista, uma tupla, uma string, um dicionário, entre outros.</p></li>
+</ul>
+<p><strong>Exemplo: Iterando sobre uma Lista de Frutas:</strong>
+Neste exemplo, itera-se sobre uma lista de frutas e imprime cada uma delas.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">maçã</span>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">maçã</span>
 <span class="n">banana</span>
 <span class="n">uva</span>
 </pre></div>
 </div>
+<p><strong>Iterando sobre um Dicionário:</strong>
+Aqui, itera-se sobre um dicionário de notas de alunos, imprimindo o nome e a nota de cada aluno.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">aluno_notas</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;João&quot;</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">,</span> <span class="s2">&quot;Maria&quot;</span><span class="p">:</span> <span class="mf">9.0</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">:</span> <span class="mf">7.8</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">nome</span><span class="p">,</span> <span class="n">nota</span> <span class="ow">in</span> <span class="n">aluno_notas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2"> obteve nota </span><span class="si">{</span><span class="n">nota</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">João</span> <span class="n">obteve</span> <span class="n">nota</span> <span class="mf">8.5</span><span class="o">.</span>
+<span class="n">Maria</span> <span class="n">obteve</span> <span class="n">nota</span> <span class="mf">9.0</span><span class="o">.</span>
+<span class="n">Pedro</span> <span class="n">obteve</span> <span class="n">nota</span> <span class="mf">7.8</span><span class="o">.</span>
+</pre></div>
+</div>
 <p><strong>Utilização do <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">exit()</span></code>:</strong> Encerra o programa completamente, <strong>interrompendo o loop <code class="docutils literal notranslate"><span class="pre">for</span></code> e qualquer código subsequente</strong>.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong> Sai apenas do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> atual, <strong>permitindo que o código restante seja executado</strong>.</p></li>
+<li><p>O <code class="docutils literal notranslate"><span class="pre">exit()</span></code> encerra o programa completamente, interrompendo o loop <code class="docutils literal notranslate"><span class="pre">for</span></code> e qualquer código subsequente.</p></li>
+<li><p>O <code class="docutils literal notranslate"><span class="pre">break</span></code> sai apenas do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> atual, permitindo que o código restante seja executado.</p></li>
 </ul>
-<p><strong>Exemplo:</strong></p>
+<p><strong>Exemplo com <code class="docutils literal notranslate"><span class="pre">exit()</span></code>:</strong>
+Neste exemplo, ao encontrar a palavra “banana”, o programa é encerrado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
-   <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Saindo do programa.&quot;</span><span class="p">)</span>
-      <span class="n">exit</span><span class="p">()</span>
-   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Saindo do programa.&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Encontrei uma banana! Saindo do programa.
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Encontrei uma banana! Saindo do programa.
 </pre></div>
 </div>
-<p>Neste exemplo, o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é usado para sair do programa assim que a fruta “banana” é encontrada, interrompendo a iteração do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> e a execução do código restante.</p>
-<p><strong>Exemplo com <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
+<p><strong>Exemplo com <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong>
+Neste exemplo, ao encontrar a palavra “banana”, o loop é interrompido.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
-   <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Pulando para a próxima fruta.&quot;</span><span class="p">)</span>
-      <span class="k">break</span>
-   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Pulando para a próxima fruta.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
 Encontrei uma banana! Pulando para a próxima fruta.
 Estou processando a fruta uva.
 </pre></div>
 </div>
-<p>Aqui, o <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para sair do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> assim que a fruta “banana” é encontrada, permitindo que o código restante seja executado, processando a fruta “uva”.</p>
 <p><strong>Casos de Utilização do <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
 <ul class="simple">
 <li><p>Iteração sobre sequências como listas, tuplas e strings.</p></li>
