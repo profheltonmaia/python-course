@@ -552,13 +552,6 @@ Encontrei uma banana! Pulando para a próxima fruta.
 Estou processando a fruta uva.
 </pre></div>
 </div>
-<p><strong>Casos de Utilização do <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
-<ul class="simple">
-<li><p>Iteração sobre sequências como listas, tuplas e strings.</p></li>
-<li><p>Processamento de conjuntos de dados.</p></li>
-<li><p>Execução de código um número predefinido de vezes.</p></li>
-</ul>
-<p>Vamos corrigir o texto e adicionar as saídas do código conforme solicitado:</p>
 </section>
 <section id="estrutura-de-repeticao-while">
 <h3>Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#estrutura-de-repeticao-while" title="Permalink to this heading">#</a></h3>
@@ -572,7 +565,7 @@ Estou processando a fruta uva.
 <li><p><strong>Condição:</strong> Uma expressão booleana que determina se o loop deve continuar ou parar.</p></li>
 <li><p><strong>Bloco de Código:</strong> As instruções que serão executadas enquanto a condição for verdadeira.</p></li>
 </ul>
-<p><strong>Exemplo Prático: Contagem Até 5 Usando <code class="docutils literal notranslate"><span class="pre">while</span></code></strong></p>
+<p><strong>Exemplo: Contagem Até 5 Usando <code class="docutils literal notranslate"><span class="pre">while</span></code></strong></p>
 <p>Vamos contar até 5 usando o loop <code class="docutils literal notranslate"><span class="pre">while</span></code>: Implementação de um contador simples e sua impressão na saída.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
@@ -618,32 +611,27 @@ Estou processando a fruta uva.
 <li><p>Se for par, <code class="docutils literal notranslate"><span class="pre">print(numero)</span></code> imprime o número.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">numero</span> <span class="pre">+=</span> <span class="pre">1</span></code> incrementa <code class="docutils literal notranslate"><span class="pre">numero</span></code> em 1.</p></li>
 </ul>
-<p><strong>Exemplo de Validação da Idade do Usuário:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">while</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">idade</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite sua idade: &quot;</span><span class="p">))</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade inválida. Digite um número inteiro.&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">idade</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade deve estar entre 1 e 100.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sua idade é </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span><span class="p">)</span>
+<p><strong>Exemplo do <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span></code></strong> como forma de continuar o loop enquanto uma condição não é verdadeira:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">flag</span><span class="p">:</span>
+    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Você deseja sair? (sim/não): &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">resposta</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;sim&#39;</span><span class="p">:</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você saiu do loop.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Idade</span> <span class="n">inválida</span><span class="o">.</span> <span class="n">Digite</span> <span class="n">um</span> <span class="n">número</span> <span class="n">inteiro</span><span class="o">.</span>
-<span class="n">Idade</span> <span class="n">deve</span> <span class="n">estar</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mf">100.</span>
-<span class="n">Sua</span> <span class="n">idade</span> <span class="n">é</span> <span class="mi">25</span> <span class="n">anos</span><span class="o">.</span>
-</pre></div>
-</div>
-<p>Observações importantes:</p>
+<p>Explicando o código:</p>
 <ul class="simple">
-<li><p>O loop repete enquanto <code class="docutils literal notranslate"><span class="pre">idade</span></code> é inválida (menor ou igual a 0 ou maior que 100).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">try-except</span></code> tenta converter a entrada do usuário em um número inteiro.</p></li>
-<li><p>Se a conversão falhar, uma mensagem de erro é exibida.</p></li>
-<li><p>Se a idade for válida, o loop termina e a idade é impressa.</p></li>
+<li><p>A variável <code class="docutils literal notranslate"><span class="pre">flag</span></code> é inicializada como <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>O loop <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span></code> continua enquanto <code class="docutils literal notranslate"><span class="pre">flag</span></code> for <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>O usuário é solicitado a digitar se deseja sair.</p></li>
+<li><p>Se o usuário digitar “sim”, <code class="docutils literal notranslate"><span class="pre">flag</span></code> se torna <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>Quando <code class="docutils literal notranslate"><span class="pre">flag</span></code> é <code class="docutils literal notranslate"><span class="pre">True</span></code>, a condição <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">not</span> <span class="pre">flag</span></code> se torna <code class="docutils literal notranslate"><span class="pre">False</span></code>, e o loop termina.</p></li>
 </ul>
-<p><strong>Usando <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
+<ul class="simple">
+<li><p>O programa imprime “Você saiu do loop.” e encerra a execução do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
+</ul>
+<p><strong>Usando o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
 <p><strong><code class="docutils literal notranslate"><span class="pre">exit()</span></code>: Encerrando o Programa Completamente:</strong></p>
 <p>O <code class="docutils literal notranslate"><span class="pre">exit()</span></code> encerra o programa completamente, interrompendo o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> e qualquer código subsequente.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
@@ -656,69 +644,38 @@ Estou processando a fruta uva.
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Contagem</span><span class="p">:</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Contagem</span><span class="p">:</span> <span class="mi">1</span>
 <span class="o">...</span>
 <span class="n">Contagem</span><span class="p">:</span> <span class="mi">10</span>
 <span class="n">Contagem</span> <span class="n">chegou</span> <span class="n">a</span> <span class="mf">10.</span> <span class="n">Saindo</span> <span class="n">do</span> <span class="n">programa</span><span class="o">.</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>O loop repete indefinidamente.</p></li>
-<li><p>Se <code class="docutils literal notranslate"><span class="pre">contador</span></code> for 10, <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é chamado, encerrando o programa.</p></li>
-</ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">break</span></code>: Saindo Apenas do Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> Atual:</strong></p>
-<p>O <code class="docutils literal notranslate"><span class="pre">break</span></code> sai apenas do loop <code class="docutils literal notranslate"><span class="pre">while</span></code> atual, permitindo que o código restante seja executado.</p>
+<p>O loop repete indefinidamente. Se <code class="docutils literal notranslate"><span class="pre">contador</span></code> for 10, <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é chamado, encerrando o programa.</p>
+<p>Por fim, um exemplo da tulização do <code class="docutils literal notranslate"><span class="pre">break</span></code> apenas para sair do loop <code class="docutils literal notranslate"><span class="pre">while</span></code> atual, permitindo que o código restante seja executado.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">opcao</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite uma opção (a/b/c/sair): &quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;sair&quot;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saindo do programa.&quot;</span><span class="p">)</span>
         <span class="k">break</span>
     <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
-        <span class="c1"># Executar ação relacionada à opção &quot;a&quot;</span>
-        <span class="k">pass</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Executando ação relacionada à opção &#39;a&#39;&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span>
-        <span class="c1"># Executar ação relacionada à opção &quot;b&quot;</span>
-        <span class="k">pass</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Executando ação relacionada à opção &#39;b&#39;&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opção inválida. Tente novamente.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Opção</span> <span class="n">inválida</span><span class="o">.</span> <span class="n">Tente</span> <span class="n">novamente</span><span class="o">.</span>
-<span class="n">Saindo</span> <span class="n">do</span> <span class="n">programa</span><span class="o">.</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>O loop repete indefinidamente.</p></li>
-<li><p>Se <code class="docutils literal notranslate"><span class="pre">opcao</span></code> for “sair”, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop.</p></li>
-</ul>
+<p>O loop repete indefinidamente. Se <code class="docutils literal notranslate"><span class="pre">opcao</span></code> for “sair”, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop.</p>
 </section>
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
-<p>map</p>
-<ol class="arabic simple">
-<li><p><strong>Verificação de Idade</strong>:
-Crie um programa que, ao receber a idade do usuário, imprima “Você é maior de idade” se a idade for 18 anos ou mais; caso contrário, imprima “Você é menor de idade”.</p></li>
-<li><p><strong>Calculadora de Bônus</strong>:
-Faça um programa que, ao solicitar o salário de um funcionário, calcule e imprima um bônus de 10% se o salário for inferior a R$ 2000.</p></li>
-<li><p><strong>Média de Notas</strong>:
-Desenvolva um programa que, ao receber três notas do usuário, calcule a média. Em seguida, imprima se o aluno foi aprovado (média maior ou igual a 7) ou reprovado.</p></li>
-<li><p><strong>Contagem Regressiva</strong>:
-Escreva um programa que imprima uma contagem regressiva de 10 a 1 usando um loop while. Por exemplo, “Contagem regressiva: 10, 9, 8, …, 1”.</p></li>
-<li><p><strong>Verificação de Palíndromo</strong>:
-Crie um programa que, ao solicitar ao usuário uma palavra, verifique se é um palíndromo (pode ser lida da mesma forma de trás para frente) e imprima o resultado.</p></li>
-<li><p><strong>Tabuada Personalizada</strong>:
-Peça ao usuário para fornecer um número. O programa deve imprimir a tabuada desse número de 1 a 10. Por exemplo, se o usuário inserir 5, o programa imprimirá “5 x 1 = 5”, “5 x 2 = 10”, …, “5 x 10 = 50”.</p></li>
-<li><p><strong>Validação de Senha</strong>:
-Desenvolva um programa que, ao solicitar ao usuário criar uma senha, valide se ela tem pelo menos 8 caracteres e inclui pelo menos um número. Dê feedback ao usuário sobre a validação.</p></li>
-<li><p><strong>Jogo da Adivinhação</strong>:
-Crie um jogo em que o programa gere um número aleatório entre 1 e 100. O usuário deve tentar adivinhar o número, e o programa deve fornecer dicas sobre se o número é maior ou menor após cada tentativa.</p></li>
-<li><p><strong>Fatorial</strong>:
-Implemente um programa que, ao solicitar ao usuário inserir um número, calcule e imprima o fatorial desse número. O fatorial de um número é o produto de todos os números inteiros de 1 até o próprio número.</p></li>
-<li><p><strong>Classificação de Triângulos</strong>:
-Solicite ao usuário os comprimentos dos lados de um triângulo. O programa deve classificar o triângulo como equilátero (todos os lados iguais), isósceles (dois lados iguais) ou escaleno (nenhum lado igual).</p></li>
-</ol>
+<p>Antes de começar os exercícios, vamos aprender mais um pouco sobre a leitura dos dados de entrada. Desta vez sobre a função  <code class="docutils literal notranslate"><span class="pre">map()</span></code>, que é usada para aplicar uma função específica a todos os elementos de uma sequência (como listas ou tuplas), retornando um iterador com os resultados. Ela recebe dois argumentos: a função a ser aplicada e a sequência de entrada.</p>
+<p>Por exemplo, quando queremos converter a entrada do usuário em números de ponto flutuante. Usamos <code class="docutils literal notranslate"><span class="pre">map()</span></code> juntamente com a função <code class="docutils literal notranslate"><span class="pre">float()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota1</span><span class="p">,</span> <span class="n">nota2</span><span class="p">,</span> <span class="n">nota3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Neste código, o <code class="docutils literal notranslate"><span class="pre">input()</span></code> revebe três notas separadas por espaços. O método <code class="docutils literal notranslate"><span class="pre">.split()</span></code> divide a entrada em uma lista de strings. Em seguida, <code class="docutils literal notranslate"><span class="pre">map(float,</span> <span class="pre">...)</span></code> aplica a função <code class="docutils literal notranslate"><span class="pre">float()</span></code> a cada elemento da lista, convertendo as strings em números de ponto flutuante. Finalmente, os valores convertidos são atribuídos às variáveis <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code> e <code class="docutils literal notranslate"><span class="pre">n3</span></code>.</p>
 </section>
 </section>
 
