@@ -491,7 +491,7 @@ Olá, mundo!
 <li><p>A variável definida no <code class="docutils literal notranslate"><span class="pre">for</span></code> recebe, a cada iteração, um item da sequência.</p></li>
 <li><p>A sequência pode ser uma lista, uma tupla, uma string, um dicionário, entre outros.</p></li>
 </ul>
-<p><strong>Exemplo: Iterando sobre uma Lista de Frutas:</strong>
+<p><strong>Iterando sobre uma Lista de Frutas:</strong>
 Neste exemplo, itera-se sobre uma lista de frutas e imprime cada uma delas.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
@@ -565,7 +565,6 @@ Estou processando a fruta uva.
 <li><p><strong>Condição:</strong> Uma expressão booleana que determina se o loop deve continuar ou parar.</p></li>
 <li><p><strong>Bloco de Código:</strong> As instruções que serão executadas enquanto a condição for verdadeira.</p></li>
 </ul>
-<p><strong>Exemplo: Contagem Até 5 Usando <code class="docutils literal notranslate"><span class="pre">while</span></code></strong></p>
 <p>Vamos contar até 5 usando o loop <code class="docutils literal notranslate"><span class="pre">while</span></code>: Implementação de um contador simples e sua impressão na saída.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
@@ -589,7 +588,7 @@ Estou processando a fruta uva.
 <li><p><code class="docutils literal notranslate"><span class="pre">contador</span> <span class="pre">+=</span> <span class="pre">1</span></code> incrementa <code class="docutils literal notranslate"><span class="pre">contador</span></code> em 1.</p></li>
 <li><p>O loop repete enquanto a condição for <code class="docutils literal notranslate"><span class="pre">True</span></code>, até que <code class="docutils literal notranslate"><span class="pre">contador</span></code> seja maior que 5.</p></li>
 </ul>
-<p><strong>Imprimindo Números Pares de 1 a 10:</strong></p>
+<p><strong>Vamos Imprimir os Números Pares de 1 a 10:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">numero</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -631,9 +630,7 @@ Estou processando a fruta uva.
 <ul class="simple">
 <li><p>O programa imprime “Você saiu do loop.” e encerra a execução do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
 </ul>
-<p><strong>Usando o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">exit()</span></code>: Encerrando o Programa Completamente:</strong></p>
-<p>O <code class="docutils literal notranslate"><span class="pre">exit()</span></code> encerra o programa completamente, interrompendo o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> e qualquer código subsequente.</p>
+<p><strong>Encerrando o Programa Completamente com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code>:</strong> Interrompe o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> e qualquer código subsequente.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contagem: </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -672,10 +669,61 @@ Estou processando a fruta uva.
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
 <p>Antes de começar os exercícios, vamos aprender mais um pouco sobre a leitura dos dados de entrada. Desta vez sobre a função  <code class="docutils literal notranslate"><span class="pre">map()</span></code>, que é usada para aplicar uma função específica a todos os elementos de uma sequência (como listas ou tuplas), retornando um iterador com os resultados. Ela recebe dois argumentos: a função a ser aplicada e a sequência de entrada.</p>
 <p>Por exemplo, quando queremos converter a entrada do usuário em números de ponto flutuante. Usamos <code class="docutils literal notranslate"><span class="pre">map()</span></code> juntamente com a função <code class="docutils literal notranslate"><span class="pre">float()</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota1</span><span class="p">,</span> <span class="n">nota2</span><span class="p">,</span> <span class="n">nota3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota1</span><span class="p">,</span> <span class="n">nota2</span><span class="p">,</span> <span class="n">nota3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Neste código, o <code class="docutils literal notranslate"><span class="pre">input()</span></code> revebe três notas separadas por espaços. O método <code class="docutils literal notranslate"><span class="pre">.split()</span></code> divide a entrada em uma lista de strings. Em seguida, <code class="docutils literal notranslate"><span class="pre">map(float,</span> <span class="pre">...)</span></code> aplica a função <code class="docutils literal notranslate"><span class="pre">float()</span></code> a cada elemento da lista, convertendo as strings em números de ponto flutuante. Finalmente, os valores convertidos são atribuídos às variáveis <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code> e <code class="docutils literal notranslate"><span class="pre">n3</span></code>.</p>
+<p>Neste código, o <code class="docutils literal notranslate"><span class="pre">input()</span></code> revebe três notas separadas por espaços. O método <code class="docutils literal notranslate"><span class="pre">.split()</span></code> divide a entrada em uma lista de strings. Em seguida, <code class="docutils literal notranslate"><span class="pre">map(float,</span> <span class="pre">...)</span></code> aplica a função <code class="docutils literal notranslate"><span class="pre">float()</span></code> a cada elemento da lista, convertendo as strings em números de ponto flutuante. Finalmente, os valores convertidos são atribuídos às variáveis <code class="docutils literal notranslate"><span class="pre">nota1</span></code>, <code class="docutils literal notranslate"><span class="pre">nota2</span></code> e <code class="docutils literal notranslate"><span class="pre">nota3</span></code>.</p>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li><p><strong>Classificação Etária</strong>:
+Desenvolva um programa que recebe várias idades de usuários na entrada, todas separadas por espaços. Para cada idade, o programa deve imprimir a categoria correspondente de acordo com a seguinte escala:</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Categoria</p></th>
+<th class="head"><p>Faixa Etária</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Menor de idade</p></td>
+<td><p>Menos de 13 anos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Adolescente</p></td>
+<td><p>De 13 a 17 anos</p></td>
+</tr>
+<tr class="row-even"><td><p>Maior de idade</p></td>
+<td><p>De 18 a 59 anos</p></td>
+</tr>
+<tr class="row-odd"><td><p>Idoso</p></td>
+<td><p>60 anos ou mais</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">12</span> <span class="mi">15</span> <span class="mi">20</span> <span class="mi">16</span> <span class="mi">21</span> <span class="mi">60</span> <span class="mi">22</span> <span class="mi">14</span> <span class="mi">23</span> <span class="mi">65</span>
+<span class="n">Saída</span><span class="p">:</span> 
+<span class="n">Menor</span> <span class="n">de</span> <span class="n">idade</span>
+<span class="n">Adolescente</span>
+<span class="n">Maior</span> <span class="n">de</span> <span class="n">idade</span>
+<span class="n">Adolescente</span>
+<span class="n">Maior</span> <span class="n">de</span> <span class="n">idade</span>
+<span class="n">Idoso</span>
+<span class="n">Maior</span> <span class="n">de</span> <span class="n">idade</span>
+<span class="n">Adolescente</span>
+<span class="n">Maior</span> <span class="n">de</span> <span class="n">idade</span>
+<span class="n">Idoso</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Verificação de Palíndromo</strong>:
+Faça um programa que receba uma lista de palavras e verifique se cada palavra é um palíndromo. Um palíndromo é uma palavra que permanece a mesma quando lida de trás para frente. O programa deve imprimir “Sim” para palíndromos e “Não” para não palíndromos. Utilize <code class="docutils literal notranslate"><span class="pre">end='</span> <span class="pre">'</span></code> no comando print para que os resultados sejam exibidos na mesma linha, separados por espaços.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="n">arara</span> <span class="n">python</span> <span class="n">reviver</span> <span class="n">código</span> <span class="n">osso</span> <span class="n">copilot</span> <span class="n">radar</span> <span class="n">programa</span> <span class="n">mussum</span> <span class="n">piloto</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Sim</span> <span class="n">Não</span> <span class="n">Sim</span> <span class="n">Não</span> <span class="n">Sim</span> <span class="n">Não</span> <span class="n">Sim</span> <span class="n">Não</span> <span class="n">Sim</span> <span class="n">Não</span>
+
+</pre></div>
+</div>
 </section>
 </section>
 
