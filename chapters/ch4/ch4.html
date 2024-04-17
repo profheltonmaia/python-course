@@ -637,12 +637,12 @@ Considere uma matriz como uma tabela com linhas e colunas. Queremos ver o que es
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Valor de x: 0, Valor de y: 0
-Valor de x: 0, Valor de y: 1
-Valor de x: 1, Valor de y: 0
-Valor de x: 1, Valor de y: 1
-Valor de x: 2, Valor de y: 0
-Valor de x: 2, Valor de y: 1
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">y</span><span class="p">:</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Veja que <code class="docutils literal notranslate"><span class="pre">x</span></code> varia de 0 a 2 e <code class="docutils literal notranslate"><span class="pre">y</span></code> de 0 a 1, como mostrado na saída do código. Para tornar o exemplo mais interessante, podemos adicionar uma condição que altere o comportamento dos loops quando certos critérios forem atendidos. Por exemplo, podemos imprimir uma mensagem especial quando <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> forem iguais:</p>
@@ -659,7 +659,7 @@ Valor de x: 2, Valor de y: 1
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>X e Y são iguais e valem: 0!
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>X e Y são iguais e valem: 0!
 Valor de x: 0, Valor de y: 1
 Valor de x: 1, Valor de y: 0
 X e Y são iguais e valem: 1!
@@ -675,7 +675,7 @@ Valor de x: 2, Valor de y: 1
     <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>A saída deste código será a impressão dos valores de <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">i</span></code> para cada iteração do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> dentro do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>. Para adicionar mais interesse, podemos incluir uma condição que interrompa o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> se uma condição específica for verdadeira. Por exemplo, podemos parar o loop quando <code class="docutils literal notranslate"><span class="pre">x</span></code> for igual a 3:</p>
+<p>A saída deste código será a impressão dos valores de <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">i</span></code> para cada iteração do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> dentro do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>. Podemos incluir uma condição que interrompa o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> se uma condição específica for verdadeira. Por exemplo, podemos parar o loop quando <code class="docutils literal notranslate"><span class="pre">x</span></code> for igual a 3:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
@@ -687,16 +687,16 @@ Valor de x: 2, Valor de y: 1
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Valor de x = 0, Valor de i = 0
-Valor de x = 0, Valor de i = 1
-Valor de x = 0, Valor de i = 2
-Valor de x = 1, Valor de i = 0
-Valor de x = 1, Valor de i = 1
-Valor de x = 1, Valor de i = 2
-Valor de x = 2, Valor de i = 0
-Valor de x = 2, Valor de i = 1
-Valor de x = 2, Valor de i = 2
-X atingiu o valor 3, loop será interrompido.
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Valor</span> <span class="n">de</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Valor</span> <span class="n">de</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">X</span> <span class="n">atingiu</span> <span class="n">o</span> <span class="n">valor</span> <span class="mi">3</span><span class="p">,</span> <span class="n">loop</span> <span class="n">será</span> <span class="n">interrompido</span><span class="o">.</span>
 </pre></div>
 </div>
 </section>
