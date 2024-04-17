@@ -332,6 +332,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
             </nav>
@@ -517,41 +522,32 @@ Aqui, itera-se sobre um dicionário de notas de alunos, imprimindo o nome e a no
 <span class="n">Pedro</span> <span class="n">obteve</span> <span class="n">nota</span> <span class="mf">7.8</span><span class="o">.</span>
 </pre></div>
 </div>
-<p><strong>Utilização do <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong></p>
-<ul class="simple">
-<li><p>O <code class="docutils literal notranslate"><span class="pre">exit()</span></code> encerra o programa completamente, interrompendo o loop <code class="docutils literal notranslate"><span class="pre">for</span></code> e qualquer código subsequente.</p></li>
-<li><p>O <code class="docutils literal notranslate"><span class="pre">break</span></code> sai apenas do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> atual, permitindo que o código restante seja executado.</p></li>
-</ul>
-<p><strong>Exemplo com <code class="docutils literal notranslate"><span class="pre">exit()</span></code>:</strong>
-Neste exemplo, ao encontrar a palavra “banana”, o programa é encerrado.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Saindo do programa.&quot;</span><span class="p">)</span>
-        <span class="n">exit</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<p><strong>Entendendo o <code class="docutils literal notranslate"><span class="pre">for</span></code> Aninhado:</strong>
+Imagine que você tem uma caixa cheia de pequenas gavetas e dentro de cada gaveta, há várias bolinhas coloridas. Agora, se você quiser contar todas as bolinhas, você abriria cada gaveta e, dentro dela, pegaria cada bolinha para contar. No mundo da programação, isso é o que chamamos de um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> aninhado: um loop dentro de outro.</p>
+<p>Vamos praticar com um exemplo:
+Considere uma matriz como uma tabela com linhas e colunas. Queremos ver o que está em cada célula da tabela. Para isso, usamos um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para passar por cada linha e, dentro dele, outro loop <code class="docutils literal notranslate"><span class="pre">for</span></code> para passar por cada coluna daquela linha.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabela com 3 linhas e 3 colunas</span>
+<span class="n">matriz</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>  <span class="c1"># Primeira linha</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>  <span class="c1"># Segunda linha</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>   <span class="c1"># Terceira linha</span>
+<span class="p">]</span>
+
+<span class="c1"># loop externo, que passa por cada linha</span>
+<span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">matriz</span><span class="p">:</span>
+    <span class="c1"># Dentro de cada linha, passando por cada número (coluna)</span>
+    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">linha</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># Mostramos os número da mesma linha</span>
+    <span class="nb">print</span><span class="p">()</span>  <span class="c1"># Pulando para a próxima linha</span>
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Encontrei uma banana! Saindo do programa.
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> 
+<span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> 
+<span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> 
 </pre></div>
 </div>
-<p><strong>Exemplo com <code class="docutils literal notranslate"><span class="pre">break</span></code>:</strong>
-Neste exemplo, ao encontrar a palavra “banana”, o loop é interrompido.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Pulando para a próxima fruta.&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
-Encontrei uma banana! Pulando para a próxima fruta.
-Estou processando a fruta uva.
-</pre></div>
-</div>
+<p>Cada número é impresso um após o outro, com um espaço entre eles, graças ao <code class="docutils literal notranslate"><span class="pre">end='</span> <span class="pre">'</span></code>. Quando terminamos de imprimir todos os números de uma linha, o <code class="docutils literal notranslate"><span class="pre">print()</span></code> sem nada dentro dele nos leva para a próxima linha, assim como quando terminamos de contar as bolinhas de uma gaveta e passamos para a próxima.</p>
 </section>
 <section id="estrutura-de-repeticao-while">
 <h3>Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#estrutura-de-repeticao-while" title="Permalink to this heading">#</a></h3>
@@ -630,7 +626,105 @@ Estou processando a fruta uva.
 <ul class="simple">
 <li><p>O programa imprime “Você saiu do loop.” e encerra a execução do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p></li>
 </ul>
-<p><strong>Encerrando o Programa Completamente com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code>:</strong> Interrompe o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> e qualquer código subsequente.</p>
+<p><strong>While dentro de outro while</strong>: Aqui temos um exemplo simples de aninhamento de loops <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor de x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, Valor de y: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Valor de x: 0, Valor de y: 0
+Valor de x: 0, Valor de y: 1
+Valor de x: 1, Valor de y: 0
+Valor de x: 1, Valor de y: 1
+Valor de x: 2, Valor de y: 0
+Valor de x: 2, Valor de y: 1
+</pre></div>
+</div>
+<p>Veja que <code class="docutils literal notranslate"><span class="pre">x</span></code> varia de 0 a 2 e <code class="docutils literal notranslate"><span class="pre">y</span></code> de 0 a 1, como mostrado na saída do código. Para tornar o exemplo mais interessante, podemos adicionar uma condição que altere o comportamento dos loops quando certos critérios forem atendidos. Por exemplo, podemos imprimir uma mensagem especial quando <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> forem iguais:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X e Y são iguais e valem: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor de x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, Valor de y: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>X e Y são iguais e valem: 0!
+Valor de x: 0, Valor de y: 1
+Valor de x: 1, Valor de y: 0
+X e Y são iguais e valem: 1!
+Valor de x: 2, Valor de y: 0
+Valor de x: 2, Valor de y: 1
+</pre></div>
+</div>
+<p><strong>For dentro de um while</strong>: Também é possível aninhar estruturas diferentes, como um loop <code class="docutils literal notranslate"><span class="pre">for</span></code> dentro de um loop <code class="docutils literal notranslate"><span class="pre">while</span></code>. Vejamos um exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor de x: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, Valor de i: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>A saída deste código será a impressão dos valores de <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">i</span></code> para cada iteração do loop <code class="docutils literal notranslate"><span class="pre">for</span></code> dentro do loop <code class="docutils literal notranslate"><span class="pre">while</span></code>. Para adicionar mais interesse, podemos incluir uma condição que interrompa o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> se uma condição específica for verdadeira. Por exemplo, podemos parar o loop quando <code class="docutils literal notranslate"><span class="pre">x</span></code> for igual a 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X atingiu o valor 3, loop será interrompido.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor de x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, Valor de i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Valor de x = 0, Valor de i = 0
+Valor de x = 0, Valor de i = 1
+Valor de x = 0, Valor de i = 2
+Valor de x = 1, Valor de i = 0
+Valor de x = 1, Valor de i = 1
+Valor de x = 1, Valor de i = 2
+Valor de x = 2, Valor de i = 0
+Valor de x = 2, Valor de i = 1
+Valor de x = 2, Valor de i = 2
+X atingiu o valor 3, loop será interrompido.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="controle-de-fluxo-com-o-exit-e-break">
+<h2>Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#controle-de-fluxo-com-o-exit-e-break" title="Permalink to this heading">#</a></h2>
+<p>Python oferece várias formas de controlar o fluxo de execução em seu código. Duas dessas possibilidades são as funções <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>, que são utilizadas em estruturas de repetição.</p>
+<section id="exit">
+<h3><code class="docutils literal notranslate"><span class="pre">exit()</span></code><a class="headerlink" href="#exit" title="Permalink to this heading">#</a></h3>
+<p>A função <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é usada para encerrar a execução do programa completamente. Isso significa que se <code class="docutils literal notranslate"><span class="pre">exit()</span></code> for chamado dentro de um loop, o loop será interrompido e nenhum código subsequente será executado.</p>
+<p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">exit()</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">,</span> <span class="s2">&quot;morango&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;abacaxi&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Saindo do programa.&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estou fora do Loop.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Neste exemplo, quando a palavra “banana” é encontrada, o programa é encerrado e a saída será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
+Estou processando a fruta uva.
+Estou processando a fruta morango.
+Encontrei uma banana! Saindo do programa.
+</pre></div>
+</div>
+<p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">exit()</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">while</span></code>:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contagem: </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -640,15 +734,30 @@ Estou processando a fruta uva.
     <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p><strong>Saída do Código:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Contagem</span><span class="p">:</span> <span class="mi">1</span>
-<span class="o">...</span>
-<span class="n">Contagem</span><span class="p">:</span> <span class="mi">10</span>
-<span class="n">Contagem</span> <span class="n">chegou</span> <span class="n">a</span> <span class="mf">10.</span> <span class="n">Saindo</span> <span class="n">do</span> <span class="n">programa</span><span class="o">.</span>
+<p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando o <code class="docutils literal notranslate"><span class="pre">contador</span></code> chega a 10, <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é chamado, encerrando o programa.</p>
+</section>
+<section id="break">
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Permalink to this heading">#</a></h3>
+<p>A função <code class="docutils literal notranslate"><span class="pre">break</span></code>, por outro lado, é usada para sair apenas do loop atual. Isso permite que o código restante seja executado.</p>
+<p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">break</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">,</span> <span class="s2">&quot;morango&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;abacaxi&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruta</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">fruta</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encontrei uma banana! Saindo do loop.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estou processando a fruta </span><span class="si">{</span><span class="n">fruta</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estou fora do Loop.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>O loop repete indefinidamente. Se <code class="docutils literal notranslate"><span class="pre">contador</span></code> for 10, <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é chamado, encerrando o programa.</p>
-<p>Por fim, um exemplo da tulização do <code class="docutils literal notranslate"><span class="pre">break</span></code> apenas para sair do loop <code class="docutils literal notranslate"><span class="pre">while</span></code> atual, permitindo que o código restante seja executado.</p>
+<p>Neste exemplo, quando a palavra “banana” é encontrada, o loop é interrompido e o código restante é executado. A saída será:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
+Estou processando a fruta uva.
+Estou processando a fruta morango.
+Encontrei uma banana! Saindo do loop.
+Estou fora do Loop.
+</pre></div>
+</div>
+<p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">break</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">while</span></code>:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">opcao</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite uma opção (a/b/c/sair): &quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">opcao</span> <span class="o">==</span> <span class="s2">&quot;sair&quot;</span><span class="p">:</span>
@@ -662,7 +771,7 @@ Estou processando a fruta uva.
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opção inválida. Tente novamente.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>O loop repete indefinidamente. Se <code class="docutils literal notranslate"><span class="pre">opcao</span></code> for “sair”, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop.</p>
+<p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando a opção “sair” é escolhida, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop. O código restante é então executado.</p>
 </section>
 </section>
 <section id="exercicios">
@@ -743,7 +852,7 @@ Analise o desempenho de uma turma de 100 alunos em uma disciplina de linguagem d
 <li><p>Se a média for menor que 5, incrementar o contador de alunos reprovados.</p></li>
 </ul>
 <p>Após processar todas as médias, o programa deve calcular e imprimir as seguintes informações: <strong>Número de Alunos Aprovados, Número de Alunos Reprovados e Média da Turma.</strong></p>
-<p>Obs: Considere utilizar essa sintaxe para o armazenamento das médias em uma lista <code class="docutils literal notranslate"><span class="pre">list(map(float,</span> <span class="pre">input().split(',')))</span></code></p>
+<p>Obs: Considere utilizar essa sintaxe para o armazenamento das médias em uma lista: <code class="docutils literal notranslate"><span class="pre">list(map(float,</span> <span class="pre">input().split(',')))</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">6.9</span><span class="p">,</span> <span class="mf">9.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">6.9</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">,</span> <span class="mf">4.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">3.9</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">7.4</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mf">9.7</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">9.7</span><span class="p">,</span> <span class="mf">8.2</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">9.7</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">7.1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">7.7</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="mf">9.1</span><span class="p">,</span> <span class="mf">8.6</span><span class="p">,</span> <span class="mf">6.2</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">7.4</span>
 
@@ -823,6 +932,11 @@ Analise o desempenho de uma turma de 100 alunos em uma disciplina de linguagem d
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
