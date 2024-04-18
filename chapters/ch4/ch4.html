@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch4/ch4';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Capítulo 5: Funções" href="../ch5/ch5.html" />
+    <link rel="next" title="Capítulo 5: Funções (Em construção)" href="../ch5/ch5.html" />
     <link rel="prev" title="Capítulo 3: Operadores e Expressões" href="../ch3/ch3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,10 +174,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e Expressões</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 4: Controle de Fluxo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos (Em construção)</a></li>
 </ul>
 
     </div>
@@ -332,11 +332,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
             </nav>
@@ -704,8 +700,6 @@ Valor de x: 2, Valor de y: 1
 <section id="controle-de-fluxo-com-o-exit-e-break">
 <h2>Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#controle-de-fluxo-com-o-exit-e-break" title="Permalink to this heading">#</a></h2>
 <p>Python oferece várias formas de controlar o fluxo de execução em seu código. Duas dessas possibilidades são as funções <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code>, que são utilizadas em estruturas de repetição.</p>
-<section id="exit">
-<h3><code class="docutils literal notranslate"><span class="pre">exit()</span></code><a class="headerlink" href="#exit" title="Permalink to this heading">#</a></h3>
 <p>A função <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é usada para encerrar a execução do programa completamente. Isso significa que se <code class="docutils literal notranslate"><span class="pre">exit()</span></code> for chamado dentro de um loop, o loop será interrompido e nenhum código subsequente será executado.</p>
 <p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">exit()</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">,</span> <span class="s2">&quot;morango&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;abacaxi&quot;</span><span class="p">]</span>
@@ -735,9 +729,6 @@ Encontrei uma banana! Saindo do programa.
 </pre></div>
 </div>
 <p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando o <code class="docutils literal notranslate"><span class="pre">contador</span></code> chega a 10, <code class="docutils literal notranslate"><span class="pre">exit()</span></code> é chamado, encerrando o programa.</p>
-</section>
-<section id="break">
-<h3><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Permalink to this heading">#</a></h3>
 <p>A função <code class="docutils literal notranslate"><span class="pre">break</span></code>, por outro lado, é usada para sair apenas do loop atual. Isso permite que o código restante seja executado.</p>
 <p><strong>Exemplo de uso do <code class="docutils literal notranslate"><span class="pre">break</span></code> em um loop <code class="docutils literal notranslate"><span class="pre">for</span></code>:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;maçã&quot;</span><span class="p">,</span> <span class="s2">&quot;uva&quot;</span><span class="p">,</span> <span class="s2">&quot;morango&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;abacaxi&quot;</span><span class="p">]</span>
@@ -772,7 +763,6 @@ Estou fora do Loop.
 </pre></div>
 </div>
 <p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando a opção “sair” é escolhida, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop. O código restante é então executado.</p>
-</section>
 </section>
 <section id="exercicios">
 <h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
@@ -932,7 +922,7 @@ Escreva um programa que receba uma lista de números inteiros, e obedecendo algu
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capítulo 5: Funções</p>
+        <p class="prev-next-title">Capítulo 5: Funções (Em construção)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -957,11 +947,7 @@ Escreva um programa que receba uma lista de números inteiros, e obedecendo algu
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-while">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
   </nav></div>
