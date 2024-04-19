@@ -2,7 +2,7 @@
 
 Bem-vindo ao curso de Python para Iniciantes
 
-[Helton Maia](https://heltonmaia.github.io/heltonmaia/), o autor deste material, é doutor em engenharia de computação e pesquisador da Universidade Federal do Rio Grande do Norte (UFRN). Ele possui experiência no ensino de disciplinas como Linguagem de Programação, Visão Computacional e Aprendizado de Máquina em cursos de graduação e pós-graduação.
+[Helton Maia](https://heltonmaia.github.io/heltonmaia/), o autor deste conteúdo, é doutor em engenharia de computação e pesquisador da Universidade Federal do Rio Grande do Norte (UFRN). Ele possui experiência no ensino de disciplinas como Linguagem de Programação, Visão Computacional e Aprendizado de Máquina em cursos de graduação e pós-graduação.
 
 Este material foi cuidadosamente elaborado para estudantes universitários que desejam adquirir habilidades fundamentais em programação por meio da linguagem Python.
 
