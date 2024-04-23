@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Capítulo 4: Controle de Fluxo &#8212; Curso de Python</title>
+    <title>Capítulo 4: Controle de Fluxo e Números Aleatórios &#8212; Curso de Python</title>
   
   
   
@@ -173,7 +173,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e Expressões</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 4: Controle de Fluxo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções (Em construção)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings (Em construção)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib (Em construção)</a></li>
@@ -316,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capítulo 4: Controle de Fluxo</h1>
+    <h1>Capítulo 4: Controle de Fluxo e Números Aleatórios</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -326,6 +328,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
@@ -333,8 +336,16 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -345,8 +356,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-controle-de-fluxo">
-<h1>Capítulo 4: Controle de Fluxo<a class="headerlink" href="#capitulo-4-controle-de-fluxo" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-controle-de-fluxo-e-numeros-aleatorios">
+<h1>Capítulo 4: Controle de Fluxo e Números Aleatórios<a class="headerlink" href="#capitulo-4-controle-de-fluxo-e-numeros-aleatorios" title="Permalink to this heading">#</a></h1>
 <section id="estruturas-de-decisao-aninhadas">
 <h2>Estruturas de Decisão Aninhadas<a class="headerlink" href="#estruturas-de-decisao-aninhadas" title="Permalink to this heading">#</a></h2>
 <p>As estruturas condicionais permitem que o programador controle o fluxo do programa, executando diferentes blocos de código de acordo com condições específicas. Vamos revisar as estruturas mais utilizadas:</p>
@@ -712,6 +723,7 @@ Valor de x: 2, Valor de y: 1
 </pre></div>
 </div>
 <p>Neste exemplo, quando a palavra “banana” é encontrada, o programa é encerrado e a saída será:</p>
+<p><strong>Saída do Código:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
 Estou processando a fruta uva.
 Estou processando a fruta morango.
@@ -741,6 +753,7 @@ Encontrei uma banana! Saindo do programa.
 </pre></div>
 </div>
 <p>Neste exemplo, quando a palavra “banana” é encontrada, o loop é interrompido e o código restante é executado. A saída será:</p>
+<p><strong>Saída do Código:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Estou processando a fruta maçã.
 Estou processando a fruta uva.
 Estou processando a fruta morango.
@@ -764,8 +777,88 @@ Estou fora do Loop.
 </div>
 <p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando a opção “sair” é escolhida, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop. O código restante é então executado.</p>
 </section>
-<section id="exercicios">
-<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numeros-aleatorios">
+<h1>Números Aleatórios<a class="headerlink" href="#numeros-aleatorios" title="Permalink to this heading">#</a></h1>
+<p>O módulo <code class="docutils literal notranslate"><span class="pre">random</span></code> em Python facilita a geração de números aleatórios, fornecendo uma interface simples e direta. Este módulo implementa geradores de números pseudoaleatórios, que são capazes de produzir sequências de números que aproximam a aleatoriedade verdadeira para uma variedade de distribuições estatísticas.</p>
+<section id="modulos-em-python">
+<h2>Módulos em Python<a class="headerlink" href="#modulos-em-python" title="Permalink to this heading">#</a></h2>
+<p>Módulos em Python são arquivos contendo definições e instruções Python que podem ser reutilizados em outros programas Python. Para utilizar um módulo em seu código, você precisa importá-lo. Isso é feito usando a instrução <code class="docutils literal notranslate"><span class="pre">import</span></code>, seguida pelo nome do módulo.</p>
+<p>Por exemplo, para importar o módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>, que é responsável pela geração de números aleatórios, você pode usar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+<p>Depois de importar o módulo, você pode acessar suas funções e classes usando a notação de ponto, como <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> ou <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>.</p>
+<p>Aqui estão alguns exemplos de como você pode gerar números aleatórios utilizando o módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Gerar um número flutuante aleatório entre 0 e 1</span>
+<span class="n">random_float</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número flutuante aleatório entre 0 e 1: </span><span class="si">{</span><span class="n">random_float</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Gerar um número inteiro aleatório entre 1 e 10</span>
+<span class="n">random_integer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número inteiro aleatório entre 1 e 10: </span><span class="si">{</span><span class="n">random_integer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Escolher aleatoriamente de uma lista</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cereja&#39;</span><span class="p">]</span>
+<span class="n">escolha_aleatoria</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Escolha aleatória de uma lista: </span><span class="si">{</span><span class="n">escolha_aleatoria</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">0</span> <span class="n">e</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">0.08329587492346713</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">8</span>
+<span class="n">Escolha</span> <span class="n">aleatória</span> <span class="n">de</span> <span class="n">uma</span> <span class="n">lista</span><span class="p">:</span> <span class="n">maçã</span>
+</pre></div>
+</div>
+<p>Ao executar este código, você obterá diferentes resultados a cada vez, ilustrando a natureza aleatória da geração de números pelo módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+</section>
+<section id="definindo-uma-semente">
+<h2>Definindo uma semente<a class="headerlink" href="#definindo-uma-semente" title="Permalink to this heading">#</a></h2>
+<p>Definir uma semente antes de gerar números aleatórios pode ser útil em alguns casos, especialmente quando você precisa reproduzir resultados específicos em diferentes execuções do seu programa. Ao definir uma semente, você garante que a sequência de números aleatórios gerada seja sempre a mesma.</p>
+<p>Por exemplo, se você estiver depurando um algoritmo que usa números aleatórios e encontrar um problema, definir uma semente permitirá que você reproduza exatamente a mesma sequência de números aleatórios toda vez que executar o código, facilitando a identificação e solução do problema.</p>
+<p>Aqui está um exemplo com a geração de números aleatórios após a inicialização de uma semente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Define uma semente para reproduzibilidade</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c1"># Agora, a sequência de números aleatórios será sempre a mesma</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteração </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número flutuante aleatório: </span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número inteiro aleatório entre 1 e 10: </span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Saída do Código:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Iteração</span> <span class="mi">1</span><span class="p">:</span>
+<span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span><span class="p">:</span> <span class="mf">0.052363598850944326</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">2</span>
+
+<span class="n">Iteração</span> <span class="mi">2</span><span class="p">:</span>
+<span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span><span class="p">:</span> <span class="mf">0.7689563885870707</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">5</span>
+
+<span class="n">Iteração</span> <span class="mi">3</span><span class="p">:</span>
+<span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span><span class="p">:</span> <span class="mf">0.10770023493843905</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">1</span>
+
+<span class="n">Iteração</span> <span class="mi">4</span><span class="p">:</span>
+<span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span><span class="p">:</span> <span class="mf">0.3791243324890884</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">9</span>
+
+<span class="n">Iteração</span> <span class="mi">5</span><span class="p">:</span>
+<span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span><span class="p">:</span> <span class="mf">0.33219769850967984</span>
+<span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Neste exemplo, ao definir a semente como 123 e usar uma estrutura de repetição, a sequência de números aleatórios gerada será sempre a mesma em diferentes execuções do código em seu computador.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h1>
 <p>Antes de começar os exercícios, vamos aprender mais um pouco sobre a leitura dos dados de entrada. Desta vez sobre a função  <code class="docutils literal notranslate"><span class="pre">map()</span></code>, que é usada para aplicar uma função específica a todos os elementos de uma sequência (como listas ou tuplas), retornando um iterador com os resultados. Ela recebe dois argumentos: a função a ser aplicada e a sequência de entrada.</p>
 <p>Por exemplo, quando queremos converter a entrada do usuário em números de ponto flutuante. Usamos <code class="docutils literal notranslate"><span class="pre">map()</span></code> juntamente com a função <code class="docutils literal notranslate"><span class="pre">float()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota1</span><span class="p">,</span> <span class="n">nota2</span><span class="p">,</span> <span class="n">nota3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
@@ -875,7 +968,15 @@ Escreva um programa que receba uma lista de números inteiros, e obedecendo algu
 </pre></div>
 </div>
 <p>Lembre-se de tratar casos especiais. Zero possui fatorial 1 e um número negativo não possui fatorial.</p>
-</section>
+<p><strong>6. Jogo da Adivinhação (Jogador vs Computador):</strong>
+O objetivo é desenvolver um jogo interativo de adivinhação de números no qual o jogador compete contra o computador. O jogo deve seguir as seguintes regras:</p>
+<ul class="simple">
+<li><p>No início do jogo, o programa deve gerar um número aleatório secreto entre 1 e 100. Este será o número que o jogador e o computador tentarão adivinhar.</p></li>
+<li><p>Tanto o jogador quanto o computador têm um número limitado de tentativas para adivinhar o número. Por exemplo, pode-se limitar a 20 tentativas.</p></li>
+<li><p>Em cada rodada, o jogador e o computador fazem um palpite. O programa deve então fornecer uma dica para ambos, indicando se o número secreto é maior ou menor que os palpites.</p></li>
+<li><p>Se o jogador ou o computador adivinhar o número corretamente, o programa deve parabenizá-lo e informar o número de tentativas que foram necessárias para adivinhar o número. Se ambos adivinharem o número na mesma rodada, o jogo termina em empate.</p></li>
+<li><p>Se o jogador e o computador esgotarem todas as suas tentativas sem adivinhar o número, o programa deve informar que o jogo terminou e revelar o número secreto.</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -941,6 +1042,7 @@ Escreva um programa que receba uma lista de números inteiros, e obedecendo algu
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
@@ -948,8 +1050,16 @@ Escreva um programa que receba uma lista de números inteiros, e obedecendo algu
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
