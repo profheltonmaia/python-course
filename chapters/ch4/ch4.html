@@ -174,8 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch3/ch3.html">Capítulo 3: Operadores e Expressões</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções (Em construção)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings (Em construção)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib (Em construção)</a></li>
@@ -328,7 +326,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
@@ -336,16 +333,13 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -777,12 +771,11 @@ Estou fora do Loop.
 </div>
 <p>Neste exemplo, o loop <code class="docutils literal notranslate"><span class="pre">while</span></code> repete indefinidamente. Quando a opção “sair” é escolhida, <code class="docutils literal notranslate"><span class="pre">break</span></code> é chamado, terminando o loop. O código restante é então executado.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="numeros-aleatorios">
-<h1>Números Aleatórios<a class="headerlink" href="#numeros-aleatorios" title="Permalink to this heading">#</a></h1>
+<section id="numeros-aleatorios">
+<h2>Números Aleatórios<a class="headerlink" href="#numeros-aleatorios" title="Permalink to this heading">#</a></h2>
 <p>O módulo <code class="docutils literal notranslate"><span class="pre">random</span></code> em Python facilita a geração de números aleatórios, fornecendo uma interface simples e direta. Este módulo implementa geradores de números pseudoaleatórios, que são capazes de produzir sequências de números que aproximam a aleatoriedade verdadeira para uma variedade de distribuições estatísticas.</p>
 <section id="modulos-em-python">
-<h2>Módulos em Python<a class="headerlink" href="#modulos-em-python" title="Permalink to this heading">#</a></h2>
+<h3>Módulos em Python<a class="headerlink" href="#modulos-em-python" title="Permalink to this heading">#</a></h3>
 <p>Módulos em Python são arquivos contendo definições e instruções Python que podem ser reutilizados em outros programas Python. Para utilizar um módulo em seu código, você precisa importá-lo. Isso é feito usando a instrução <code class="docutils literal notranslate"><span class="pre">import</span></code>, seguida pelo nome do módulo.</p>
 <p>Por exemplo, para importar o módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>, que é responsável pela geração de números aleatórios, você pode usar:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -815,7 +808,7 @@ Estou fora do Loop.
 <p>Ao executar este código, você obterá diferentes resultados a cada vez, ilustrando a natureza aleatória da geração de números pelo módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
 </section>
 <section id="definindo-uma-semente">
-<h2>Definindo uma semente<a class="headerlink" href="#definindo-uma-semente" title="Permalink to this heading">#</a></h2>
+<h3>Definindo uma semente<a class="headerlink" href="#definindo-uma-semente" title="Permalink to this heading">#</a></h3>
 <p>Definir uma semente antes de gerar números aleatórios pode ser útil em alguns casos, especialmente quando você precisa reproduzir resultados específicos em diferentes execuções do seu programa. Ao definir uma semente, você garante que a sequência de números aleatórios gerada seja sempre a mesma.</p>
 <p>Por exemplo, se você estiver depurando um algoritmo que usa números aleatórios e encontrar um problema, definir uma semente permitirá que você reproduza exatamente a mesma sequência de números aleatórios toda vez que executar o código, facilitando a identificação e solução do problema.</p>
 <p>Aqui está um exemplo com a geração de números aleatórios após a inicialização de uma semente:</p>
@@ -857,8 +850,8 @@ Estou fora do Loop.
 <p>Neste exemplo, ao definir a semente como 123 e usar uma estrutura de repetição, a sequência de números aleatórios gerada será sempre a mesma em diferentes execuções do código em seu computador.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
-<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h1>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
 <p>Antes de começar os exercícios, vamos aprender mais um pouco sobre a leitura dos dados de entrada. Desta vez sobre a função  <code class="docutils literal notranslate"><span class="pre">map()</span></code>, que é usada para aplicar uma função específica a todos os elementos de uma sequência (como listas ou tuplas), retornando um iterador com os resultados. Ela recebe dois argumentos: a função a ser aplicada e a sequência de entrada.</p>
 <p>Por exemplo, quando queremos converter a entrada do usuário em números de ponto flutuante. Usamos <code class="docutils literal notranslate"><span class="pre">map()</span></code> juntamente com a função <code class="docutils literal notranslate"><span class="pre">float()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nota1</span><span class="p">,</span> <span class="n">nota2</span><span class="p">,</span> <span class="n">nota3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
@@ -1008,12 +1001,26 @@ Escreva um programa em Python que imprima um triângulo de asteriscos. O program
 <span class="o">*</span>
 </pre></div>
 </div>
-<p><strong>8. :</strong>
-Matriz de números</p>
-<p><strong>9. :</strong>
-Jogo da Velha:</p>
-<p><strong>10. :</strong>
-Busca em listas de listas</p>
+<p><strong>8. Identificação de Números Primos em uma Lista:</strong>
+Desenvolva um programa que identifique todos os números primos presentes em uma lista fornecida na entrada. Um número primo é um número maior que 1 que não possui divisores positivos além de 1 e si próprio. Siga as Instruções a seguir:</p>
+<ul class="simple">
+<li><p>Leia uma lista de números inteiros.</p></li>
+<li><p>Para cada número na lista, verifique se ele é um número primo.</p></li>
+<li><p>Se o número for primo, adicione-o a uma nova lista.</p></li>
+<li><p>Após verificar todos os números na lista original, exiba a nova lista contendo apenas os números primos.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="o">-</span><span class="mi">23</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="o">-</span><span class="mi">29</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">28</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="o">-</span><span class="mi">33</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">36</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">23</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="o">-</span><span class="mi">18</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="o">-</span><span class="mi">24</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">33</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">42</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="o">-</span><span class="mi">19</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">39</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="o">-</span><span class="mi">28</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">38</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span>
+</pre></div>
+</div>
+<p><strong>9. :</strong></p>
+<p><strong>10. :</strong></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1079,7 +1086,6 @@ Busca em listas de listas</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Capítulo 4: Controle de Fluxo e Números Aleatórios</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-decisao-aninhadas">Estruturas de Decisão Aninhadas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estruturas-de-repeticao">Estruturas de Repetição</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-de-repeticao-for">Estrutura de Repetição <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
@@ -1087,16 +1093,13 @@ Busca em listas de listas</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controle-de-fluxo-com-o-exit-e-break">Controle de fluxo com o <code class="docutils literal notranslate"><span class="pre">exit()</span></code> e <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-aleatorios">Números Aleatórios</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-em-python">Módulos em Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-semente">Definindo uma semente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
