@@ -781,7 +781,7 @@ Estou fora do Loop.
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 </div>
-<p>Depois de importar o módulo, você pode acessar suas funções e classes usando a notação de ponto, como <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> ou <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code>.</p>
+<p>Depois de importar o módulo, você pode acessar suas funções e classes usando a notação de ponto, como <code class="docutils literal notranslate"><span class="pre">random.random()</span></code>, <code class="docutils literal notranslate"><span class="pre">random.randint()</span></code> e <code class="docutils literal notranslate"><span class="pre">random.sample()</span></code>.</p>
 <p>Aqui estão alguns exemplos de como você pode gerar números aleatórios utilizando o módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -797,12 +797,17 @@ Estou fora do Loop.
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maçã&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cereja&#39;</span><span class="p">]</span>
 <span class="n">escolha_aleatoria</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Escolha aleatória de uma lista: </span><span class="si">{</span><span class="n">escolha_aleatoria</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Amostra aleatória de elementos de uma lista</span>
+<span class="n">amostra_aleatoria</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Amostra aleatória de 2 elementos da lista: </span><span class="si">{</span><span class="n">amostra_aleatoria</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Saída do Código:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Número</span> <span class="n">flutuante</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">0</span> <span class="n">e</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">0.08329587492346713</span>
 <span class="n">Número</span> <span class="n">inteiro</span> <span class="n">aleatório</span> <span class="n">entre</span> <span class="mi">1</span> <span class="n">e</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">8</span>
 <span class="n">Escolha</span> <span class="n">aleatória</span> <span class="n">de</span> <span class="n">uma</span> <span class="n">lista</span><span class="p">:</span> <span class="n">maçã</span>
+<span class="n">Amostra</span> <span class="n">aleatória</span> <span class="n">de</span> <span class="mi">2</span> <span class="n">elementos</span> <span class="n">da</span> <span class="n">lista</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cereja&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Ao executar este código, você obterá diferentes resultados a cada vez, ilustrando a natureza aleatória da geração de números pelo módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
@@ -1018,8 +1023,29 @@ Desenvolva um programa que identifique todos os números primos presentes em uma
 <span class="n">Saída</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">41</span>
 </pre></div>
 </div>
-<p><strong>9. :</strong></p>
-<p><strong>10. :</strong></p>
+<p><strong>9. Loteria:</strong>
+Desenvolva um programa que simule uma loteria onde são sorteados <strong>5 números distintos entre 1 e 50</strong>. O programa deve gerar aleatoriamente jogos de 5 números até que um jogo corresponda exatamente à combinação sorteada. O objetivo é determinar quantos jogos são necessários até que haja um ganhador. Siga as instruções a seguir:</p>
+<ul class="simple">
+<li><p>Receba na entrada um inteiro correspondete a semente para geração aleatória de números.</p></li>
+<li><p>Gere uma combinação vencedora de <strong>5 números únicos entre 1 e 50</strong>. Esta será a combinação que os jogadores devem acertar para ganhar.</p></li>
+<li><p>Crie um loop que simule jogos aleatórios de <strong>5 números únicos entre 1 e 50</strong>.</p></li>
+<li><p>Após cada jogo, verifique se a combinação de números gerada corresponde à combinação vencedora.</p></li>
+<li><p>Conte o número de jogos realizados até que um jogo corresponda exatamente à combinação vencedora.</p></li>
+<li><p>Exiba o número total de jogos necessários para encontrar um ganhador.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">jogos</span> <span class="n">necessários</span><span class="p">:</span> <span class="mi">24836</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">jogos</span> <span class="n">necessários</span><span class="p">:</span> <span class="mi">622164</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">11</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">jogos</span> <span class="n">necessários</span><span class="p">:</span> <span class="mi">807045</span>
+</pre></div>
+</div>
 </section>
 </section>
 
