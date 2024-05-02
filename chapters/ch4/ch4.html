@@ -814,8 +814,8 @@ Estou fora do Loop.
 </section>
 <section id="definindo-uma-semente">
 <h3>Definindo uma semente<a class="headerlink" href="#definindo-uma-semente" title="Permalink to this heading">#</a></h3>
-<p>Definir uma semente antes de gerar números aleatórios pode ser útil em alguns casos, especialmente quando você precisa reproduzir resultados específicos em diferentes execuções do seu programa. Ao definir uma semente, você garante que a sequência de números aleatórios gerada seja sempre a mesma.</p>
-<p>Por exemplo, se você estiver depurando um algoritmo que usa números aleatórios e encontrar um problema, definir uma semente permitirá que você reproduza exatamente a mesma sequência de números aleatórios toda vez que executar o código, facilitando a identificação e solução do problema.</p>
+<p>Definir uma semente antes de gerar números aleatórios pode ser útil em alguns casos, especialmente quando você precisa reproduzir resultados específicos em diferentes execuções do seu programa. Ao definir uma semente, você garante que a sequência de números gerada seja sempre a mesma, determinística; por isso, esses números também são chamados de pseudoaleatórios.</p>
+<p>Por exemplo, se você estiver depurando um algoritmo que utiliza números pseudoaleatórios e encontrar um problema, definir uma semente permitirá que você reproduza exatamente a mesma sequência de números pseudoaleatórios toda vez que executar o código, facilitando a identificação e a solução do problema.</p>
 <p>Aqui está um exemplo com a geração de números aleatórios após a inicialização de uma semente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
@@ -1026,9 +1026,9 @@ Desenvolva um programa que identifique todos os números primos presentes em uma
 <p><strong>9. Loteria:</strong>
 Desenvolva um programa que simule uma loteria onde são sorteados <strong>5 números distintos entre 1 e 50</strong>. O programa deve gerar aleatoriamente jogos de 5 números até que um jogo corresponda exatamente à combinação sorteada. O objetivo é determinar quantos jogos são necessários até que haja um ganhador. Siga as instruções a seguir:</p>
 <ul class="simple">
-<li><p>Receba na entrada um inteiro correspondete a semente para geração aleatória de números.</p></li>
+<li><p>Receba na entrada um inteiro correspondete a semente para geração pseudoaleatória de números.</p></li>
 <li><p>Gere uma combinação vencedora de <strong>5 números únicos entre 1 e 50</strong>. Esta será a combinação que os jogadores devem acertar para ganhar.</p></li>
-<li><p>Crie um loop que simule jogos aleatórios de <strong>5 números únicos entre 1 e 50</strong>.</p></li>
+<li><p>Crie um loop que simule jogos de <strong>5 números únicos entre 1 e 50</strong>.</p></li>
 <li><p>Após cada jogo, verifique se a combinação de números gerada corresponde à combinação vencedora.</p></li>
 <li><p>Conte o número de jogos realizados até que um jogo corresponda exatamente à combinação vencedora.</p></li>
 <li><p>Exiba o número total de jogos necessários para encontrar um ganhador.</p></li>
