@@ -62,12 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ch3/ch3';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Capítulo 4: Controle de Fluxo" href="../ch4/ch4.html" />
+    <link rel="next" title="Capítulo 4: Controle de Fluxo e Números Aleatórios" href="../ch4/ch4.html" />
     <link rel="prev" title="Capítulo 2: Tipos de dados e Estruturas Condicionais" href="../ch2/ch2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -175,11 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../ch1/ch1.html">Capítulo 1: Introdução à programação em Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ch2/ch2.html">Capítulo 2: Tipos de dados e Estruturas Condicionais</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 3: Operadores e Expressões</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch4/ch4.html">Capítulo 4: Controle de Fluxo e Números Aleatórios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch5/ch5.html">Capítulo 5: Funções (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch6/ch6.html">Capítulo 6: Strings (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch7/ch7.html">Capítulo 7: NumPy e Matplotlib (Em construção)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch8/ch8.html">Capítulo 8: Manipulação de Arquivos (Em construção)</a></li>
 </ul>
 
     </div>
@@ -359,7 +357,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-3-operadores-e-expressoes">
+  <section id="capitulo-3-operadores-e-expressoes">
 <h1>Capítulo 3: Operadores e Expressões<a class="headerlink" href="#capitulo-3-operadores-e-expressoes" title="Permalink to this heading">#</a></h1>
 <p><img alt="ch3" src="../../_images/ch3.jpeg" /></p>
 <p>Compreender os operadores e expressões é importante para a manipulação eficiente de dados e a execução de operações fundamentais em qualquer linguagem. Estes elementos, abrangendo operadores aritméticos, relacionais, lógicos e de atribuição, assumem papéis específicos, desde cálculos matemáticos até avaliações condicionais. Entender tais conceitos não apenas facilita a escrita de códigos mais eficazes, mas também permite a resolução de problemas complexos e a compreensão de códigos existentes.</p>
@@ -1135,7 +1133,7 @@ document.write(`
 </div>
 <hr class="docutils" />
 <ol class="arabic simple">
-<li><p>Dada a expressão matemática: <span class="math notranslate nohighlight">\(a = 4 * (2 + 3) - 7\)</span>. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Dada a expressão matemática: $a = 4 * (2 + 3) - 7$. Crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">a</span></code> e atribua a ela o resultado dessa expressão. Em seguida, crie uma variável chamada <code class="docutils literal notranslate"><span class="pre">b</span></code> e atribua a ela o valor de <code class="docutils literal notranslate"><span class="pre">a</span></code> multiplicado por 2. Por fim, imprima os valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="n">Sem</span> <span class="n">entrada</span>
@@ -1166,7 +1164,7 @@ document.write(`
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Escreva um programa que converta uma temperatura de Celsius para Fahrenheit. Utilize a fórmula: <span class="math notranslate nohighlight">\(F = \frac{9}{5} * C + 32\)</span>.</p></li>
+<li><p>Escreva um programa que converta uma temperatura de Celsius para Fahrenheit. Utilize a fórmula: $F = \frac{9}{5} * C + 32$.</p></li>
 </ol>
 <ul class="simple">
 <li><p>Solicite ao usuário que digite a temperatura em Celsius.</p></li>
@@ -1340,7 +1338,7 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
 <li><p>Você é um fotógrafo profissional apaixonado por paisagens. Em sua próxima aventura, você se depara com um lago cristalino cercado por imensas montanhas. Seu objetivo é capturar uma foto aérea épica do lago, utilizando um drone. Para garantir a melhor perspectiva, você precisa determinar a altura ideal de voo do drone. Para isso, será necessário saber a distância horizontal entre você e a margem do lago, bem como a altura vertical que deseja alcançar com o drone.</p></li>
 </ol>
 <p>A hipotenusa, que representa a distância diagonal percorrida pelo drone, pode ser calculada utilizando o Teorema de Pitágoras:</p>
-<p><span class="math notranslate nohighlight">\( Hipotenusa = \sqrt(CatetoAdjacente^2 + CatetoOposto^2) \)</span></p>
+<p>$ Hipotenusa = \sqrt(CatetoAdjacente^2 + CatetoOposto^2) $</p>
 <p>Seu programa receberá como entrada, em metros, o comprimento do cateto adjacente e do cateto oposto, e calculará a hipotenusa correspondente.</p>
 <p><strong>Exemplos de Teste:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
@@ -1364,8 +1362,8 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
 <li><p>Em seguida, receber as informações para o paralepípedo: Altura, Largura e Comprimento.</p></li>
 </ul>
 <p>Considerando as fórmulas matemáticas adequadas para calcular o volume de cada objeto:</p>
-<p>Volume do Cone: <span class="math notranslate nohighlight">\( V_{\text{cone}} = \frac{1}{3} \pi r^2 h \)</span></p>
-<p>Volume do Paralepípedo: <span class="math notranslate nohighlight">\( V_{\text{paralel}} = l \times w \times h \)</span></p>
+<p>Volume do Cone: $ V_{\text{cone}} = \frac{1}{3} \pi r^2 h $</p>
+<p>Volume do Paralepípedo: $ V_{\text{paralel}} = l \times w \times h $</p>
 <p>Calcule a massa de cada objeto, considerando que a densidade do metal é de 8 g/cm³ e a densidade da madeira é de 0,5 g/cm³. Qual dos dois objetos, cone ou paralepípedo, é mais pesado? Considere que eles possuem o mesmo peso se a diferença entre as massas for menor do que 5g.</p>
 <p><strong>Exemplos de Teste:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
@@ -1432,7 +1430,7 @@ Neo, um hacker talentoso, vive uma vida dupla. No mundo que ele conhece, ele é 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capítulo 4: Controle de Fluxo</p>
+        <p class="prev-next-title">Capítulo 4: Controle de Fluxo e Números Aleatórios</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

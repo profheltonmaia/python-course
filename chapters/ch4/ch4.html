@@ -350,8 +350,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-controle-de-fluxo-e-numeros-aleatorios">
+  <section id="capitulo-4-controle-de-fluxo-e-numeros-aleatorios">
 <h1>Capítulo 4: Controle de Fluxo e Números Aleatórios<a class="headerlink" href="#capitulo-4-controle-de-fluxo-e-numeros-aleatorios" title="Permalink to this heading">#</a></h1>
+<p><img alt="ch4" src="../../_images/ch4.jpeg" /></p>
 <section id="estruturas-de-decisao-aninhadas">
 <h2>Estruturas de Decisão Aninhadas<a class="headerlink" href="#estruturas-de-decisao-aninhadas" title="Permalink to this heading">#</a></h2>
 <p>As estruturas condicionais permitem que o programador controle o fluxo do programa, executando diferentes blocos de código de acordo com condições específicas. Vamos revisar as estruturas mais utilizadas:</p>
@@ -1044,6 +1045,40 @@ Desenvolva um programa que simule uma loteria onde são sorteados <strong>5 núm
 <span class="c1"># Teste 3</span>
 <span class="n">Entrada</span><span class="p">:</span> <span class="mi">11</span>
 <span class="n">Saída</span><span class="p">:</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">jogos</span> <span class="n">necessários</span><span class="p">:</span> <span class="mi">807045</span>
+</pre></div>
+</div>
+<p><strong>10. O “Velho” Fibonacci:</strong>
+A <strong>sequência de Fibonacci</strong> é uma série infinita de números inteiros em que cada número é a soma dos dois anteriores. Ela começa com os números 1 e 1:</p>
+<p>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …</p>
+<p>Para calcular o próximo número na sequência, somamos os dois números anteriores. Por exemplo:</p>
+<ul class="simple">
+<li><p>O terceiro número é 1 + 1 = 2.</p></li>
+<li><p>O quarto número é 1 + 2 = 3.</p></li>
+<li><p>O quinto número é 2 + 3 = 5.</p></li>
+</ul>
+<p>E assim por diante.</p>
+<p>Veja a imagem ilustrativa a seguir:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/fib.jpeg"><img alt="fib" class="bg-primary mb-1" src="../../_images/fib.jpeg" style="width: 210px;" /></a>
+<p>Agora, vamos criar um programa que gere a sequência de Fibonacci até o <strong>n-ésimo termo</strong>. O usuário fornecerá o valor de <strong>n</strong>.</p>
+<ul class="simple">
+<li><p>Inicializamos as variáveis <code class="docutils literal notranslate"><span class="pre">ultimo</span></code> e <code class="docutils literal notranslate"><span class="pre">penultimo</span></code> com os valores 1, pois os dois primeiros termos da sequência são 1.</p></li>
+<li><p>Usamos um laço de repetição (como um <code class="docutils literal notranslate"><span class="pre">for</span></code> ou <code class="docutils literal notranslate"><span class="pre">while</span></code>) para calcular os próximos termos. Salvando os valores em uma lista.</p></li>
+<li><p>A cada iteração, somamos <code class="docutils literal notranslate"><span class="pre">ultimo</span></code> e <code class="docutils literal notranslate"><span class="pre">penultimo</span></code> para obter o próximo termo.</p></li>
+<li><p>Atualizamos as variáveis <code class="docutils literal notranslate"><span class="pre">ultimo</span></code> e <code class="docutils literal notranslate"><span class="pre">penultimo</span></code> para os valores corretos.</p></li>
+<li><p>Repetimos o processo até chegarmos ao <strong>n-ésimo termo</strong>.</p></li>
+<li><p>Por fim, todos os números da sequência, armazenados em uma lista, devem ser impressos.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Teste 1</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span>
+
+<span class="c1"># Teste 2</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">19</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="mi">1597</span><span class="p">,</span> <span class="mi">2584</span><span class="p">,</span> <span class="mi">4181</span>
+
+<span class="c1"># Teste 3</span>
+<span class="n">Entrada</span><span class="p">:</span> <span class="mi">23</span>
+<span class="n">Saída</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">144</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">377</span><span class="p">,</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">987</span><span class="p">,</span> <span class="mi">1597</span><span class="p">,</span> <span class="mi">2584</span><span class="p">,</span> <span class="mi">4181</span><span class="p">,</span> <span class="mi">6765</span><span class="p">,</span> <span class="mi">10946</span><span class="p">,</span> <span class="mi">17711</span><span class="p">,</span> <span class="mi">28657</span> 
 </pre></div>
 </div>
 </section>
