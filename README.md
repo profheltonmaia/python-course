@@ -1,2 +1,2 @@
 ### Curso de Python (LiP)
-[ECT-UFRN](https://profheltonmaia.github.io/python-course/intro.html)
+[ECT-UFRN](https://heltonmaia.com/pythonbook/intro.html)
